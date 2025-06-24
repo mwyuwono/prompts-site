@@ -27,14 +27,35 @@
         {
           "id": "copy-editor",
           "title": "Proofreader",
-          "description": "Professional proofreading and editing assistance.",
+          "description": "Proofreads text, maintaining a clear, concise tone.",
           "category": {
             "type": "personal",
             "subcategory": "utilities"
           },
-          "inputFields": [],
+          "inputFields": [
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "textarea",
+              "placeholder": "Paste any text",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
           "promptText": {
-            "content": "Please proofread the following text for grammar, spelling, punctuation, and clarity. Provide suggestions for improvement while maintaining the original tone and style."
+            "content": "<h4>Instructions</h4><p><strong>Task 1:</strong></p><p>I want you to help me write, starting with the passage of text above. If possible, allow me to directly edit the output in canvas mode. As we iterate, remember that your primary purpose is to improve clarity, flow, and overall structure, even if that means reorganizing the content.</p><p>I also want you to:</p><ol><li>Preserve my original tone and style, but revise wording and re-organize content when needed to enhance readability and coherence.</li><li>Be concise, direct, and confident. Favor economical constructions over verbosity.</li><li>Ensure grammar and usage conform to rigorous standards of American English, such as <em>The Chicago Manual of Style.</em></li></ol><p><strong>Task 2:</strong></p><p>Create an alternative version of the text that:</p><ol><li>Presents information objectively without advocating for any particular outcome. Keep it casual but professional, as if I'm communicating with a colleague I know well. Avoid being overly enthusiastic, pushy, or using excessive praise. Focus on relevant facts and let the recipient draw their own conclusions.</li><li><strong>Optimizes the structure.</strong> Reimagine the structure to be more concise and efficient, while conveying the same meaning and sentiment.</li></ol>"
+          },
+          "overview": {
+            "userSteps": [
+              "Paste any text below and submit to ChatGPT."
+            ],
+            "aiSteps": [
+              "Provides a proofed version of the original text.",
+              "Offers suggestions for alternative versions."
+            ]
           }
         }
       ],
@@ -92,7 +113,7 @@
             }
           ],
           "promptText": {
-            "content": "You are an expert instructor. Create a comprehensive quiz to test deep knowledge on the topic above. Follow these requirements:\n\n**Quiz Structure:**\n- 10 challenging questions that test genuine expertise\n- Mix of multiple choice, short answer, and essay questions\n- Progress from intermediate to expert level\n- Include at least 2 questions requiring critical analysis\n\n**Question Quality:**\n- Avoid basic definitional questions\n- Focus on application, analysis, and synthesis\n- Include current developments and controversies\n- Test practical knowledge, not just theory\n\n**Format for Audio Optimization:**\n- Number each question clearly\n- Provide brief context before complex questions\n- For multiple choice: state options as 'A through D' rather than listing\n- Include thinking time indicators (\"Take 30 seconds to consider...\")\n\n**Answer Key:**\n- Provide detailed explanations for correct answers\n- Explain why other options are incorrect\n- Include relevant examples and additional context\n- Suggest follow-up resources for areas of weakness"
+            "content": "<h4>Instructions</h4><p>I want to test my expertise on the topic above. Create a highly challenging, expert-level quiz that covers historical context, technical details, key figures or developments, advanced concepts, distinguishing characteristics, and real-world applications or implications.</p><p>The quiz should be structured into sections, with each section containing thought-provoking questions designed to assess deep knowledge and nuanced understanding. Include a bonus section for advanced connoisseurship or specialized expertise. The difficulty level should be equivalent to an exam for subject-matter experts or professionals in the field.</p><p>At the end of the quiz, ask if I would like the answers. If I choose to receive them, provide detailed explanations in a format optimized for audio playback, using a storytelling style similar to historian Alan Taylor. Responses should be deeply researched, engaging, and expansive—offering historical context, connections between events, and rich detail rather than just isolated facts. Transitions should be smooth, descriptions vivid, and key insights framed within a broader narrative. Avoid dry lists or overly academic phrasing; instead, present explanations with the depth and flow of an engaging historical audiobook. Where applicable, naturally reference supporting sources or data points to enhance the explanation.</p>"
           }
         },
         {
@@ -144,7 +165,15 @@
             }
           ],
           "promptText": {
-            "content": "<h4>Context</h4><p>You are a Senior Product Designer specializing in Human-Centered Design with expertise in financial services, particularly digital banking experiences. You have extensive experience in:</p><ul><li>Design systems and component libraries</li><li>User research methodologies</li><li>Accessibility and inclusive design</li><li>Mobile-first design approaches</li><li>Regulatory compliance in financial services</li><li>Data visualization and complex information architecture</li></ul><h4>Your Role</h4><p>Provide strategic design guidance that balances user needs with business objectives and regulatory requirements. Your responses should be practical, actionable, and grounded in design best practices.</p><h4>Response Style</h4><ul><li>Lead with user impact and business value</li><li>Provide specific, actionable recommendations</li><li>Include relevant design principles and methodologies</li><li>Consider technical feasibility and implementation</li><li>Address potential edge cases and accessibility concerns</li><li>Reference industry standards and best practices where relevant</li></ul>"
+            "content": "<p><strong>Instructions & Context:</strong></p><p><strong>1. Your Role & Expertise:</strong><br>* Act as an expert consultant with deep knowledge of Human-Centered Design (HCD), Design Thinking, Agile methodologies, and the thought leadership of leading design organizations (e.g., IDEO, Nielsen Norman Group).<br>* You are assisting a <strong>Principal User Experience Designer</strong> at a leading management consulting firm.</p><p><strong>2. Objective:</strong><br>* Analyze the request above, leveraging the provided context about my role, methodologies, and professional style.<br>* <strong>Propose the most effective and appropriate approach</strong> to address the request. This may involve outlining steps, suggesting methodologies, drafting content, generating ideas, or providing a critique, depending on the nature of the request.<br>* Adopt a <strong>strategic perspective</strong> suitable for a Principal-level role, considering user value, business objectives, and potential challenges.<br>* If the request is ambiguous or multiple valid approaches exist, <strong>identify key decision points, propose alternatives, or ask clarifying questions.</strong></p><p><strong>3. Background Context:</strong><br>* <strong>My Role:</strong> Principal User Experience Designer supporting domains like Strategy & Corporate Finance and Global Banking within a management consulting firm.<br>* <strong>Core Methodology:</strong> Human-Centered Design (HCD) is foundational for all product design work, ensuring tools are intuitive and effective for end-users (colleagues and clients; primarily internal/B2B).<br>* <strong>Development Process:</strong> Agile methodology is used for product development.<br>* <strong>Problem Solving/Workshops:</strong> Design Thinking principles and practices are employed.<br>* <strong>Definitions:</strong><br>    * <strong>Solutions:</strong> Internal business units, each with products/tools (often insights dashboards) enabling colleagues/clients to assess performance. Not consumer-facing. Typically have dedicated product teams.<br>    * <strong>Insights Portal:</strong> A specific type of dashboard for data visualization and interpretation, often featuring predictive insights.</p><p><strong>4. Required Professional Style for Output:</strong><br>* <strong>Clarity and Conciseness:</strong> Be direct and to the point.<br>* <strong>Attention to Detail:</strong> Ensure accuracy and thoroughness.<br>* <strong>Substantive Value:</strong> Focus on practical application and measurable impact.<br>* <strong>Neutral & Genuine Tone:</strong> Avoid overconfidence, self-aggrandizement, superfluous adjectives, or unwarranted enthusiasm. Be straightforward.<br>* <strong>Integrate Design Principles:</strong> When relevant, explicitly reference HCD or Design Thinking principles to justify the proposed approach.<br>* <strong>Polished & Professional:</strong> Maintain a high standard of writing.</p><p><strong>Synthesize all the above information (Objective, Role, Context, Style) to generate your response.</strong></p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Enter any work-related request."
+            ],
+            "aiSteps": [
+              "Responds to the request, incorporating the principles and best practices of Human Centered Design."
+            ]
           }
         }
       ],
@@ -152,14 +181,34 @@
         {
           "id": "meeting-notes",
           "title": "Meeting notes",
-          "description": "Structure and organize meeting notes effectively.",
+          "description": "Organize and clarify meeting notes for sharing with a team.",
           "category": {
             "type": "work",
             "subcategory": "miscellaneous"
           },
-          "inputFields": [],
+          "inputFields": [
+            {
+              "name": "notes",
+              "label": "Meeting notes",
+              "type": "textarea",
+              "placeholder": "Paste your raw notes",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
           "promptText": {
-            "content": "Help structure and organize meeting notes with clear action items, decisions made, and follow-up tasks. Format for easy sharing and reference."
+            "content": "<p>Instructions</p><p>Please organize and clarify the meeting notes so I can share them with my team. Ensure the notes are structured in a way that makes them clear and actionable. Follow these guidelines:</p><ol><li>Format the notes into bullet points or numbered lists for each section to improve readability and facilitate quick scanning.</li><li>Use direct and clear language to ensure all team members can easily understand and act upon the information.</li><li>Maintain a professional and focused tone throughout the document.</li><li>Do not delete important details.</li><li>If you are unsure about the meaning of something, ask me before you take action.</li><li>For individual tasks, use the following format:[Task name]<br>[Task description]</li><li>I share these notes with my team via Microsoft Outlook, so please ensure the format is compatible with Outlook email to maintain integrity when copied and pasted.</li></ol>"
+          },
+          "overview": {
+            "userSteps": [
+              "Paste your raw notes below and submit to ChatGPT."
+            ],
+            "aiSteps": [
+              "Provides an organized version."
+            ]
           }
         }
       ]
