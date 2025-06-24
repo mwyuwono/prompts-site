@@ -106,6 +106,13 @@ export class Sidebar {
   updateSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
     sidebarContent.innerHTML = this.renderPromptCategories();
+    
+    // Update tab active states
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    document.querySelector(`.tab.${this.currentTab}`).classList.add('active');
+    
     this.attachEventListeners();
   }
 
