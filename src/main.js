@@ -1,11 +1,13 @@
 import './style.css'
 import { Sidebar } from './components/Sidebar.js'
 import { PromptForm } from './components/PromptForm.js'
+import AiServices from './components/AiServices.js'
 
 class App {
   constructor() {
     this.sidebar = new Sidebar();
     this.promptForm = new PromptForm();
+    this.aiServices = new AiServices();
     this.currentPrompt = null;
     
     this.init();
@@ -23,7 +25,7 @@ class App {
           ${this.sidebar.render()}
         </div>
         <div class="right-panel start-page">
-          ${this.promptForm.render(this.currentPrompt)}
+          ${this.currentPrompt ? this.promptForm.render(this.currentPrompt) : this.aiServices.render()}
         </div>
       </div>
     `;
@@ -56,16 +58,15 @@ class App {
 
   updateRightPanel() {
     const rightPanel = document.querySelector('.right-panel');
-    rightPanel.innerHTML = this.promptForm.render(this.currentPrompt);
+    rightPanel.innerHTML = this.currentPrompt ? this.promptForm.render(this.currentPrompt) : this.aiServices.render();
     
     // Remove start-page class when showing a prompt
     if (this.currentPrompt) {
       rightPanel.classList.remove('start-page');
+      this.promptForm.attachEventListeners();
     } else {
       rightPanel.classList.add('start-page');
     }
-    
-    this.promptForm.attachEventListeners();
   }
 }
 
