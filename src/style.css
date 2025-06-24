@@ -98,6 +98,7 @@ h3 {
   padding-top: 116px;
   padding-bottom: 40px;
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Sidebar Styles */
@@ -110,11 +111,19 @@ h3 {
   overflow: auto;
 }
 
-.sidebar h2 {
+/* Sidebar Header */
+.sidebar-header {
   padding: 32px 32px 16px;
+}
+
+.prompts-title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 400;
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 56px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.4em;
+  color: var(--black);
 }
 
 .sidebar-content {
@@ -310,8 +319,8 @@ h3 {
 
 .tab {
   padding: 8px 16px;
-  background-color: var(--lightest-green);
-  border-radius: 20px;
+  background-color: var(--transparent-black);
+  border-radius: 100px;
   cursor: pointer;
   font-family: 'Cousine', sans-serif;
   font-size: 14px;
@@ -479,13 +488,13 @@ h3 {
 .ai-services-section {
   background-color: var(--contrast-background);
   border-radius: 32px;
-  padding: 40px;
-  margin: 20px;
+  padding: 32px 48px 48px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  height: calc(100vh - 80px);
-  overflow-y: auto;
+  width: 100%;
+  max-width: 800px;
 }
 
 .services-heading {
@@ -511,7 +520,7 @@ h3 {
   align-items: center;
   text-align: center;
   background-color: var(--lightest-green);
-  border-radius: 28px;
+  border-radius: 100px;
   padding: 16px 24px;
   text-decoration: none;
   color: var(--black);
@@ -544,7 +553,7 @@ h3 {
 /* Mobile responsive for AI services */
 @media (max-width: 768px) {
   .ai-services-section {
-    margin: 16px;
+    margin: 0;
     padding: 24px;
     height: auto;
     max-height: 70vh;

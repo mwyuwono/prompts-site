@@ -9,7 +9,9 @@ export class Sidebar {
   render() {
     return `
       <div class="sidebar">
-        <h2>Prompts</h2>
+        <div class="sidebar-header">
+          <h1 class="prompts-title">Prompts</h1>
+        </div>
         
         <div class="sidebar-section-head">
           <div class="tab personal ${this.currentTab === 'personal' ? 'active' : ''}" data-tab="personal">
