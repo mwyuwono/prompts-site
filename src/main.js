@@ -1,35 +1,73 @@
 import './style.css'
+import { Sidebar } from './components/Sidebar.js'
+import { PromptForm } from './components/PromptForm.js'
 
-// App initialization
-document.querySelector('#app').innerHTML = `
-  <div class="page-wrap">
-    <div class="left-panel">
-      <div class="sidebar">
-        <h2>Prompts</h2>
-        <div class="sidebar-content">
-          <div class="sidebar-section">
-            <div class="sidebar-category-head">Personal</div>
-            <p>Navigation will go here...</p>
-          </div>
-          <div class="sidebar-section">
-            <div class="sidebar-category-head">Work</div>
-            <p>Navigation will go here...</p>
-          </div>
+class App {
+  constructor() {
+    this.sidebar = new Sidebar();
+    this.promptForm = new PromptForm();
+    this.currentPrompt = null;
+    
+    this.init();
+  }
+
+  init() {
+    this.render();
+    this.attachEventListeners();
+  }
+
+  render() {
+    document.querySelector('#app').innerHTML = `
+      <div class="page-wrap">
+        <div class="left-panel">
+          ${this.sidebar.render()}
+        </div>
+        <div class="right-panel start-page">
+          ${this.promptForm.render(this.currentPrompt)}
         </div>
       </div>
-    </div>
-    <div class="right-panel">
-      <div class="start-page-content">
-        <h1>Prompts Site - Modern Version</h1>
-        <p>🚀 Successfully set up Vite project!</p>
-        <p>Next steps:</p>
-        <ul>
-          <li>Copy CSS from Webflow export</li>
-          <li>Create components for sidebar and forms</li>
-          <li>Extract prompt data to JSON</li>
-          <li>Deploy to p.weaver-yuwono.com</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-`
+    `;
+    
+    // Attach event listeners after rendering
+    this.sidebar.attachEventListeners();
+    this.promptForm.attachEventListeners();
+  }
+
+  attachEventListeners() {
+    // Listen for prompt selection
+    window.addEventListener('promptSelected', (e) => {
+      const promptId = e.detail.promptId;
+      const promptData = this.sidebar.getPromptData(promptId);
+      this.loadPrompt(promptData);
+    });
+
+    // Listen for tab changes
+    window.addEventListener('tabChanged', (e) => {
+      // Clear current prompt when switching tabs
+      this.currentPrompt = null;
+      this.updateRightPanel();
+    });
+  }
+
+  loadPrompt(promptData) {
+    this.currentPrompt = promptData;
+    this.updateRightPanel();
+  }
+
+  updateRightPanel() {
+    const rightPanel = document.querySelector('.right-panel');
+    rightPanel.innerHTML = this.promptForm.render(this.currentPrompt);
+    
+    // Remove start-page class when showing a prompt
+    if (this.currentPrompt) {
+      rightPanel.classList.remove('start-page');
+    } else {
+      rightPanel.classList.add('start-page');
+    }
+    
+    this.promptForm.attachEventListeners();
+  }
+}
+
+// Initialize the app
+new App();

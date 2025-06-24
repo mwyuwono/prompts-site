@@ -296,6 +296,168 @@ h3 {
   }
 }
 
+/* Tab Styles */
+.sidebar-section-head {
+  display: flex;
+  gap: 8px;
+  background-color: var(--main-background);
+  padding: 16px 32px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: var(--lightest-green);
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Cousine', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: var(--secondary-highlight);
+}
+
+.tab.active {
+  background-color: var(--highlight);
+  color: var(--white);
+}
+
+/* Prompt Overview */
+.prompt-overview-wrap {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: var(--lightest-green);
+  border-radius: 12px;
+}
+
+.prompt-overview-section {
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  font-family: 'Cousine', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--highlight);
+}
+
+.instructions-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instructions-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Form Controls */
+.form-controls {
+  margin: 24px 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Prompt Text Display */
+.prompt-text-container {
+  margin-top: 24px;
+  padding: 20px;
+  background-color: var(--field-background);
+  border-radius: 12px;
+  border: 1px solid var(--contrast-low);
+}
+
+.prompt-text {
+  font-family: 'Cousine', sans-serif;
+  line-height: 1.6;
+}
+
+.prompt-text h4 {
+  color: var(--highlight);
+  margin: 16px 0 8px 0;
+  font-size: 16px;
+}
+
+.prompt-text ul {
+  padding-left: 20px;
+}
+
+.prompt-text li {
+  margin-bottom: 8px;
+}
+
+.prompt-text strong {
+  color: var(--highlight);
+}
+
+/* Links in start page */
+.link-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.block-link {
+  display: block;
+  padding: 16px 20px;
+  background-color: var(--contrast-background);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.2s ease;
+}
+
+.block-link:hover {
+  background-color: var(--secondary-highlight);
+  transform: translateY(-2px);
+}
+
+.link-title {
+  font-family: 'Cousine', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.link-description {
+  font-size: 14px;
+  color: var(--contrast-low);
+}
+
+/* Mobile enhancements */
+@media (max-width: 768px) {
+  .sidebar-section-head {
+    padding: 12px 16px;
+    position: static;
+  }
+  
+  .tab {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .prompt-form {
+    padding: 20px;
+  }
+  
+  .form-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .copy-btn {
+    width: 100%;
+  }
+}
+
 /* Utility Classes */
 .hidden {
   display: none;

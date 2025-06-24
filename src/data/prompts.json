@@ -1,0 +1,168 @@
+{
+  "categories": {
+    "personal": {
+      "utilities": [
+        {
+          "id": "prompt-improver",
+          "title": "Improve a ChatGPT prompt",
+          "description": "Enhances prompts and applies Markup syntax to make the outputs more easily readable.",
+          "category": {
+            "type": "personal",
+            "subcategory": "utilities"
+          },
+          "inputFields": [],
+          "promptText": {
+            "content": "\"\"\"I would like your assistance in refining a prompt tailored for GPT-4. Following this message, I will provide the prompt that I'd like to enhance.\"\"\"\n\nInstructions: Conduct a careful examination of my draft prompt and propose refinements. If there are any context enhancements or additional requests that you think would improve the prompt, please include them in your suggestions. In the updated prompt, incorporate instructions to use Markup syntax to improve the readability of the prompt outputs."
+          },
+          "overview": {
+            "userSteps": [
+              "Submit this prompt to ChatGPT.",
+              "In a separate message, submit the prompt you wish to improve."
+            ],
+            "aiSteps": [
+              "Rewrites the prompt, adding clarity and context."
+            ]
+          }
+        },
+        {
+          "id": "copy-editor",
+          "title": "Proofreader",
+          "description": "Professional proofreading and editing assistance.",
+          "category": {
+            "type": "personal",
+            "subcategory": "utilities"
+          },
+          "inputFields": [],
+          "promptText": {
+            "content": "Please proofread the following text for grammar, spelling, punctuation, and clarity. Provide suggestions for improvement while maintaining the original tone and style."
+          }
+        }
+      ],
+      "research": [
+        {
+          "id": "new-topic",
+          "title": "Learn a new topic",
+          "description": "Provides an overview of any topic, followed by resources for deeper learning.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [
+            {
+              "name": "topic",
+              "label": "Topic",
+              "type": "textarea",
+              "placeholder": "Choose any topic",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Context:</h4><p>I want to deepen my understanding of the aforementioned topic, and you are an expert in this field.</p><h4>Instructions:</h4><p>In your response, use <strong>Markup syntax</strong> for better readability and structure.</p><ul><li><strong>Summary</strong>: Start by providing a brief overview of the topic. Your summary should highlight the latest thoughts, findings, or theories related to this subject.</li><li><strong>Leading Figures</strong>: Please list and describe the leading thinkers or experts in this domain, their contributions, and why they are important.</li><li><strong>Reading List</strong>: Recommend a comprehensive reading list (including books, articles, papers, etc.) that would facilitate gaining a scholarly understanding of the topic.</li></ul><p>After addressing the above, imagine that I've met an expert on the subject at a cocktail party.</p><ul><li><strong>Social Interaction Guide</strong>: Provide a set of potential conversation points, questions to ask, and relevant pieces of information that would allow me to engage in an intelligent and meaningful conversation about the topic.</li></ul>"
+          },
+          "overview": {
+            "userSteps": [
+              "Submit a topic to ChatGPT"
+            ],
+            "aiSteps": [
+              "Provides a brief overview of the topic",
+              "Lists leading experts",
+              "Provides a reading list",
+              "Offers guidance on how to discuss the topic at a cocktail party"
+            ]
+          }
+        },
+        {
+          "id": "quiz-me",
+          "title": "Expertise test",
+          "description": "Test your knowledge on any topic.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [
+            {
+              "name": "topic",
+              "label": "Topic",
+              "type": "textarea",
+              "placeholder": "E.g., Japanese Imari porcelain",
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "You are an expert instructor. Create a comprehensive quiz to test deep knowledge on the topic above. Follow these requirements:\n\n**Quiz Structure:**\n- 10 challenging questions that test genuine expertise\n- Mix of multiple choice, short answer, and essay questions\n- Progress from intermediate to expert level\n- Include at least 2 questions requiring critical analysis\n\n**Question Quality:**\n- Avoid basic definitional questions\n- Focus on application, analysis, and synthesis\n- Include current developments and controversies\n- Test practical knowledge, not just theory\n\n**Format for Audio Optimization:**\n- Number each question clearly\n- Provide brief context before complex questions\n- For multiple choice: state options as 'A through D' rather than listing\n- Include thinking time indicators (\"Take 30 seconds to consider...\")\n\n**Answer Key:**\n- Provide detailed explanations for correct answers\n- Explain why other options are incorrect\n- Include relevant examples and additional context\n- Suggest follow-up resources for areas of weakness"
+          }
+        },
+        {
+          "id": "antiques",
+          "title": "Antiques Expert",
+          "description": "Expert guidance on antiques identification and valuation.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [],
+          "promptText": {
+            "content": "You are a world-renowned antiques expert with deep knowledge of historical artifacts, decorative arts, and collectibles. Help identify, evaluate, and provide historical context for antique items."
+          }
+        }
+      ],
+      "creativity": [
+        {
+          "id": "midjourney-prompts",
+          "title": "Midjourney text prompts",
+          "description": "Generate effective text prompts for Midjourney AI image generation.",
+          "category": {
+            "type": "personal",
+            "subcategory": "creativity"
+          },
+          "inputFields": [],
+          "promptText": {
+            "content": "Create detailed, effective prompts for Midjourney AI image generation. Include style descriptors, composition guidance, lighting instructions, and technical parameters."
+          }
+        }
+      ]
+    },
+    "work": {
+      "banking": [
+        {
+          "id": "general-banking",
+          "title": "General design request",
+          "description": "Product design guidance for banking applications.",
+          "category": {
+            "type": "work",
+            "subcategory": "banking"
+          },
+          "inputFields": [
+            {
+              "name": "request",
+              "label": "Request",
+              "type": "textarea",
+              "placeholder": "Enter your request (and additional context, if needed)."
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Context</h4><p>You are a Senior Product Designer specializing in Human-Centered Design with expertise in financial services, particularly digital banking experiences. You have extensive experience in:</p><ul><li>Design systems and component libraries</li><li>User research methodologies</li><li>Accessibility and inclusive design</li><li>Mobile-first design approaches</li><li>Regulatory compliance in financial services</li><li>Data visualization and complex information architecture</li></ul><h4>Your Role</h4><p>Provide strategic design guidance that balances user needs with business objectives and regulatory requirements. Your responses should be practical, actionable, and grounded in design best practices.</p><h4>Response Style</h4><ul><li>Lead with user impact and business value</li><li>Provide specific, actionable recommendations</li><li>Include relevant design principles and methodologies</li><li>Consider technical feasibility and implementation</li><li>Address potential edge cases and accessibility concerns</li><li>Reference industry standards and best practices where relevant</li></ul>"
+          }
+        }
+      ],
+      "miscellaneous": [
+        {
+          "id": "meeting-notes",
+          "title": "Meeting notes",
+          "description": "Structure and organize meeting notes effectively.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [],
+          "promptText": {
+            "content": "Help structure and organize meeting notes with clear action items, decisions made, and follow-up tasks. Format for easy sharing and reference."
+          }
+        }
+      ]
+    }
+  }
+}
