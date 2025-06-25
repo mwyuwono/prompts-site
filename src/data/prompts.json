@@ -3,7 +3,7 @@
     "personal": {
       "utilities": [
         {
-          "id": "prompt-improver",
+          "id": "prompt-improver tester",
           "title": "Improve a ChatGPT prompt",
           "description": "Enhances prompts and applies Markup syntax to make the outputs more easily readable.",
           "category": {
