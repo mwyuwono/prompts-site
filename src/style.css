@@ -93,6 +93,9 @@ h3 {
   align-items: center;
   padding: 20px 40px 40px;
   overflow: auto;
+  /* Smooth transition support */
+  transition: min-height 0.3s ease-out;
+  position: relative;
 }
 
 .right-panel.start-page {
@@ -673,4 +676,92 @@ h3 {
   .service-company {
     font-size: 11px;
   }
+}
+
+/* Transition Enhancement Styles */
+.right-panel.transitioning {
+  overflow: hidden;
+}
+
+.transitioning {
+  will-change: opacity, transform;
+}
+
+/* Loading states */
+.loading-content {
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--secondary-highlight) 25%, var(--tertiary-highlight) 50%, var(--secondary-highlight) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+  height: 1.2em;
+  margin: 0.8em 0;
+}
+
+.loading-skeleton:first-child {
+  height: 2em;
+  margin-bottom: 1.5em;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced transitions for different content types */
+.prompt-form-container {
+  transition: opacity 0.25s ease-in-out, transform 0.3s ease-out;
+}
+
+.start-page-content {
+  transition: opacity 0.25s ease-in-out, transform 0.3s ease-out;
+}
+
+/* Smooth height changes for different sections */
+.prompt-header {
+  transition: all 0.2s ease-out;
+}
+
+.form-section {
+  transition: all 0.2s ease-out;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .right-panel,
+  .transitioning,
+  .prompt-form-container,
+  .start-page-content,
+  .prompt-header,
+  .form-section {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .loading-skeleton {
+    animation: none;
+    background: #e0e0e0;
+  }
+}
+
+/* Hardware acceleration for better performance */
+.right-panel,
+.prompt-form-container,
+.start-page-content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Ensure smooth scrolling during transitions */
+.right-panel.transitioning {
+  scroll-behavior: smooth;
 }

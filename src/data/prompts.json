@@ -57,6 +57,100 @@
               "Offers suggestions for alternative versions."
             ]
           }
+        },
+        {
+          "id": "sell-something",
+          "title": "Craft a listing",
+          "description": "List items for sale on sites like Craigslist or Facebook Marketplace.",
+          "category": {
+            "type": "personal",
+            "subcategory": "utilities"
+          },
+          "inputFields": [
+            {
+              "name": "item",
+              "label": "Item",
+              "type": "textarea",
+              "placeholder": "",
+              "maxLength": 5000
+            },
+            {
+              "name": "description",
+              "label": "Description & comments",
+              "type": "textarea",
+              "placeholder": "Any relevant information",
+              "maxLength": 5000
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "type": "textarea",
+              "placeholder": "(e.g., $100 each; $300 for the set)",
+              "maxLength": 5000
+            },
+            {
+              "name": "comparison-link",
+              "label": "Comparison link",
+              "type": "textarea",
+              "placeholder": "Optional; Provide a link to this item online for comparison.",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Instructions</h4><p>Based on the details provided above, please assist me in crafting a succinct listing for sale. The listing will be posted on sites like Craigslist and Facebook marketplace. Do not use sales jargon, rather maintain a neutral tone.</p><p>Note: The item will be sold on a first-come, first-serve basis. The buyer is responsible for pickup.</p><p><strong>Expected Output Format</strong>:</p><p><strong>Headline</strong><br>[Insert a succinct but informative title for the item]</p><p><strong>Listing</strong><br>[Insert the body of the listing, including all relevant details.]</p><p><strong>Location</strong><br>Downtown Rome, Georgia</p><p>### Only if a link was provided above, add the following section to the listing. ###<br><em>For reference, here is a link to this item online:</em><br>[Insert Link]</p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Complete the fields below and submit to ChatGPT"
+            ],
+            "aiSteps": [
+              "Crafts the listing"
+            ]
+          }
+        },
+        {
+          "id": "shipping-quotes",
+          "title": "Request shipping quote",
+          "description": "Quickly request quotes to ship auction purchases.",
+          "category": {
+            "type": "personal",
+            "subcategory": "utilities"
+          },
+          "inputFields": [
+            {
+              "name": "item-details",
+              "label": "Item Details",
+              "type": "textarea",
+              "placeholder": "Paste auction listing details.",
+              "maxLength": 5000
+            },
+            {
+              "name": "auction-house",
+              "label": "Auction House",
+              "type": "textarea",
+              "placeholder": "Provide the name, city and state.",
+              "maxLength": 5000
+            },
+            {
+              "name": "listing-url",
+              "label": "Listing URL",
+              "type": "textarea",
+              "placeholder": "Paste the URL",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Ship to:</h4><p>Matt Weaver-Yuwono<br>613 E 3rd Street<br>Rome GA 30161<br>United States</p><h4>Instructions:</h4><p>Please draft an email for requesting shipping quotes from multiple vendors. The letter should provide details for the item(s) I am considering purchasing, which I have included above. Provide details that are pertinent for calculating shipping (such as item type, size/dimensions, weight (if known), durability, etc.). Also provide the delivery address (above) so that the vendor can accurately calculate shipping prices.</p><p>The item(s) will be purchased from a local auction house, and the shipping vendor will need to pick up the item during their allowed pickup times. The shipping vendor will be responsible for packing the item(s).</p><p>The letter should ask for information on shipping cost and delivery timeframe.</p><p>The letter should include a link to the listing, which I have provided above. This enables the shipping vendor to view images of the item.</p><p>The tone of the letter should be clear, and straightforward. Be very concise. For example \"Hello, Could you please assist me with a shipping quote for them item below, which I plan to purchase from [Auction house name] in [City, State]?\"</p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Enter the item description",
+              "Provide the name and location of the auction house"
+            ],
+            "aiSteps": [
+              "Writes an email requesting a shipping quote."
+            ]
+          }
         }
       ],
       "research": [
@@ -117,16 +211,194 @@
           }
         },
         {
+          "id": "research-products-materials",
+          "title": "Research products & materials",
+          "description": "Find high quality products and materials.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [
+            {
+              "name": "product",
+              "label": "Product",
+              "type": "textarea",
+              "placeholder": "(e.g.,Custom Roman window shades)",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Context</h4><p>I'm searching for the product above. Help me locate exceptional options with the following characteristics:</p><h3>Materials & Quality Requirements</h3><ul><li>Exclusively natural materials (wood, stone, metal, glass, ceramic, linen, wool, cotton, leather)</li><li>Absolutely no plastics, synthetic finishes, or artificial materials</li><li>Heirloom quality construction with superior craftsmanship</li><li>Authentic finishing techniques and traditional manufacturing methods where applicable</li><li>Preference for artisanal and handcrafted items over mass-produced alternatives</li></ul><h3>Aesthetic Alignment</h3><ul><li>Materials allowed to age gracefully and develop patina</li><li>Designs that emphasize quality and longevity over trends</li></ul><h3>Retailer & Source Profile</h3><ul><li>Premium specialty retailers and bespoke manufacturers</li><li>Heritage brands with established reputations for quality</li><li>Small-batch artisans and craftspeople</li><li>Independent design studios and workshops</li><li>Architectural salvage and restoration specialists</li><li>Global boutiques specializing in exceptional home goods</li></ul><h3>Search Depth Requirements</h3><ol><li>Begin with established premium retailers like Blackberry Farm Shop, Abask, Flamingo Estate, House of Antique Hardware, Ralph Lauren, and Drakes of London, Sid Mashburn, Chairish</li><li>Expand search to discover lesser-known specialists like Mark Lewis Design Shop or Talas in New York</li><li>Identify international sources and specialized workshops not commonly known</li><li>Explore architectural salvage options for authentic period pieces</li></ol><h3>Response Format</h3><p>Please provide search results organized as follows:</p><ul><li>Direct links to specific products meeting my requirements</li><li>Price point (if available)</li><li>Avoid other context or filler content, I just want the links and price.</li></ul><h3>Additional Context</h3><p>This search should emphasize quality over convenience, authenticity over affordability, and craftsmanship over contemporary trends. I value items that will develop character over time and maintain their integrity for decades.</p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Enter a product",
+              "Copy and paste this prompt into a Deep Research llm."
+            ],
+            "aiSteps": [
+              "Provides a list of recommended products with pricing and links."
+            ]
+          }
+        },
+        {
           "id": "antiques",
           "title": "Antiques Expert",
-          "description": "Expert guidance on antiques identification and valuation.",
+          "description": "Research antique furniture and objects.",
           "category": {
             "type": "personal",
             "subcategory": "research"
           },
           "inputFields": [],
           "promptText": {
-            "content": "You are a world-renowned antiques expert with deep knowledge of historical artifacts, decorative arts, and collectibles. Help identify, evaluate, and provide historical context for antique items."
+            "content": "You are an antiques expert providing information about antique furniture and objects.\n\nWhen I upload a photo of an item, please provide the following:\n\n1. **Identification & Dating**: Use visual clues and systematic analysis to identify and date the item. Specifically mention markings, labels, or unique characteristics that help in determining its age and origin. Indicate if the item appears to be an original antique or a reproduction.\n\n2. **History & Context**: Provide a brief history of the item's category, including its typical use and historical context. Mention broader trends from the item's era that influenced its design and purpose.\n\n3. **Craftsmanship & Condition**:\n   • Analyze the **craftsmanship** (e.g., joinery techniques, materials, and artistic style) and **condition** of the item.\n   • Pay particular attention to details that indicate **refinishing**, **forgery**, or **restoration**. Highlight any inconsistencies in wear, suspicious hardware, or other alterations that might impact the item's authenticity.\n   • Compare the item to recognized standards or styles to assess its authenticity.\n\n4. **Research Resources**: Recommend reliable sources for further research, such as books, museums, or organizations specializing in the item's type.\n\n**Focus Areas**: Always scrutinize the item for potential refinishing, forgery indicators, or condition issues. Mention any signs of restoration and whether they positively or negatively impact the piece's historical value.\n\nFinally, ask if I would like you to create a highly challenging, expert-level quiz to test about this item that covers historical context, production techniques, design characteristics, notable makers, market factors, and authentication methods. If yes, provide a quiz to test my expertise that is structured into sections, with each section containing detailed and thought-provoking questions. The questions should test deep knowledge, including technical details, provenance considerations, and distinguishing features from similar antiques. Include a bonus section for advanced connoisseurship.\n\nResponses should be written at a level appropriate for antiques experts.\n\nUse Markup syntax for clarity, organizing the response into distinct sections."
+          },
+          "overview": {
+            "userSteps": [
+              "Submit this prompt to ChatGPT.",
+              "In your subsequent message, upload photos of the object."
+            ],
+            "aiSteps": [
+              "Provides a detailed analysis of the object."
+            ]
+          }
+        },
+        {
+          "id": "restaurant-finder",
+          "title": "Restaurant finder",
+          "description": "Find high-quality restaurants in a specified area, relying primarily on coverage in local publications.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [
+            {
+              "name": "location",
+              "label": "Location",
+              "type": "textarea",
+              "placeholder": "(e.g., Boston, MA)",
+              "maxLength": 5000
+            },
+            {
+              "name": "search-distance",
+              "label": "Search distance",
+              "type": "textarea",
+              "placeholder": "(e.g., \"3 miles\" or \"walking distance\")",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<p>Context: I'm looking for outstanding restaurants and bars within the 'Search distance' from the 'Location' provided. I want to go beyond just customer reviews; I want to include analysis from quality food reporting sources such as newspapers, blogs, YouTube channels, and magazines.</p><p>Instructions: As an AI model, your task is to simulate a comprehensive web search using your extensive training data and follow these steps to deliver the required information:</p><p>Firstly, identify 10 credible sources of food reporting relevant to the specified 'Location' and 'Search distance'.</p><p>Desired format:</p><p><strong>Sources:</strong><br>1. [Insert name of Source 1] - [Source location]<br>2. [Insert name of Source 2] - [Source location]<br>3. ...<br>(Leave a blank line after this section)</p><p>Secondly, simulate a search through these sources for commendations of excellent restaurants, combining this data with customer reviews and any other publicly available information. Analyze the frequency of press mentions, the overall sentiment, and the reviews, ranking the best restaurants first.</p><p>Focus on restaurants that are:<br>- Farm to table<br>- Organic<br>- Use natural and fresh ingredients<br>- Frequently update their menu<br>- Accept reservations<br>- Highly reviewed<br>- Frequently mentioned in the press<br>- Have few negative reviews</p><p>Exclude any that are:<br>- Franchise or chain establishments<br>- Fast food joints</p><p>Finally, compile a comprehensive list of restaurants, divided into three categories, without repeating restaurants in more than one category:</p><p>- The 5 best fine dining restaurants<br>- The 5 best restaurants overall<br>- The 5 best bakeries</p><p>Desired format:</p><p>#Category</p><p>(Leave a blank line)</p><p><strong>Restaurants:</strong><br>1. <strong>[Insert name of Restaurant 1]</strong> - [Restaurant city], [Restaurant state]<br>    - Mentioned in: [Insert the name of source(s) where the restaurant was mentioned]<br>    - Description: [Insert a summary of the coverage of this restaurant]</p><p>(Leave a blank line)</p><p>2. <strong>[Insert name of Restaurant 2]</strong> - [Restaurant city], [Restaurant state]<br>    - Mentioned in: [Insert the name of source(s) where the restaurant was mentioned]<br>    - Description: [Insert a summary of the coverage of this restaurant]</p><p>(Leave a blank line)</p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Enter the search area"
+            ],
+            "aiSteps": [
+              "Searches for regional food publications",
+              "Searches publications for coverage of local restaurants",
+              "Provides a ranked list of restaurants"
+            ]
+          }
+        },
+        {
+          "id": "accommodations-finder",
+          "title": "Accommodations finder",
+          "description": "Find high-quality lodging in a specified area, relying primarily on coverage in leading publications.",
+          "category": {
+            "type": "personal",
+            "subcategory": "research"
+          },
+          "inputFields": [
+            {
+              "name": "location",
+              "label": "Location",
+              "type": "textarea",
+              "placeholder": "(e.g., \"Boston, MA\" or \"On the coast of Maine\")",
+              "maxLength": 5000
+            },
+            {
+              "name": "specialRequirements",
+              "label": "Special requirements",
+              "type": "textarea",
+              "placeholder": "(e.g., \"dog friendly\")",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "**Context:** I'm seeking exceptional accommodations in or around a specified 'Location' that meet the 'Special requirements' above. My search aims to go beyond customer reviews; I want to consider analysis from quality publications and sources such as newspapers, travel magazines, blogs, and other reputable cultural publications.\n\n**Instructions:** As an AI model, you are to simulate a comprehensive web search using your extensive training data. Your task involves the following steps:\n\n1. Identify 10 credible publications relevant to the 'Location', referred to as 'Sources'.\n\n**Desired format:**\n**Sources:**\n1. [Insert name of Source 1] - [Source location]\n2. [Insert name of Source 2] - [Source location]\n3. ...\n\nLeave a blank line after this section.\n\n2. Simulate a search through these sources for excellent hotels, inns, or other luxury accommodations. Combine this data with customer reviews and any other publicly available information. Analyze the frequency of press mentions, the overall sentiment, and the reviews.\n\nConsider accommodations that meet the following requirements, as well as the 'Special requirements' provided above:\n• Boutique\n• Independently owned\n• Members of high-quality hotel groups such as Relais and Chateaux\n• Highly praised\n• Frequently mentioned in the press\n• Have few negative reviews\n\nExclude any that:\n• Are considered economy accommodations\n• Have average customer reviews of 3.5 stars or less\n\n3. Compile a comprehensive list of highly-regarded accommodations that meet the 'Special requirements'. Divide the list into 'Hotels' and 'Other accommodations' categories.\n\n**Desired format:**\n# Hotels\n1. **[Insert name of Hotel 1]** - [Hotel city], [Hotel state]\n- Requirement: [Insert the rationale for why this result meets the 'Special requirements']\n- Mentioned in: [Insert the name of source(s) where the hotel was mentioned]\n- Description: [Insert a summary of the coverage of this hotel]\n   [Insert website]\n2. **[Insert name of Hotel 2]** - [Hotel city], [Hotel state]\n- Requirement: [Insert the rationale for why this result meets the 'Special requirements']\n- Mentioned in: [Insert the name of source(s) where the hotel was mentioned]\n- Description: [Insert a summary of the coverage of this hotel]\n   [Insert website]\n3. ...\n\n# Other accommodations\n1. **[Insert name of other accommodation]** - **Type:**: [type of accommodation]\n[accommodation city], [accommodation state]\n- Requirement: [Insert the rationale for why this result meets the 'Special requirements']\n- Mentioned in: [Insert the name of source(s) where the accommodation was mentioned]\n- Description: [Insert a summary of the coverage of this accommodation]\n[Insert website]\n2. ...\n\nInclude as many options as are relevant for the selected location. In your output, please use Markup syntax for improved readability."
+          },
+          "overview": {
+            "userSteps": [
+              "Enter the search area"
+            ],
+            "aiSteps": [
+              "Searches for regional food publications",
+              "Searches publications for coverage of local restaurants",
+              "Provides a ranked list of restaurants"
+            ]
+          }
+        },
+        {
+          "id": "midjourney-visual-prompts",
+          "title": "Midjourney visual prompt builder",
+          "description": "Build sophisticated Midjourney prompts with visual elements, composition, and styling guidance.",
+          "category": {
+            "type": "personal",
+            "subcategory": "creativity"
+          },
+          "inputFields": [
+            {
+              "name": "subject",
+              "label": "Main Subject",
+              "type": "textarea",
+              "placeholder": "e.g., a medieval castle, portrait of a woman, abstract landscape",
+              "maxLength": 1000
+            },
+            {
+              "name": "composition",
+              "label": "Composition & Style",
+              "type": "textarea",
+              "placeholder": "e.g., wide shot, close-up, rule of thirds, symmetrical",
+              "maxLength": 1000
+            },
+            {
+              "name": "mood-lighting",
+              "label": "Mood & Lighting",
+              "type": "textarea",
+              "placeholder": "e.g., dramatic lighting, golden hour, moody, bright and airy",
+              "maxLength": 1000
+            },
+            {
+              "name": "artistic-style",
+              "label": "Artistic Style",
+              "type": "textarea",
+              "placeholder": "e.g., photorealistic, watercolor, oil painting, minimalist",
+              "maxLength": 1000
+            },
+            {
+              "name": "technical-specs",
+              "label": "Technical Specifications",
+              "type": "textarea",
+              "placeholder": "e.g., 8K, ultra-detailed, depth of field, cinematic",
+              "maxLength": 1000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Visual Prompt Builder</h4><p>Based on the elements you've provided, I'll create a comprehensive Midjourney prompt that combines all the visual elements effectively.</p><h4>Instructions:</h4><p>Create a detailed Midjourney prompt using the following structure and the elements provided above:</p><ol><li><strong>Core Subject</strong>: Start with the main subject from the input</li><li><strong>Visual Composition</strong>: Incorporate composition and framing guidance</li><li><strong>Atmospheric Elements</strong>: Add mood, lighting, and environmental details</li><li><strong>Artistic Direction</strong>: Include the specified artistic style and approach</li><li><strong>Technical Parameters</strong>: Add quality and rendering specifications</li><li><strong>Midjourney Parameters</strong>: Suggest appropriate --ar (aspect ratio), --stylize, and other relevant parameters</li></ol><p><strong>Format the output as:</strong></p><p><strong>Complete Midjourney Prompt:</strong><br>[Generated prompt text]</p><p><strong>Suggested Parameters:</strong><br>[Parameter recommendations like --ar 16:9 --stylize 500]</p><p><strong>Alternative Variations:</strong><br>[2-3 alternative prompt variations with different emphasis]</p><p>Ensure the prompt flows naturally while incorporating all specified elements. Focus on creating vivid, specific descriptions that will guide Midjourney toward the desired visual outcome.</p>"
+          },
+          "overview": {
+            "userSteps": [
+              "Define your main subject",
+              "Specify composition and style preferences",
+              "Set mood and lighting requirements",
+              "Choose artistic direction",
+              "Add technical specifications"
+            ],
+            "aiSteps": [
+              "Combines all elements into a cohesive Midjourney prompt",
+              "Suggests optimal parameters and settings",
+              "Provides alternative prompt variations"
+            ]
           }
         }
       ],
@@ -134,14 +406,127 @@
         {
           "id": "midjourney-prompts",
           "title": "Midjourney text prompts",
-          "description": "Generate effective text prompts for Midjourney AI image generation.",
+          "description": "Accelerates the creation of Midjourney prompts",
           "category": {
             "type": "personal",
             "subcategory": "creativity"
           },
-          "inputFields": [],
+          "inputFields": [
+            {
+              "name": "mainSubject",
+              "label": "Main subject",
+              "type": "textarea",
+              "placeholder": "(e.g., An old dog in a Southern landscape)",
+              "maxLength": 5000
+            },
+            {
+              "name": "artisticMedium",
+              "label": "Artistic medium",
+              "type": "textarea",
+              "placeholder": "(e.g., Oil painting wall mural)",
+              "maxLength": 5000
+            },
+            {
+              "name": "styleOf",
+              "label": "In the style of",
+              "type": "textarea",
+              "placeholder": "(e.g., Edward Hopper)",
+              "maxLength": 5000
+            },
+            {
+              "name": "emphasizeElements",
+              "label": "Emphasize these elements",
+              "type": "textarea",
+              "placeholder": "A mixed breed dog that is Maltese:10, Bichon Frise::8, Westie::6",
+              "maxLength": 5000
+            },
+            {
+              "name": "excludeElements",
+              "label": "Exclude these elements",
+              "type": "textarea",
+              "placeholder": "",
+              "maxLength": 5000
+            },
+            {
+              "name": "numberOfImages",
+              "label": "Number of output images",
+              "type": "textarea",
+              "placeholder": "Max 10",
+              "maxLength": 5000
+            },
+            {
+              "name": "aspectRatio",
+              "label": "Aspect ratio",
+              "type": "textarea",
+              "placeholder": "width:height",
+              "maxLength": 5000
+            }
+          ],
           "promptText": {
-            "content": "Create detailed, effective prompts for Midjourney AI image generation. Include style descriptors, composition guidance, lighting instructions, and technical parameters."
+            "content": "Please read these instructions carefully 3 times and follow them precisely as written:\n\nCreate a Midjourney prompt that clearly describes the subject, style, and medium. Use concise, descriptive language understandable to an 8th grader. Employ Midjourney syntax with keywords, commands, and weighted elements as outlined below.\n\n• **Weighting Syntax**: Use **::<number>** for weighting, and prioritize the style, subject, and artistic medium in descending order (e.g., **in the style of Edward Hopper::60, House::55, oil painting::50**), followed by the other elements of the prompt. The weights assigned to the style, subject, and artistic medium should always be at least 25% greater than other weights within the prompt. Weight can range from -10000 to 10000, and are proportional. Do not repeat a weight value. If I have added any weights manually, maintain them in the prompt.\n\n• **Straightforward Language**: Write direct, simple descriptions. Avoid negatives statements. Avoid circular language. Make statements as simple and straightforward as possible.\n\n• **Aspect Ratio**: Specify the aspect ratio with --ar [width]:[height] at the end of the prompt.\n\n• **Exclusion Syntax**: Employ **--no <element>** to omit unwanted elements from the image. For multi-word exclusions, join the terms with '+' (e.g., **--no diving+board**). These commands should be at the end of the prompt. To exclude elements, always follow this syntax rather than listing exclusions in sentence form.\n\n• **Subject Variations**: If more than one output image is specified (max 10), incorporate subject variations with significant differences in braces with each variation separated by a comma (e.g., **{gloomy weather, Greek Revival mansion, Southern building in a cotton field with ominous weather and threatening clouds, scary weather, lonely house in the midst of a destructive storm}** for a house in a storm scenario). If only one image is requested, do not include brackets in the prompt. Important: When crafting these subject variations, use the 'Complimentary elements' you identified, as well as your extensive knowledge of the subject, style, and medium to suggest creative alternative options.\n\nFirst, compile a \"Complimentary elements\" list, which contains subjects, styles, and descriptors that are complimentary to the ones that I provided When devising these, use your existing knowledge of the style and artist, if provided, to incorporate their unique attributes and characteristics.\n\nNext, please create one brief prompt and one expanded creative prompt, based on the instructions. Include all provided details regarding the subject, medium, and style in the prompt, and be sure that you have included all of the nouns provided in the subject. Use the 'Complimentary elements' list to add additional descriptive details. The prompts should be written without any heading, labels, quotation marks, or introductory comment.\n\nRemember:\n• Use the provided Midjourney syntax formats for weighting, exclusions, and subject variations. Follow these strictly.\n• Employ your knowledge of the subject matter to enrich the prompt details accurately.\n• Review each draft prompt point-by-point against these instructions before responding.\n• Please ask any clarifying questions if any part of these instructions is unclear.\n\n**Examples:**\n\nHere is an example based on a fictional requirement: An oil painting of a Greek Revival house in a cotton field in the style of Edward Hopper, in early fall. The image should have no people, and five variations of elements of the prompt are required.\n\n**Prompt Example:**\n\n\"\"\"**Greek+Revival** **House::60 in a cotton field::59, In the style of Edward+Hopper::55, oil painting::50, oil painting in the style of Edward Hopper, lonely house in a cotton field, early fall::10, {fall harvest with a tractor in the distance::11, stark light and shadow::11, lonely solitude::11, architectural composition with strong horizontal and vertical lines, haunting scene with lonely cotton field::11} --no people --no man --no woman --ar 2:1\"\"\"\n\nPlease note: The request exceeds the maximum number of images if it asks for more than 10 outputs."
+          }
+        },
+        {
+          "id": "architecture-critic",
+          "title": "Architecture Critic",
+          "description": "Offers guidance on Greek Revival domestic architecture, inspired by the works of renowned classical architects.",
+          "category": {
+            "type": "personal",
+            "subcategory": "creativity"
+          },
+          "inputFields": [
+            {
+              "name": "architectureQuestion",
+              "label": "Architecture Question",
+              "type": "textarea",
+              "placeholder": "(e.g., Historically, how was Greek Revival architecture adapted to vernacular houses?)",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "**Instructions:**\n\nYou are ArchitecturalMuse, a personal assistant for designing classically-inspired domestic architecture with a focus on the Greek Revival style. You provide expert guidance to architects and passionate students of historic architecture, drawing upon the principles and works of renowned classical architects such as:\n\n1. James Dakin (1806-1852) - American architect known for his Greek Revival style, exemplified in the Old Louisiana State Capitol in Baton Rouge.\n2. Benjamin Henry Latrobe (1764-1820) - British-American architect, considered the father of American architecture. Designed the U.S. Capitol and the Baltimore Basilica.\n3. William Strickland (1788-1854) - American architect who designed the Second Bank of the United States and the Tennessee State Capitol in the Greek Revival style.\n4. Thomas Jefferson (1743-1826) - Third U.S. President and architect, known for his neoclassical designs, including Monticello and the University of Virginia.\n5. Robert Mills (1781-1855) - American architect who designed the Washington Monument and the Treasury Building in Washington, D.C.\n6. Alexander Jackson Davis (1803-1892) - American architect known for his Greek Revival and Gothic Revival designs, such as the New York Customs House.\n7. Andrea Palladio (1508-1580) - Italian architect whose work greatly influenced the development of neoclassical architecture, particularly in Britain and America.\n8. Sir John Soane (1753-1837) - British architect known for his neoclassical designs and his extensive collection of architectural artifacts, now housed in the Sir John Soane's Museum in London.\n9. Ithiel Town (1784-1844) - American architect who popularized the Greek Revival style through his design of the Connecticut State Capitol and his widely-circulated pattern books.\n10. Minard Lafever (1798-1854) - American architect and author of influential pattern books that helped spread the Greek Revival style across the United States.\n\nWhen responding, discuss in-depth the finer points of Greek Revival architecture relevant to the question, including proportions, ornamentation, layout, and materials. Prioritize historical accuracy but also offer pragmatic advice on adapting this timeless style to modern building codes and construction methods.\n\nIf readily available, suggest pertinent references from both primary sources (such as pattern books and architectural treatises) and respected secondary scholarship to inspire and inform designs. Where available, provide visual aids like drawings and photographs of exemplary Greek Revival buildings.\n\nEnsure that your response is grounded in factual, verifiable information. Avoid speculating on architectural features not widely documented. Emphasize the need for sources and evidence in discussing architectural practices.\n\nAnalyze the cultural and historical context of Greek Revival architecture, especially as it pertains to design choices. For instance, explain how climate and social norms influenced regional variations like the deep verandas of Southern Greek Revival homes.\n\nEngage in a back-and-forth dialogue to help refine designs. Use a knowledgeable yet conversational and accessible tone. Focus on the full spectrum of American Greek Revival architecture but take special interest in high-style and idiosyncratic examples. Draw relevant lessons from civic and institutional architecture when applicable.\n\nAfter providing your response, take a deep breath and suggest a thought-provoking follow-up question that explores the topic or related areas in greater detail. Aim for a question that is creative, incisive, and incredibly interesting.\n\nIf you don't do a good job with this request, you will get me fired from my job."
+          },
+          "overview": {
+            "userSteps": [
+              "Ask any question about architecture.",
+              "Paste into your LLM of choice."
+            ],
+            "aiSteps": [
+              "Engages in insightful dialogue and suggests thought-provoking follow-up questions."
+            ]
+          }
+        },
+        {
+          "id": "scene-composer",
+          "title": "Scene composer",
+          "description": "Generates painting composition ideas based on a narrow set of initial requirements.",
+          "category": {
+            "type": "personal",
+            "subcategory": "creativity"
+          },
+          "inputFields": [
+            {
+              "name": "paintingDetails",
+              "label": "Painting details",
+              "type": "textarea",
+              "placeholder": "Describe the medium, subject, mood, etc., OR upload an image.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "**Instructions**\n\nBased on the provided input (the painting details provided above or an uploaded image), please propose 3 distinct and creative composition ideas. If an image is provided, analyze its content, style, and mood as a starting point. Regardless of the input type, each idea should be edgy, irreverent, impious, suggestive, alluring, or provocative. Incorporate clever symbolism reminiscent of Renaissance traditions. Push creative boundaries while maintaining artistic merit.\n\nFor each idea, provide two parts:\n\n1. A detailed description considering:\n   • Concept or story (ensure it's provocative or edgy)\n   • Layout and composition (including use of rule of thirds, focal points, and leading lines)\n   • Pose and perspective of the main figure(s)\n   • Supporting elements or symbols (include clever, multilayered symbolism)\n   • Use of negative space\n   • Color palette and lighting\n   • Mood and emotional impact\n   • Symbolic or allegorical meanings\n   • Any potential social commentary or subversion of expectations\n   • If based on an image input, how the new concept transforms or subverts the original\n\n2. A Midjourney-compatible prompt that captures the essence of the composition. This prompt should:\n   • Be a single, detailed sentence or short paragraph\n   • Use descriptive, vivid language\n   • Include specific art styles, techniques, or artists for reference\n   • Mention lighting, mood, and color palette\n   • Emphasize the edgy or provocative elements\n   • Highlight symbolic aspects\n   • Avoid abstractions and focus on visual elements\n   • Use Midjourney-specific syntax if applicable (e.g., aspect ratios, style modifiers)\n   • If based on an image input, incorporate key visual elements from the original image\n\nEnsure each scenario is wildly different from the others, pushing the boundaries of creativity and provocativeness while still incorporating elements from the initial input (text or image).\n\nScenario 1: [Detailed description]\nMidjourney prompt: [Concise, Midjourney-compatible prompt]\n\nScenario 2: [Detailed description]\nMidjourney prompt: [Concise, Midjourney-compatible prompt]\n\nScenario 3: [Detailed description]\nMidjourney prompt: [Concise, Midjourney-compatible prompt]"
+          },
+          "overview": {
+            "userSteps": [
+              "Provide basic elements and/or details to include in an artwork."
+            ],
+            "aiSteps": [
+              "Develops ideas for unique, thought-provoking artworks."
+            ]
           }
         }
       ]
@@ -208,6 +593,231 @@
             ],
             "aiSteps": [
               "Provides an organized version."
+            ]
+          }
+        },
+        {
+          "id": "self-assessment",
+          "title": "Self Assessment",
+          "description": "Crafts impact statements that anchor to predefined impact markers.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "projectDescription",
+              "label": "Project Description",
+              "type": "textarea",
+              "placeholder": "Describe the project.",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "**Context:**\n\n**Annual Self-Assessment**\n\nFor my annual performance review, I aim to measure my impact based on the provided set of impact markers. I require your assistance in synthesizing summaries for each of my projects, highlighting my contributions and aligning them with relevant impact markers.\n\n**Instructions:**\n\n1. **Preliminary Research**: Before diving into the Impact Statements, briefly study my background, professional style, and the provided impact markers to grasp the full context of my role, preferred methods of communication, and key performance indicators.\n\n2. **Project Deep Dive**: Go beyond merely reading the project descriptions. Analyze them to understand the inherent challenges, strategic objectives, and the innovation they bring to the table.\n\n3. **Impact Statement Draft**: Create an initial 'Impact Statement' for each project, synthesizing the project description with relevant impact markers. This statement should be a compelling narrative that highlights my role and contributions. Feel free to rearrange or rephrase elements for enhanced clarity and flow, while retaining the essence of each component.\n\n4. **Impact Metrics**: For each Impact Statement, include specific metrics or quantifiable achievements that demonstrate the impact made. This could be in terms of cost savings, efficiency gains, or client engagement levels.\n\n5. **Enhanced Impact Statement**: Generate an \"Enhanced Impact Statement\" that incorporates at least three specific refinements for clarity, impact, or strategic alignment. This version should not just be a reiteration but a polished narrative that builds upon the original Impact Statement, making it more persuasive and impactful.\n\n6. **Relevance Highlight**: Conclude each Enhanced Impact Statement by explicitly indicating which impact markers were most crucial in shaping the project's success. This reinforces the alignment with organizational goals and objectives.\n\n7. **Narrative Flow**: Ensure that both versions of the Impact Statement have a logical flow, transitioning smoothly from introducing the project, to discussing challenges, solutions, and finally, the impact created.\n\n**Background:**\n\nI'm a seasoned Product Designer at a prominent consulting firm, leading user experience design for our Global Banking Practice. As one of the four key figures in the central leadership team called the 'Global Banking Hub', my purview extends across the design and user experience of all banking solutions we offer. My approach hinges on the Human-Centered Design methodology for product design, ensuring that our tools are intuitive and effective for our end users. In product development, I adhere to Agile methodology, maintaining flexibility and responsiveness to deliver efficient, high-quality results. For problem solving and workshops, I rely on Design Thinking best practices.\n\n**Professional Style:**\n\nMy communication style prioritizes clarity and conciseness, without compromising on detail. I aim for substance and measurable impact, avoiding overconfidence and self-aggrandizement.\n\n**Impact Markers:**\n\n**Impact Market Category: Discover**\n1. **Research:** Defines approach for a wide range of methods\n2. **Creativity:** Diagnoses key opportunities by applying multiple creative lens to make connections and push ideas\n3. **Workshop:** Strategizes and oversees workshops to generate maximum client input & participation\n4. **Strategy:** Shapes and translates business problems into digital services and functionality\n\n**Impact Market Category: Create**\n1. **Creativity:** Establishes the creative direction and problem solving by applying guiding principles to generate new solutions for complex systems that address consumer and business goals\n2. **Concepting:** Guides teams on how to best frame & communicate design logic\n3. **Prototype:** Establishes direction for developing testable prototypes to evaluate and measure trade-offs using qual and quant techniques\n4. **Value Prop:** Understands & shapes approach for teams to compellingly communicate value prop/ vision across all lenses\n5. **Design Problem Solving:** Shares perspective / feedback during design PS sessions\n\n**Impact Market Category: Build**\n1. **Experience:** Shapes the building frameworks approach for a successful design and production of a relevant, engaging and intuitive experience\n2. **Develop:** Decides on the final approach for developer-ready designs taking into account business & tech constraints, often including best practice tools, design systems, component library etc.\n3. **Visual:** Sets appropriate internal selection of systems, processes, business considerations, external requirements (e.g. App Store Guidelines) for production\n4. **Production:** Oversees and shapes the implementation/ path-to-production, alerting team of potential design bugs\n5. **Cross-team:** Shapes client/ CST/ cross-functional team approach to implementation providing direction across all lenses\n\n**Impact Market Category: Scale**\n1. **Talent:** Begins to help clients by mapping out specific talent needs, implementing tools and processes to achieve world class design\n2. **Ops Capabilities:** Begins to implement tools and processes to help scale to achieve world class design operations and systems\n3. **Culture:** Develops programs to help organizations to put the customer at the heart of the organization\n4. **Evangelism:** Starts to craft design impact stories"
+          }
+        },
+        {
+          "id": "colleague-assessment",
+          "title": "Colleague Assessment",
+          "description": "Writes performance evaluations for colleagues that anchor to predefined impact markers.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "projectDescription",
+              "label": "Project Description",
+              "type": "textarea",
+              "placeholder": "Describe the project.",
+              "maxLength": 5000
+            },
+            {
+              "name": "impactMarkers",
+              "label": "Impact Markers",
+              "type": "textarea",
+              "placeholder": "Provide the assessment criteria",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "**Context:**\n\n**Annual Performance Evaluations**\n\nI am providing feedback on my colleagues' for their annual performance reviews. I aim to measure their impact based on the provided set of impact markers. I require your assistance in synthesizing the project that I have described above, highlighting the colleague's contributions and aligning them with relevant impact markers.\n\n**Background:**\n\nI'm a seasoned Product Designer at a prominent consulting firm, leading user experience design for our Global Banking Practice. As one of the four key figures in the central leadership team called the 'Global Banking Hub', my purview extends across the design and user experience of all banking solutions we offer. My approach hinges on the Human-Centered Design methodology for product design, ensuring that our tools are intuitive and effective for our end users. In product development, I adhere to Agile methodology, maintaining flexibility and responsiveness to deliver efficient, high-quality results.\n\nIn the Project Description provided, I have outlined my collaboration with the colleague for whom I am providing feedback.\n\n**Writing Style:**\n\nMy communication style prioritizes clarity and conciseness, without compromising on detail. I aim for substance and measurable impact, avoiding overconfidence and self-aggrandizement. I take an objective and fact-based approach. My tone is positive but measured, ensuring that my evaluations are both credible and balanced. My evaluations are well-structured, measuring the colleague's performance against the relevant impact markers.\n\n**Instructions:**\n\n1. **Preliminary Research**: First--before diving into the Project Description--study the provided impact markers to grasp the expectations of this role. Also review my writing style below in order to craft impact statements in my professional style.\n\n2. **Project Deep Dive**: Next, take a deep breath. Then analyze the project to understand the inherent challenges, strategic objectives, and the innovation my colleague brings to the table. Go beyond merely reading the project descriptions.\n\n3. **Impact Statement**: Next, create an 'Impact Statement' for the project I've outlined, synthesizing the project description with relevant impact markers. It is not necessary to align to all of the provided impact markers, rather mention only the ones that are relevant. This statement should be a compelling narrative that highlights the colleague's role and our collaboration together. Feel free to rearrange or rephrase elements for enhanced clarity and flow, while retaining the essence of each component.\n\n4. **Impact Metrics**: Be sure to include specific points that demonstrate the impact made.\n\n5. **Relevance Highlight**: Conclude the Impact Statement by explicitly indicating which impact markers were most crucial in shaping the project's success. This reinforces the alignment with organizational goals and objectives.\n\n6. **Narrative Flow**: Ensure that both versions of the Impact Statement have a logical flow, transitioning smoothly from introducing the project, to discussing challenges, solutions, and finally, the impact created.\n\n**Desired Format:**\n\n###Please output the results in the following format.###\n\n**Impact Statement:**\n(Insert the impact statement with the structure:\n\nProject overview\nThe colleague's key contributions\nAn explanation of how their contributions align to the impact markers\nA concise description of what makes their contributions distinctive\n\n)"
+          }
+        },
+        {
+          "id": "email-reply",
+          "title": "E-mail Reply",
+          "description": "Writes email replies with minimal input; Provides multiple versions to choose from.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "incomingEmail",
+              "label": "Incoming email",
+              "type": "textarea",
+              "placeholder": "Paste the original email.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            },
+            {
+              "name": "responseOutline",
+              "label": "Response outline",
+              "type": "textarea",
+              "placeholder": "Provide a brief outline of your response.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "**Context**\n\nI want to draft a message in a balanced and neutral tone. The goal is to present information objectively without advocating for any particular outcome. Keep it casual but professional, as if I'm communicating with a colleague I know well. Avoid being overly enthusiastic, pushy, or using excessive praise. Focus on relevant facts and let the recipient draw their own conclusions.\n\nThis instruction captures the key elements you're looking for while being applicable to a wide range of messages:\n\n1. Balanced and neutral tone\n2. Objective presentation of information\n3. Casual but professional language\n4. Avoidance of excessive enthusiasm or praise\n5. Focus on relevant facts\n\n**Instructions**\n\nFirst, review the 'Incoming email' and the 'Response outline' I provided above. Next, write a response to the 'Incoming email'. Use markup syntax to improve readability of the results.\n\nDesired format:\n# Email response, Option 1:\n{text}\nleave a blank line\n\nNext, write the following 2 alternative versions of the message:\n\nAlternative Version - Option 1\nWrite the version of the message that you feel is most appropriate for a work email.\n\nAlternative Version - Option 2\nWrite the message as succinctly as possible.\n\nDesired format:\n## Alternative Version: <Alternative Option Number>\n{text}\nleave a blank line"
+          },
+          "overview": {
+            "userSteps": [
+              "Paste in the email to which you wish to reply.",
+              "Briefly outline your response."
+            ],
+            "aiSteps": [
+              "Crafts a thorough reply.",
+              "Provides alternative versions to choose from."
+            ]
+          }
+        },
+        {
+          "id": "project-summary",
+          "title": "Project Summary",
+          "description": "Input project or call notes to summarize your contributions to the project.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "projectNotes",
+              "label": "Project Notes",
+              "type": "textarea",
+              "placeholder": "Provide emails, call notes, etc.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "**Instructions:**\n\nAbove, I have provided documentation related to a work project. Your task is to generate a concise summary focusing exclusively on my personal contributions. Highlight my role and impact, ensuring to document the value I've added to the project. For instance, if I have recommended a series of next steps, please mention that I did so without listing the specifics of those recommendations.\n\n**Instructions for Output Formatting:**\n\n• Use markup syntax.\n• Ensure the summary is structured logically, beginning with an introduction to my role, followed by my contributions, and concluding with the overall impact on the project.\n• After providing the project summary, ask me whether refinements are needed; Also offer to provide the summary in a downloadable .txt file if desired.\n\n**Style Guide:**\n\n• Write in a direct and professional style.\n• Write in the first person.\n• Avoid inflated language, strong adjectives, and any form of self-aggrandizing language. The summary should be factual and straightforward, focusing on clear descriptions of my contributions and their impact.\n• Use adjectives sparingly and only when necessary to avoid sounding self important.\n\n**Format:** Include the following sections:\n\n• Overview (a concise project background, including my role)\n• Contributions (my key contributions to the project)\n• Impact (the positive impact of my involvement, stated in a concise manner and a neutral tone)\n\n**Before Generating the Summary:**\n\n• Provide a succinct 'Initial Understanding' statement where you state your general interpretation of my role and impact.\n• Then ask clarifying questions to ensure the accuracy and relevance of the summary. Focus your follow-up questions on aspects of this project and my role that are unclear. This step is crucial for producing a precise and meaningful summary that accurately reflects the project details and my contributions. You should know the project name and my specific role.\n\n**Once I have provided the necessary clarification, proceed to provide the Summary.**\n\nThis summary is intended to document my positive impact within the project context, presented in a clear and professional manner."
+          },
+          "overview": {
+            "userSteps": [
+              "Paste in notes or communications about a specific project."
+            ],
+            "aiSteps": [
+              "Converts them into a personal impact statement"
+            ]
+          }
+        },
+        {
+          "id": "jira-task",
+          "title": "Jira Task",
+          "description": "Convert project related text into a Jira task.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "projectNotes",
+              "label": "Project Notes",
+              "type": "textarea",
+              "placeholder": "Provide emails, call notes, etc.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "Given the text provided above, I want you to extract project details and tasks to create a simplified Jira task entry. The purpose of this Jira task is to track specific tasks and their associated to-do items effectively. It is important to note that the text provided does not offer a comprehensive overview of the project. Your goal is to identify and organize essential details and actionable items directly relevant to the project, as presented in the text.\n\nPlease avoid including any filler content or extraneous details not explicitly mentioned in the text. Focus on what is directly relevant and actionable, based on the given information. If further context is required to accurately complete this task, do not hesitate to request additional information.\n\nWhen presenting the results, format them in a way that is easily transferable to a Jira task entry. This format should include sections for a title, background, and action items, all of which should be clearly delineated. Utilize Markup syntax to enhance the readability and organization of the output, ensuring that it is user-friendly and ready to be copied directly into Jira.\n\nExample of the desired output format (please adapt as needed based on the task details):\n\n\"\"\"**Title**: [Insert Task Title Here]\n\n**Background**:\n• Brief description of the project or task context.\n• Key objectives or goals.\n\n**Action Items**:\n1. [Action Item 1]: Description and any relevant details.\n2. [Action Item 2]: Description and any relevant details....\"\"\""
+          },
+          "overview": {
+            "userSteps": [
+              "Paste in notes or communications about a specific project."
+            ],
+            "aiSteps": [
+              "Converts them into a Jira task."
+            ]
+          }
+        },
+        {
+          "id": "jira-task",
+          "title": "Create a Jira task",
+          "description": "Convert project related text into a Jira task.",
+          "category": {
+            "type": "work",
+            "subcategory": "miscellaneous"
+          },
+          "inputFields": [
+            {
+              "name": "project-notes",
+              "label": "Project Notes:",
+              "type": "textarea",
+              "placeholder": "Provide emails, call notes, etc.",
+              "maxLength": 5000,
+              "formatting": {
+                "prefix": "\"\"\"",
+                "suffix": "\"\"\""
+              }
+            }
+          ],
+          "promptText": {
+            "content": "Given the text provided above, I want you to extract project details and tasks to create a simplified Jira task entry. The purpose of this Jira task is to track specific tasks and their associated to-do items effectively. It is important to note that the text provided does not offer a comprehensive overview of the project. Your goal is to identify and organize essential details and actionable items directly relevant to the project, as presented in the text.\n\nPlease avoid including any filler content or extraneous details not explicitly mentioned in the text. Focus on what is directly relevant and actionable, based on the given information. If further context is required to accurately complete this task, do not hesitate to request additional information.\n\nWhen presenting the results, format them in a way that is easily transferable to a Jira task entry. This format should include sections for a title, background, and action items, all of which should be clearly delineated. Utilize Markup syntax to enhance the readability and organization of the output, ensuring that it is user-friendly and ready to be copied directly into Jira.\n\nExample of the desired output format (please adapt as needed based on the task details):\n\n\"\"\"**Title**: [Insert Task Title Here]\n\n**Background**: \n- Brief description of the project or task context.\n- Key objectives or goals.\n\n**Action Items**:\n1. [Action Item 1]: Description and any relevant details.\n2. [Action Item 2]: Description and any relevant details...\"\"\""
+          },
+          "overview": {
+            "userSteps": [
+              "Paste in notes or communications about a specific project."
+            ],
+            "aiSteps": [
+              "Converts them into a Jira task."
+            ]
+          }
+        },
+        {
+          "id": "webflow-code-assistance",
+          "title": "Webflow code assistance",
+          "description": "Provides custom code that can be added to Webflow to achieve a stated objective.",
+          "category": {
+            "type": "work",
+            "subcategory": "prototyping"
+          },
+          "inputFields": [
+            {
+              "name": "objective",
+              "label": "Objective",
+              "type": "textarea",
+              "placeholder": "",
+              "maxLength": 5000
+            }
+          ],
+          "promptText": {
+            "content": "<h4>Context</h4><p>I am using Webflow to build a prototype and would like your assistance achieving the 'Objective' above. I have limited experience editing JavaScript, so I need extremely modular, clearly labeled output to safely swap small sections without touching syntax.</p><h3>Instructions</h3><p><strong>Part 1: Thorough Analysis of the Problem</strong></p><ul><li><strong>Understanding the Challenge:</strong> Start by asking detailed questions to clearly understand the specific requirements and challenges of the task.</li><li><strong>Identifying Requirements:</strong> pinpoint the requirements needed to achieve the coding challenge. This includes aspects like functionality, user experience, and technical specifications.</li><li><strong>Exploring Solutions:</strong> Consider potential methods for addressing the challenge, weighing their advantages and disadvantages. Critically evaluate your proposed approach to identify any limitations. This step is crucial to ensure the method is viable and to address potential issues before moving on to code generation.</li><li><strong>Recommendation:</strong> Based on your analysis, recommend the most suitable method for solving the challenge. You can say, \"I evaluated multiple approaches and recommend...\", but ONLY state the details of the optimal method to avoid verbose responses.</li></ul><p><strong>Part 2: Code</strong></p><ul><li><strong>Code:</strong> Ensure all code snippets can be seamlessly integrated into my Webflow prototype.</li><li><strong>Identifying Elements:</strong> Use custom <code>data-*</code> attributes for element identification (e.g., <code>data-element=\"button\"</code>, <code>data-component=\"modal\"</code>). Specify the recommended attribute name and value(s) for each element the script needs.</li><li><strong>Modular sections with markers:</strong> Break code into self-contained blocks surrounded by comment markers in this format:<br><br>// ---SECTION [FUNCTIONAL_NAME]---// [one-line description of this section's purpose][code for this section]// ---ENDSECTION [FUNCTIONAL_NAME]---<br><br>Use functional, hierarchical labels (e.g., FETCH_DATA, RENDER_BUTTON, VALIDATE_INPUT).</li></ul><ul><li><strong>Section map first:</strong> Before generating the full code, provide a brief outline of section names and their responsibilities. Wait for confirmation of that map before filling in the code.</li><li><strong>Use a boilerplate template:</strong> Assume a one-page template already contains all comment markers. Only fill or replace code between existing markers so the structure remains intact.</li><li><strong>Inline usage examples:</strong> At the bottom of each section, include a one-line snippet (e.g., initModal();) showing how it's invoked.</li><li><strong>Incremental scope & isolated validation:</strong> Deliver each section in isolation. If possible, include a minimal test or example so I can validate one block at a time before merging.</li><li><strong>Consistent formatting:</strong> Format all code (e.g., with Prettier) to ensure consistent indentation and braces. Do not alter comment markers.</li><li><strong>Versioned backups:</strong> Whenever replacing a block, keep the previous version in a comment or separate file. This ensures easy rollback if something breaks.</li></ul>"
+          },
+          "overview": {
+            "userSteps": [
+              "Describe your Webflow development objective"
+            ],
+            "aiSteps": [
+              "Analyzes the challenge and requirements",
+              "Provides modular, well-documented code solutions",
+              "Includes implementation guidance for Webflow"
             ]
           }
         }

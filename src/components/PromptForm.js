@@ -11,33 +11,35 @@ export class PromptForm {
     this.currentPrompt = promptData;
     
     return `
-      <div class="prompt-form">
-        <div class="prompt-header">
-          <h1>${promptData.title}</h1>
-          ${promptData.description ? `
-            <div class="header-description">
-              <div>${promptData.description}</div>
+      <div class="prompt-form-container">
+        <div class="prompt-form">
+          <div class="prompt-header">
+            <h1>${promptData.title}</h1>
+            ${promptData.description ? `
+              <div class="header-description">
+                <div>${promptData.description}</div>
+              </div>
+            ` : ''}
+            
+            ${promptData.overview ? this.renderOverview(promptData.overview) : ''}
+          </div>
+
+          <form class="prompt-form-element">
+            ${this.renderInputFields(promptData.inputFields || [])}
+            
+            <div class="form-controls">
+              <button type="button" class="copy-btn" id="copyBtn">
+                Copy to clipboard
+              </button>
             </div>
-          ` : ''}
-          
-          ${promptData.overview ? this.renderOverview(promptData.overview) : ''}
+
+            <div class="prompt-text-container">
+              <div class="prompt-text">
+                ${promptData.promptText.content}
+              </div>
+            </div>
+          </form>
         </div>
-
-        <form class="prompt-form-element">
-          ${this.renderInputFields(promptData.inputFields || [])}
-          
-          <div class="form-controls">
-            <button type="button" class="copy-btn" id="copyBtn">
-              Copy to clipboard
-            </button>
-          </div>
-
-          <div class="prompt-text-container">
-            <div class="prompt-text">
-              ${promptData.promptText.content}
-            </div>
-          </div>
-        </form>
       </div>
     `;
   }
