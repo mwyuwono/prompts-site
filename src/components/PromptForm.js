@@ -27,8 +27,6 @@ export class PromptForm {
             ${promptData.overview ? this.renderOverview(promptData.overview) : ''}
           </div>
 
-          ${this.toolbar.render()}
-
           <form class="prompt-form-element">
             ${this.renderInputFields(promptData.inputFields || [])}
             
@@ -152,9 +150,6 @@ export class PromptForm {
         this.copyToClipboard();
       });
     }
-    
-    // Attach toolbar event listeners
-    this.toolbar.attachEventListeners();
   }
 
   async copyToClipboard() {
@@ -193,8 +188,8 @@ export class PromptForm {
     try {
       await navigator.clipboard.writeText(content);
       this.showCopyFeedback();
-      // Show services dropdown after successful copy
-      this.toolbar.showServicesAfterCopy();
+      // Trigger app-level toolbar to show services dropdown
+      window.dispatchEvent(new CustomEvent('promptCopied'));
     } catch (err) {
       console.error('Failed to copy text: ', err);
       // Fallback for older browsers
@@ -212,8 +207,8 @@ export class PromptForm {
     try {
       document.execCommand('copy');
       this.showCopyFeedback();
-      // Show services dropdown after successful copy
-      this.toolbar.showServicesAfterCopy();
+      // Trigger app-level toolbar to show services dropdown
+      window.dispatchEvent(new CustomEvent('promptCopied'));
     } catch (err) {
       console.error('Fallback copy failed: ', err);
     }

@@ -3,43 +3,61 @@ export class PromptToolbar {
     this.isServicesOpen = false;
     this.services = [
       { name: 'Claude', url: 'https://claude.ai/chats' },
-      { name: 'ChatGPT', url: 'https://chat.openai.com/' },
+      { name: 'ChatGPT', url: 'https://chat.openai.com/?model=gpt-4-code-interpreter' },
       { name: 'Perplexity', url: 'https://www.perplexity.ai' },
       { name: 'Copilot', url: 'https://copilot.microsoft.com/' },
-      { name: 'Gemini', url: 'https://gemini.google.com/' },
+      { name: 'Gemini', url: 'https://bard.google.com/' },
       { name: 'Midjourney', url: 'https://www.midjourney.com/imagine' }
     ];
     this.quickServices = [
-      { name: 'Claude', url: 'https://claude.ai/chats', icon: '🤖' },
-      { name: 'ChatGPT', url: 'https://chat.openai.com/', icon: '💬' }
+      { name: 'Claude', url: 'https://claude.ai/', icon: 'claude-logo.svg' },
+      { name: 'ChatGPT', url: 'https://chat.openai.com/?model=gpt-4-code-interpreter', icon: 'GPT-Icon.svg' }
     ];
   }
 
   render() {
     return `
-      <div class="prompt-toolbar" id="promptToolbar">
-        <div class="toolbar-buttons">
+      <div class="universal-prompt-head">
+        <div class="logo-lockup-ctnr">
+          <div class="w-layout-hflex logo-image-container">
+            <a href="/index.html" class="home-link w-inline-block">
+              <img src="/src/assets/Fat-Logo.svg" loading="lazy" alt="" class="logo-image">
+            </a>
+          </div>
+        </div>
+        <div class="copied" id="copiedNotification">
+          <div class="copied-content">
+            <div>Copied!</div>
+          </div>
+        </div>
+        <div class="services-dropdown-trigger">
           ${this.quickServices.map(service => `
-            <a href="${service.url}" target="_blank" class="toolbar-service-btn" aria-label="Open ${service.name}">
-              <span class="service-icon">${service.icon}</span>
+            <a href="${service.url}" target="_blank" class="universal-heading-icon gpt w-inline-block">
+              <div class="tooltip">
+                <div>${service.name}</div>
+              </div>
+              <div class="icon home">
+                <img src="/src/assets/${service.icon}" loading="eager" alt="${service.name} Logo" class="ai-icon">
+              </div>
             </a>
           `).join('')}
-          
-          <button class="toolbar-dropdown-btn ${this.isServicesOpen ? 'active' : ''}" id="dropdownBtn" aria-label="Toggle services menu">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        
-        <div class="services-dropdown ${this.isServicesOpen ? 'active' : ''}" id="servicesDropdown">
-          <div class="services-header">Services</div>
-          <div class="services-list">
-            ${this.services.map(service => `
-              <a href="${service.url}" target="_blank" class="service-link" data-service="${service.name.toLowerCase()}">
-                ${service.name}
-              </a>
-            `).join('')}
+          <div class="services-dropdown">
+            <div class="icon dropdown-trigger" id="dropdownTrigger"></div>
+            <div class="services-popup-menu ${this.isServicesOpen ? 'active' : ''}" id="servicesPopupMenu">
+              <div class="ai-menu-heading">Services</div>
+              <div class="link-list">
+                ${this.services.map(service => `
+                  <a href="${service.url}" target="_blank" class="block-link w-inline-block">
+                    <div class="div-block-15 block-link-ctnr">
+                      <div class="div-block-17">
+                        <div class="block-link-title">${service.name}</div>
+                        <div class="block-link-arrow"></div>
+                      </div>
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -47,19 +65,19 @@ export class PromptToolbar {
   }
 
   attachEventListeners() {
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const servicesDropdown = document.getElementById('servicesDropdown');
-    const serviceLinks = document.querySelectorAll('.service-link');
+    const dropdownTrigger = document.getElementById('dropdownTrigger');
+    const servicesPopupMenu = document.getElementById('servicesPopupMenu');
+    const serviceLinks = document.querySelectorAll('.block-link');
 
-    if (dropdownBtn) {
+    if (dropdownTrigger) {
       // Add both click and touchstart for better mobile support
-      dropdownBtn.addEventListener('click', (e) => {
+      dropdownTrigger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         this.toggleServices();
       });
       
-      dropdownBtn.addEventListener('touchstart', (e) => {
+      dropdownTrigger.addEventListener('touchstart', (e) => {
         e.preventDefault();
         e.stopPropagation();
         this.toggleServices();
@@ -68,7 +86,7 @@ export class PromptToolbar {
 
     // Close dropdown when clicking outside - improve mobile support
     const closeHandler = (e) => {
-      if (this.isServicesOpen && !e.target.closest('.prompt-toolbar')) {
+      if (this.isServicesOpen && !e.target.closest('.universal-prompt-head')) {
         this.closeServices();
       }
     };
@@ -110,22 +128,33 @@ export class PromptToolbar {
   }
 
   updateServicesState() {
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const servicesDropdown = document.getElementById('servicesDropdown');
+    const servicesPopupMenu = document.getElementById('servicesPopupMenu');
 
-    if (dropdownBtn) {
-      dropdownBtn.classList.toggle('active', this.isServicesOpen);
-    }
-
-    if (servicesDropdown) {
-      servicesDropdown.classList.toggle('active', this.isServicesOpen);
+    if (servicesPopupMenu) {
+      servicesPopupMenu.classList.toggle('active', this.isServicesOpen);
     }
   }
 
   // Method to be called from copy button
   showServicesAfterCopy() {
+    // Show copied notification first
+    this.showCopiedNotification();
+    
+    // Then show services dropdown after a short delay
     setTimeout(() => {
       this.openServices();
-    }, 100); // Small delay for smooth UX
+    }, 100);
+  }
+
+  showCopiedNotification() {
+    const copiedNotification = document.getElementById('copiedNotification');
+    if (copiedNotification) {
+      copiedNotification.classList.add('active');
+      
+      // Hide after 2 seconds
+      setTimeout(() => {
+        copiedNotification.classList.remove('active');
+      }, 2000);
+    }
   }
 }

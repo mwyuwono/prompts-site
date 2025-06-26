@@ -2,12 +2,14 @@ import './style.css'
 import { Sidebar } from './components/Sidebar.js'
 import { PromptForm } from './components/PromptForm.js'
 import AiServices from './components/AiServices.js'
+import { PromptToolbar } from './components/PromptToolbar.js'
 
 class App {
   constructor() {
     this.sidebar = new Sidebar();
     this.promptForm = new PromptForm();
     this.aiServices = new AiServices();
+    this.toolbar = new PromptToolbar();
     this.currentPrompt = null;
     this.isTransitioning = false;
     this.transitionDebounceTimeout = null;
@@ -33,6 +35,9 @@ class App {
         <div></div>
       </div>
       
+      <!-- Universal Prompt Head Toolbar (shown only when prompt is active) -->
+      ${this.currentPrompt ? this.toolbar.render() : ''}
+      
       <div class="mobile-menu-overlay" id="mobileOverlay"></div>
       
       <div class="page-wrap">
@@ -49,6 +54,11 @@ class App {
     this.sidebar.attachEventListeners();
     this.promptForm.attachEventListeners();
     this.attachMobileMenuListeners();
+    
+    // Attach toolbar event listeners only when toolbar is visible
+    if (this.currentPrompt) {
+      this.toolbar.attachEventListeners();
+    }
   }
 
   attachEventListeners() {
@@ -69,6 +79,13 @@ class App {
       // Clear current prompt when switching tabs
       this.currentPrompt = null;
       this.updateRightPanel();
+    });
+
+    // Listen for copy events to trigger toolbar services dropdown
+    window.addEventListener('promptCopied', () => {
+      if (this.currentPrompt && this.toolbar) {
+        this.toolbar.showServicesAfterCopy();
+      }
     });
   }
 
@@ -227,6 +244,9 @@ class App {
       } else {
         rightPanel.classList.add('start-page');
       }
+
+      // Re-render and attach toolbar if needed
+      this.updateToolbar();
       
       // Animate height change
       await this.animateHeight(rightPanel, currentHeight, newHeight);
@@ -273,6 +293,18 @@ class App {
       this.promptForm.attachEventListeners();
     } else {
       rightPanel.classList.add('start-page');
+    }
+
+    // Re-render and attach toolbar if needed
+    this.updateToolbar();
+  }
+
+  updateToolbar() {
+    // The toolbar is now part of the main render, so we just need to re-render
+    // This method is called after transitions to ensure proper state
+    if (this.currentPrompt) {
+      // Re-attach event listeners for the toolbar
+      this.toolbar.attachEventListeners();
     }
   }
 
