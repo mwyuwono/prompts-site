@@ -932,11 +932,12 @@ h3 {
 
 /* Prompt Toolbar Styles */
 .prompt-toolbar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-  display: block; /* Always visible when rendered */
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 24px 0;
+  padding: 0 8px;
+  z-index: 10;
 }
 
 .toolbar-buttons {
@@ -945,7 +946,7 @@ h3 {
   align-items: center;
 }
 
-.toolbar-icon-btn,
+.toolbar-service-btn,
 .toolbar-dropdown-btn {
   width: 48px;
   height: 48px;
@@ -959,13 +960,21 @@ h3 {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.toolbar-icon-btn:hover,
+.toolbar-service-btn:hover,
 .toolbar-dropdown-btn:hover {
   background-color: var(--field-background);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 24px;
+  line-height: 1;
 }
 
 .toolbar-dropdown-btn {
@@ -985,9 +994,10 @@ h3 {
 /* Services Dropdown */
 .services-dropdown {
   position: absolute;
-  top: 60px;
+  top: 100%;
   right: 0;
   min-width: 200px;
+  margin-top: 8px;
   background-color: var(--highlight);
   border-radius: 16px;
   padding: 20px;
@@ -1048,11 +1058,10 @@ h3 {
 /* Mobile adjustments for toolbar */
 @media (max-width: 768px) {
   .prompt-toolbar {
-    top: 70px; /* Below mobile header */
-    right: 16px;
+    margin-bottom: 16px;
   }
 
-  .toolbar-icon-btn,
+  .toolbar-service-btn,
   .toolbar-dropdown-btn {
     width: 44px;
     height: 44px;
@@ -1061,7 +1070,8 @@ h3 {
   .services-dropdown {
     min-width: 180px;
     padding: 16px;
-    top: 56px;
+    right: 0;
+    margin-top: 8px;
   }
 
   .services-header {
@@ -1077,15 +1087,11 @@ h3 {
 
 /* Smaller mobile screens */
 @media (max-width: 480px) {
-  .prompt-toolbar {
-    right: 12px;
-  }
-
   .toolbar-buttons {
     gap: 6px;
   }
 
-  .toolbar-icon-btn,
+  .toolbar-service-btn,
   .toolbar-dropdown-btn {
     width: 40px;
     height: 40px;
@@ -1094,6 +1100,6 @@ h3 {
   .services-dropdown {
     min-width: 160px;
     padding: 14px;
-    right: -8px; /* Slight offset to keep on screen */
+    right: 0;
   }
 }

@@ -15,7 +15,6 @@ export class PromptForm {
     
     return `
       <div class="prompt-form-container">
-        ${this.toolbar.render()}
         <div class="prompt-form">
           <div class="prompt-header">
             <h1>${promptData.title}</h1>
@@ -27,6 +26,8 @@ export class PromptForm {
             
             ${promptData.overview ? this.renderOverview(promptData.overview) : ''}
           </div>
+
+          ${this.toolbar.render()}
 
           <form class="prompt-form-element">
             ${this.renderInputFields(promptData.inputFields || [])}
