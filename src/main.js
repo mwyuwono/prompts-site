@@ -23,7 +23,7 @@ class App {
 
   render() {
     document.querySelector('#app').innerHTML = `
-      <div class="mobile-header">
+      <div class="mobile-header" id="mobileHeader">
         <button class="mobile-hamburger" id="mobileHamburger">
           <span></span>
           <span></span>
@@ -73,34 +73,59 @@ class App {
   }
 
   attachMobileMenuListeners() {
+    // Remove existing listeners to prevent duplicates
+    this.removeMobileMenuListeners();
+    
     const hamburger = document.getElementById('mobileHamburger');
     const overlay = document.getElementById('mobileOverlay');
     const mobileClose = document.getElementById('mobileClose');
 
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        this.toggleMobileMenu();
-      });
-    }
-
-    if (overlay) {
-      overlay.addEventListener('click', () => {
-        this.closeMobileMenu();
-      });
-    }
-
-    if (mobileClose) {
-      mobileClose.addEventListener('click', () => {
-        this.closeMobileMenu();
-      });
-    }
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
+    // Store bound functions for removal later
+    this.hamburgerClickHandler = () => this.toggleMobileMenu();
+    this.overlayClickHandler = () => this.closeMobileMenu();
+    this.mobileCloseClickHandler = () => this.closeMobileMenu();
+    this.escapeKeyHandler = (e) => {
       if (e.key === 'Escape' && this.isMobileMenuOpen) {
         this.closeMobileMenu();
       }
-    });
+    };
+
+    if (hamburger) {
+      hamburger.addEventListener('click', this.hamburgerClickHandler);
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', this.overlayClickHandler);
+    }
+
+    if (mobileClose) {
+      mobileClose.addEventListener('click', this.mobileCloseClickHandler);
+    }
+
+    // Close menu on escape key
+    document.addEventListener('keydown', this.escapeKeyHandler);
+  }
+
+  removeMobileMenuListeners() {
+    const hamburger = document.getElementById('mobileHamburger');
+    const overlay = document.getElementById('mobileOverlay');
+    const mobileClose = document.getElementById('mobileClose');
+
+    if (hamburger && this.hamburgerClickHandler) {
+      hamburger.removeEventListener('click', this.hamburgerClickHandler);
+    }
+
+    if (overlay && this.overlayClickHandler) {
+      overlay.removeEventListener('click', this.overlayClickHandler);
+    }
+
+    if (mobileClose && this.mobileCloseClickHandler) {
+      mobileClose.removeEventListener('click', this.mobileCloseClickHandler);
+    }
+
+    if (this.escapeKeyHandler) {
+      document.removeEventListener('keydown', this.escapeKeyHandler);
+    }
   }
 
   toggleMobileMenu() {
@@ -203,9 +228,6 @@ class App {
         rightPanel.classList.add('start-page');
       }
       
-      // Reattach mobile menu listeners
-      this.attachMobileMenuListeners();
-      
       // Animate height change
       await this.animateHeight(rightPanel, currentHeight, newHeight);
       
@@ -252,9 +274,6 @@ class App {
     } else {
       rightPanel.classList.add('start-page');
     }
-    
-    // Reattach mobile menu listeners
-    this.attachMobileMenuListeners();
   }
 
   fadeOut(element) {
