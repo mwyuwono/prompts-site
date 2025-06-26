@@ -11,6 +11,9 @@ export class Sidebar {
       <div class="sidebar">
         <div class="sidebar-header">
           <h1 class="prompts-title">Prompts</h1>
+          <button class="mobile-close" id="mobileClose">
+            ×
+          </button>
         </div>
         
         <div class="sidebar-section-head">

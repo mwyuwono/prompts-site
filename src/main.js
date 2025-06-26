@@ -11,6 +11,7 @@ class App {
     this.currentPrompt = null;
     this.isTransitioning = false;
     this.transitionDebounceTimeout = null;
+    this.isMobileMenuOpen = false;
     
     this.init();
   }
@@ -22,8 +23,20 @@ class App {
 
   render() {
     document.querySelector('#app').innerHTML = `
+      <div class="mobile-header">
+        <button class="mobile-hamburger" id="mobileHamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1 class="mobile-title">Prompts</h1>
+        <div></div>
+      </div>
+      
+      <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+      
       <div class="page-wrap">
-        <div class="left-panel">
+        <div class="left-panel" id="leftPanel">
           ${this.sidebar.render()}
         </div>
         <div class="right-panel start-page">
@@ -35,6 +48,7 @@ class App {
     // Attach event listeners after rendering
     this.sidebar.attachEventListeners();
     this.promptForm.attachEventListeners();
+    this.attachMobileMenuListeners();
   }
 
   attachEventListeners() {
@@ -43,6 +57,11 @@ class App {
       const promptId = e.detail.promptId;
       const promptData = this.sidebar.getPromptData(promptId);
       this.loadPrompt(promptData);
+      
+      // Close mobile menu when selecting a prompt
+      if (this.isMobileMenuOpen) {
+        this.closeMobileMenu();
+      }
     });
 
     // Listen for tab changes
@@ -51,6 +70,73 @@ class App {
       this.currentPrompt = null;
       this.updateRightPanel();
     });
+  }
+
+  attachMobileMenuListeners() {
+    const hamburger = document.getElementById('mobileHamburger');
+    const overlay = document.getElementById('mobileOverlay');
+    const mobileClose = document.getElementById('mobileClose');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        this.toggleMobileMenu();
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        this.closeMobileMenu();
+      });
+    }
+
+    if (mobileClose) {
+      mobileClose.addEventListener('click', () => {
+        this.closeMobileMenu();
+      });
+    }
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isMobileMenuOpen) {
+        this.closeMobileMenu();
+      }
+    });
+  }
+
+  toggleMobileMenu() {
+    if (this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    } else {
+      this.openMobileMenu();
+    }
+  }
+
+  openMobileMenu() {
+    this.isMobileMenuOpen = true;
+    const leftPanel = document.getElementById('leftPanel');
+    const overlay = document.getElementById('mobileOverlay');
+    const hamburger = document.getElementById('mobileHamburger');
+
+    if (leftPanel) leftPanel.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    if (hamburger) hamburger.classList.add('active');
+
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+    const leftPanel = document.getElementById('leftPanel');
+    const overlay = document.getElementById('mobileOverlay');
+    const hamburger = document.getElementById('mobileHamburger');
+
+    if (leftPanel) leftPanel.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    if (hamburger) hamburger.classList.remove('active');
+
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
 
   loadPrompt(promptData) {
@@ -117,6 +203,9 @@ class App {
         rightPanel.classList.add('start-page');
       }
       
+      // Reattach mobile menu listeners
+      this.attachMobileMenuListeners();
+      
       // Animate height change
       await this.animateHeight(rightPanel, currentHeight, newHeight);
       
@@ -163,6 +252,9 @@ class App {
     } else {
       rightPanel.classList.add('start-page');
     }
+    
+    // Reattach mobile menu listeners
+    this.attachMobileMenuListeners();
   }
 
   fadeOut(element) {

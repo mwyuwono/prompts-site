@@ -277,6 +277,103 @@ h3 {
   background-color: var(--sienna);
 }
 
+/* Mobile Menu Components */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+}
+
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--main-background);
+  z-index: 1000;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-hamburger span {
+  width: 24px;
+  height: 3px;
+  background-color: var(--black);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-title {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+
+.mobile-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--black);
+  cursor: pointer;
+  padding: 4px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .left-panel {
@@ -289,31 +386,75 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  /* Mobile layout changes */
+  .mobile-header {
+    display: flex;
+  }
+
   .page-wrap {
-    flex-direction: column;
+    flex-direction: row;
+    padding-top: 60px;
   }
 
   .left-panel {
-    width: 100%;
-    height: auto;
-    order: 2;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--main-background);
+    z-index: 999;
+    transition: left 0.3s ease;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .left-panel.active {
+    left: 0;
   }
 
   .right-panel {
-    order: 1;
+    width: 100%;
     padding: 16px;
+    margin-top: 0;
   }
 
   .right-panel.start-page {
-    padding: 24px;
+    padding: 24px 16px;
   }
 
   .sidebar {
-    height: auto;
+    height: 100vh;
+    padding-top: 60px;
+  }
+
+  .sidebar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--main-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .mobile-close {
+    display: flex;
   }
 
   .sidebar-content {
-    padding-top: 0;
+    padding: 20px 16px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+  }
+
+  .mobile-menu-overlay {
+    display: block;
   }
 
   h1 {
@@ -468,7 +609,10 @@ h3 {
 @media (max-width: 768px) {
   .sidebar-section-head {
     padding: 12px 16px;
-    position: static;
+    position: sticky;
+    top: 60px;
+    background-color: var(--main-background);
+    z-index: 100;
   }
 
   .tab {
@@ -478,6 +622,7 @@ h3 {
 
   .prompt-form {
     padding: 20px;
+    margin: 0;
   }
 
   .form-controls {
@@ -487,6 +632,25 @@ h3 {
 
   .copy-btn {
     width: 100%;
+  }
+
+  /* Improve prompt text readability on mobile */
+  .prompt-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .prompt-text h4 {
+    font-size: 14px;
+  }
+
+  /* Better field styling on mobile */
+  .field {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .field-label {
+    font-size: 16px;
   }
 }
 
