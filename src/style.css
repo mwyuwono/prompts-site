@@ -929,3 +929,171 @@ h3 {
 .right-panel.transitioning {
   scroll-behavior: smooth;
 }
+
+/* Prompt Toolbar Styles */
+.prompt-toolbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: block; /* Always visible when rendered */
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.toolbar-icon-btn,
+.toolbar-dropdown-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--white);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toolbar-icon-btn:hover,
+.toolbar-dropdown-btn:hover {
+  background-color: var(--field-background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar-dropdown-btn {
+  transition: all 0.3s ease;
+}
+
+.toolbar-dropdown-btn.active {
+  background-color: var(--highlight);
+  color: var(--white);
+  transform: rotate(180deg);
+}
+
+.toolbar-dropdown-btn.active:hover {
+  background-color: var(--faded-dark);
+}
+
+/* Services Dropdown */
+.services-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  min-width: 200px;
+  background-color: var(--highlight);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top right;
+}
+
+.services-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.services-header {
+  color: var(--white);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-link {
+  display: block;
+  padding: 12px 20px;
+  background-color: var(--field-background);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 24px;
+  font-family: 'Cousine', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.service-link:hover {
+  background-color: var(--main-background);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-link:active {
+  transform: translateY(0);
+}
+
+/* Mobile adjustments for toolbar */
+@media (max-width: 768px) {
+  .prompt-toolbar {
+    top: 70px; /* Below mobile header */
+    right: 16px;
+  }
+
+  .toolbar-icon-btn,
+  .toolbar-dropdown-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .services-dropdown {
+    min-width: 180px;
+    padding: 16px;
+    top: 56px;
+  }
+
+  .services-header {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .service-link {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+  .prompt-toolbar {
+    right: 12px;
+  }
+
+  .toolbar-buttons {
+    gap: 6px;
+  }
+
+  .toolbar-icon-btn,
+  .toolbar-dropdown-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .services-dropdown {
+    min-width: 160px;
+    padding: 14px;
+    right: -8px; /* Slight offset to keep on screen */
+  }
+}

@@ -1,6 +1,9 @@
+import { PromptToolbar } from './PromptToolbar.js';
+
 export class PromptForm {
   constructor() {
     this.currentPrompt = null;
+    this.toolbar = new PromptToolbar();
   }
 
   render(promptData) {
@@ -12,6 +15,7 @@ export class PromptForm {
     
     return `
       <div class="prompt-form-container">
+        ${this.toolbar.render()}
         <div class="prompt-form">
           <div class="prompt-header">
             <h1>${promptData.title}</h1>
@@ -147,6 +151,9 @@ export class PromptForm {
         this.copyToClipboard();
       });
     }
+    
+    // Attach toolbar event listeners
+    this.toolbar.attachEventListeners();
   }
 
   async copyToClipboard() {
@@ -185,6 +192,8 @@ export class PromptForm {
     try {
       await navigator.clipboard.writeText(content);
       this.showCopyFeedback();
+      // Show services dropdown after successful copy
+      this.toolbar.showServicesAfterCopy();
     } catch (err) {
       console.error('Failed to copy text: ', err);
       // Fallback for older browsers
@@ -202,6 +211,8 @@ export class PromptForm {
     try {
       document.execCommand('copy');
       this.showCopyFeedback();
+      // Show services dropdown after successful copy
+      this.toolbar.showServicesAfterCopy();
     } catch (err) {
       console.error('Fallback copy failed: ', err);
     }
