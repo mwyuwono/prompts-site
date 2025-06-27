@@ -1,3 +1,4 @@
 prompts-site-modern/node_modules/
 vercel-log/
 node_modules
+dist/
