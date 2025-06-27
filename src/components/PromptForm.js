@@ -7,6 +7,7 @@ export class PromptForm {
   }
 
   render(promptData) {
+    console.log('PromptForm render() called with:', promptData?.title || 'no data');
     if (!promptData) {
       return this.renderStartPage();
     }
@@ -29,19 +30,19 @@ export class PromptForm {
 
           <form class="prompt-form-element">
             ${this.renderInputFields(promptData.inputFields || [])}
-            
-            <div class="form-controls">
-              <button type="button" class="copy-btn" id="copyBtn">
-                Copy to clipboard
-              </button>
-            </div>
-
-            <div class="prompt-text-container">
-              <div class="prompt-text">
-                ${promptData.promptText.content}
-              </div>
-            </div>
           </form>
+          
+          <div class="form-controls">
+            <button type="button" class="copy-btn" id="copyBtn">
+              Copy to clipboard
+            </button>
+          </div>
+
+          <div class="prompt-text-container">
+            <div class="prompt-text">
+              ${promptData.promptText.content}
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -147,6 +148,8 @@ export class PromptForm {
     if (copyBtn) {
       copyBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
+        console.log('Copy button clicked'); // Debug log
         this.copyToClipboard();
       });
     }
@@ -218,17 +221,32 @@ export class PromptForm {
 
   showCopyFeedback() {
     const copyBtn = document.getElementById('copyBtn');
-    if (!copyBtn) return;
+    if (!copyBtn) {
+      console.log('Copy button not found in showCopyFeedback');
+      return;
+    }
     
+    console.log('Showing copy feedback');
     const originalText = copyBtn.textContent;
-    const originalClass = copyBtn.className;
+    const originalBackground = copyBtn.style.backgroundColor;
     
+    // Directly set styles instead of using CSS classes to avoid transition conflicts
     copyBtn.textContent = 'Copied!';
-    copyBtn.classList.add('copied');
+    copyBtn.style.backgroundColor = '#bd6417'; // Direct hex value for sienna
+    copyBtn.style.transition = 'none'; // Disable transitions temporarily
     
     setTimeout(() => {
-      copyBtn.textContent = originalText;
-      copyBtn.className = originalClass;
+      console.log('Restoring button state');
+      // Re-find the button element in case it's been replaced
+      const copyBtnRestored = document.getElementById('copyBtn');
+      if (copyBtnRestored) {
+        copyBtnRestored.textContent = originalText;
+        copyBtnRestored.style.backgroundColor = originalBackground;
+        copyBtnRestored.style.transition = ''; // Re-enable transitions
+        console.log('Button state restored successfully');
+      } else {
+        console.log('Copy button not found during restore - element was removed from DOM');
+      }
     }, 2000);
   }
 }

@@ -182,6 +182,7 @@ class App {
   }
 
   loadPrompt(promptData) {
+    console.log('loadPrompt called with:', promptData?.title || 'no title'); // Debug log
     // Debounce rapid prompt switches
     if (this.transitionDebounceTimeout) {
       clearTimeout(this.transitionDebounceTimeout);
@@ -214,9 +215,6 @@ class App {
       const currentHeight = rightPanel.scrollHeight;
       const currentScrollTop = rightPanel.scrollTop;
       
-      // Show loading state briefly for better UX
-      this.showLoadingState(rightPanel);
-      
       // Create temporary element to measure new content height
       const tempElement = document.createElement('div');
       tempElement.style.position = 'absolute';
@@ -235,6 +233,7 @@ class App {
       await this.fadeOut(rightPanel);
       
       // Phase 3: Update content and animate height
+      console.log('updateRightPanelWithTransition() - re-rendering content');
       rightPanel.innerHTML = this.currentPrompt ? this.promptForm.render(this.currentPrompt) : this.aiServices.render();
       
       // Update panel classes
@@ -283,6 +282,7 @@ class App {
   }
 
   updateRightPanel() {
+    console.log('updateRightPanel() called - this causes re-render');
     // Fallback method for immediate updates (no transition)
     const rightPanel = document.querySelector('.right-panel');
     rightPanel.innerHTML = this.currentPrompt ? this.promptForm.render(this.currentPrompt) : this.aiServices.render();
