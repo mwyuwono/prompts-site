@@ -36,7 +36,7 @@ class App {
       </div>
       
       <!-- Universal Prompt Head Toolbar (shown only when prompt is active) -->
-      ${this.currentPrompt ? this.toolbar.render() : ''}
+      <div class="toolbar-container"></div>
       
       <div class="mobile-menu-overlay" id="mobileOverlay"></div>
       
@@ -246,7 +246,7 @@ class App {
       }
 
       // Re-render and attach toolbar if needed
-      this.updateToolbar();
+      this.updateToolbarAndListeners();
       
       // Animate height change
       await this.animateHeight(rightPanel, currentHeight, newHeight);
@@ -296,15 +296,16 @@ class App {
     }
 
     // Re-render and attach toolbar if needed
-    this.updateToolbar();
+    this.updateToolbarAndListeners();
   }
 
-  updateToolbar() {
-    // The toolbar is now part of the main render, so we just need to re-render
-    // This method is called after transitions to ensure proper state
-    if (this.currentPrompt) {
-      // Re-attach event listeners for the toolbar
-      this.toolbar.attachEventListeners();
+  updateToolbarAndListeners() {
+    const toolbarContainer = document.querySelector('.toolbar-container');
+    if (toolbarContainer) {
+      toolbarContainer.innerHTML = this.currentPrompt ? this.toolbar.render() : '';
+      if (this.currentPrompt) {
+        this.toolbar.attachEventListeners();
+      }
     }
   }
 

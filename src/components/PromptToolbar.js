@@ -42,7 +42,7 @@ export class PromptToolbar {
             </a>
           `).join('')}
           <div class="services-dropdown">
-            <div class="icon dropdown-trigger" id="dropdownTrigger"></div>
+            <div class="icon dropdown-trigger" id="dropdownTrigger"></div>
             <div class="services-popup-menu ${this.isServicesOpen ? 'active' : ''}" id="servicesPopupMenu">
               <div class="ai-menu-heading">Services</div>
               <div class="link-list">
@@ -51,7 +51,7 @@ export class PromptToolbar {
                     <div class="div-block-15 block-link-ctnr">
                       <div class="div-block-17">
                         <div class="block-link-title">${service.name}</div>
-                        <div class="block-link-arrow"></div>
+                        <div class="block-link-arrow"></div>
                       </div>
                     </div>
                   </a>
@@ -143,7 +143,7 @@ export class PromptToolbar {
     // Then show services dropdown after a short delay
     setTimeout(() => {
       this.openServices();
-    }, 100);
+    }, 500);
   }
 
   showCopiedNotification() {

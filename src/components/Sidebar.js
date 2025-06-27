@@ -120,13 +120,18 @@ export class Sidebar {
   }
 
   getPromptData(promptId) {
+    console.log('Searching for promptId:', promptId);
     // Find prompt across all categories
     for (const tabType of ['personal', 'work']) {
       for (const category of Object.values(promptsData.categories[tabType])) {
         const prompt = category.find(p => p.id === promptId);
-        if (prompt) return prompt;
+        if (prompt) {
+          console.log('Found prompt:', prompt);
+          return prompt;
+        }
       }
     }
+    console.log('Prompt not found for promptId:', promptId);
     return null;
   }
 }
