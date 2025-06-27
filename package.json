@@ -17,7 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && cp -r prompts-site-webflow-export/personal dist/personal && cp -r prompts-site-webflow-export/work dist/work",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
