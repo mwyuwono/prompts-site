@@ -17,7 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "vite build && cp -r prompts-site-webflow-export/personal dist/personal && cp -r prompts-site-webflow-export/work dist/work",
+    "build": "vite build && cp -r prompts-site-webflow-export/personal dist/personal && cp -r prompts-site-webflow-export/work dist/work && cp -r prompts-site-webflow-export/css dist/css && cp -r prompts-site-webflow-export/images dist/images && cp -r prompts-site-webflow-export/js dist/js && cp -r prompts-site-webflow-export/documents dist/documents",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
