@@ -856,7 +856,9 @@ strong {
   display: flex;
 }
 
-.block-link-arrow:before {
+/* Target only the specific links that need arrows */
+a[href="https://perchance.org/"] .block-link-arrow:before,
+a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   content: "arrow_forward";
 }
 
