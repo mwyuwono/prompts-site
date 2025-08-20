@@ -1,73 +1,143 @@
 # GEMINI.md
 
-This file provides guidance to Gemini Code (a hypothetical Gemini-based coding assistant) when working with code in this repository.
+This file provides guidance to Gemini (Google's AI assistant) when working with code in this repository.
 
 ## Important: Play a system sound whenever the user needs to take action
 This attracts the users attention when needed. EVERY TIME the user is prompted to take action or confirm something, a system sound MUST be played. 
 
 ## Project Overview
 
-This is a static website for organizing AI prompts, built as a Webflow export. The site features a collection of curated prompts for personal and work use cases, organized into categories like utilities, research, creativity, banking, and prototyping.
+This is a static website for organizing AI prompts, built as a Webflow export with modern development tooling. The site features a collection of curated prompts for personal and work use cases, organized into categories like utilities, research, creativity, banking, and prototyping.
 
 ## Architecture
 
-The project consists of a static HTML/CSS/JavaScript website with the following structure:
+**Hybrid Development Setup**: The project combines a Webflow export with modern build tooling:
 
-- **Main entry**: `prompts-site-webflow-export/index.html` - Landing page with links to AI services
-- **Personal prompts**: `prompts-site-webflow-export/personal/` - Individual HTML pages for personal use prompts
-- **Work prompts**: `prompts-site-webflow-export/work/` - Individual HTML pages for work-related prompts
-- **Assets**: 
+- **Webflow Export** (`prompts-site-webflow-export/`): Original static site content
+  - `index.html` - Landing page with AI service links (Claude, ChatGPT, Qwen, Perchance, etc.)
+  - `personal/` - 17 prompt pages for personal use cases (research, creativity, utilities)
+  - `work/` - 13 prompt pages for work scenarios (banking, meeting notes, assessments)
   - `css/` - Stylesheets (normalize.css, components.css, gptp.css)
   - `js/` - JavaScript files (gptp.js contains Webflow-generated code)
   - `images/` - Icons, logos, and visual assets
   - `documents/` - Animation files (Lottie JSON)
 
+- **Modern Build System**: 
+  - Vite development server and build tools
+  - `src/` - Modern development files
+  - `dist/` - Production build output
+  - `package.json` - Simplified dependencies (primarily Vite)
+
 ## Key Features
 
-1. **Sidebar Navigation**: Toggle between personal and work prompt categories
-2. **Interactive Prompt Builder**: Visual drag-and-drop interface for building Midjourney prompts (`personal/prompt-builder.html`)
-3. **Copy-to-Clipboard**: Most prompts include functionality to copy content
-4. **Responsive Design**: Mobile-friendly with collapsible menus
-5. **Animation**: Lottie animations for feedback and visual enhancement
+1. **AI Service Directory**: Quick access links to Claude, ChatGPT, Qwen, Gemini, Perchance, and other AI tools
+2. **Prompt Library**: Curated collection of specialized prompts for different use cases
+3. **Interactive Prompt Builder**: Visual drag-and-drop interface for Midjourney prompts (`personal/prompt-builder.html`)
+4. **Copy-to-Clipboard**: One-click copying for all prompts and content
+5. **Responsive Design**: Mobile-friendly with collapsible navigation
+6. **Sidebar Navigation**: Toggle between personal and work prompt categories
 
-## Common Development Tasks
+## Recent Updates & Fixes (2025-01-20)
 
-**Viewing the site locally:**
-Open `prompts-site-webflow-export/index.html` in a web browser, or serve via a local HTTP server.
+- ✅ **Added Qwen AI**: New service link to https://chat.qwen.ai/ in LLMs section
+- ✅ **Fixed Arrow Display**: Service link arrows now show correctly for all services using targeted CSS
+- ✅ **Deployment Stability**: Resolved Vercel build issues by simplifying package dependencies
+- ✅ **Material Icons**: Proper arrow implementation using Material Icons font
 
-**Adding new prompts:**
-1. Create new HTML file in `personal/` or `work/` directory
-2. Copy structure from existing prompt files
-3. Update navigation links in `index.html` and other prompt files
+**Technical Fixes:**
+- Used attribute selectors to target specific service arrows
+- Prevented duplicate arrows on existing services
+- Simplified Rollup dependencies to prevent Linux build errors
 
-**Modifying styles:**
-- Main styles are in `css/gptp.css`
-- Component-specific styles in `css/components.css`
-- Avoid editing `css/normalize.css` (CSS reset)
+## Development Workflow
+
+**Quick Commands:**
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+git add . && git commit -m "message" && git push  # Deploy to Vercel
+```
+
+**Local Development:**
+- Use `npm run dev` for hot-reloading development server
+- Or open `prompts-site-webflow-export/index.html` directly in browser
+
+**Adding New AI Services:**
+1. Edit `prompts-site-webflow-export/index.html`
+2. Add service link in LLMs section using the established pattern
+3. Add arrow CSS if needed: `a[href="service-url"] .block-link-arrow:before { content: "arrow_forward"; }`
+4. Commit and push for automatic Vercel deployment
+
+**Adding New Prompts:**
+1. Create HTML file in `personal/` or `work/` directory
+2. Follow existing file structure and naming conventions
+3. Update sidebar navigation in `index.html` and other pages
+4. Test copy-to-clipboard functionality
 
 ## Code Patterns
 
-**Form handling**: Most prompt pages use similar JavaScript patterns for:
-- Copy-to-clipboard functionality
-- Form data collection
-- Button state management (e.g., "Copy" → "Copied!")
+**Service Link Structure:**
+```html
+<a href="https://service.url/" target="_blank" class="block-link w-inline-block">
+  <div class="div-block-15 block-link-ctnr">
+    <div class="div-block-17">
+      <div class="block-link-title">Service Name</div>
+      <div class="block-link-arrow"></div>
+    </div>
+    <div class="block-link-description">Company</div>
+  </div>
+</a>
+```
 
-**Navigation**: Consistent sidebar structure across all pages with:
-- Personal/Work tab switching
-- Mobile menu controls
-- Collapsible categories
+**Arrow Implementation:**
+```css
+/* Target specific services that need arrows */
+a[href="https://specific-service.url/"] .block-link-arrow:before {
+  content: "arrow_forward";
+}
+```
 
-**Interactive elements**: The visual prompt builder uses:
-- Drag-and-drop element management
-- State-based UI updates
-- Local storage for user preferences
+**Prompt Page Structure:**
+- Consistent sidebar navigation
+- Copy-to-clipboard JavaScript patterns
+- Form handling for user input
+- Mobile-responsive design
+- Material Icons for UI elements
+
+## Deployment
+
+**Vercel Integration:**
+- Automatic builds on push to `main` branch
+- Build command: `npm run build` (includes Webflow asset copying)
+- Preview deployments for pull requests
+
+**Build Process:**
+1. Vite processes modern assets → `dist/`
+2. Copy script moves Webflow static files → `dist/`
+3. Vercel serves combined output
+
+## Troubleshooting
+
+**Common Issues:**
+- **Build fails on Vercel**: Check package.json dependencies (should be minimal)
+- **Arrows not showing**: Verify CSS selector matches exact href attribute
+- **Mobile menu issues**: Check JavaScript for Webflow compatibility
+- **Copy function broken**: Ensure clipboard API permissions and HTTPS
+
+**File Structure Notes:**
+- Webflow classes follow specific naming conventions
+- `gptp.js` is minified Webflow-generated code (626KB)
+- Material Icons loaded via Google Fonts
+- CSS media queries handle mobile responsiveness
 
 ## Important Notes
 
-- This is a Webflow export, so the CSS classes and structure follow Webflow conventions
-- The `js/gptp.js` file is large (626KB) and contains generated Webflow code
-- No build process or package management - pure static HTML/CSS/JS
-- All JavaScript is inline or in separate `.js` files loaded via script tags
+- This is a Webflow export with added modern tooling
+- Maintain Webflow class structure when editing
+- Use targeted CSS selectors to avoid conflicts
+- Test on both desktop and mobile breakpoints
+- Service link arrows use Material Icons font family
+- Build process combines static files with Vite assets
 ────────────────────────────────────────
 QUICK-START CHECKLIST ✅
 ────────────────────────────────────────

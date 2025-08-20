@@ -7,33 +7,64 @@ This attracts the users attention when needed. EVERY TIME the user is prompted t
 
 ## Project Overview
 
-This is a static website for organizing AI prompts, built as a Webflow export. The site features a collection of curated prompts for personal and work use cases, organized into categories like utilities, research, creativity, banking, and prototyping.
+This is a static website for organizing AI prompts, built as a Webflow export with modern tooling. The site features a collection of curated prompts for personal and work use cases, organized into categories like utilities, research, creativity, banking, and prototyping.
 
 ## Architecture
 
-The project consists of a static HTML/CSS/JavaScript website with the following structure:
+**Hybrid Setup**: The project combines a Webflow export with modern development tooling:
 
-- **Main entry**: `prompts-site-webflow-export/index.html` - Landing page with links to AI services
-- **Personal prompts**: `prompts-site-webflow-export/personal/` - Individual HTML pages for personal use prompts
-- **Work prompts**: `prompts-site-webflow-export/work/` - Individual HTML pages for work-related prompts
-- **Assets**: 
+- **Webflow Export**: `prompts-site-webflow-export/` - Original static site (primary content)
+  - `index.html` - Landing page with AI service links (Claude, ChatGPT, Qwen, etc.)
+  - `personal/` - 17 individual HTML pages for personal use prompts
+  - `work/` - 13 individual HTML pages for work-related prompts
   - `css/` - Stylesheets (normalize.css, components.css, gptp.css)
   - `js/` - JavaScript files (gptp.js contains Webflow-generated code)
   - `images/` - Icons, logos, and visual assets
   - `documents/` - Animation files (Lottie JSON)
 
+- **Modern Tooling**: 
+  - Vite build system with development server
+  - `src/` - Modern development files (styles, assets)
+  - `dist/` - Built output directory
+  - `package.json` - Dependencies (simplified to just Vite)
+
 ## Key Features
 
-1. **Sidebar Navigation**: Toggle between personal and work prompt categories
-2. **Interactive Prompt Builder**: Visual drag-and-drop interface for building Midjourney prompts (`personal/prompt-builder.html`)
-3. **Copy-to-Clipboard**: Most prompts include functionality to copy content
-4. **Responsive Design**: Mobile-friendly with collapsible menus
-5. **Animation**: Lottie animations for feedback and visual enhancement
+1. **AI Service Links**: Direct links to Claude, ChatGPT, Qwen, Perchance, and other AI tools
+2. **Sidebar Navigation**: Toggle between personal and work prompt categories
+3. **Interactive Prompt Builder**: Visual drag-and-drop interface for building Midjourney prompts (`personal/prompt-builder.html`)
+4. **Copy-to-Clipboard**: Most prompts include functionality to copy content
+5. **Responsive Design**: Mobile-friendly with collapsible menus
+6. **Animation**: Lottie animations for feedback and visual enhancement
 
-## Common Development Tasks
+## Recent Changes & Fixes
 
-**Viewing the site locally:**
-Open `prompts-site-webflow-export/index.html` in a web browser, or serve via a local HTTP server.
+**Latest Updates (2025-01-20):**
+- ✅ Added Qwen AI service link (https://chat.qwen.ai/) to LLMs section
+- ✅ Fixed arrow visibility issue for service links (Perchance, Qwen)
+- ✅ Resolved Vercel deployment Rollup dependency conflicts
+- ✅ Simplified package.json dependencies to prevent build errors
+
+**Known UI Fixes:**
+- Service link arrows now display correctly using targeted CSS selectors
+- Material Icons arrows work properly on desktop (hidden on mobile per design)
+
+## Development Workflow
+
+**Local Development:**
+```bash
+npm run dev          # Start Vite development server
+npm run build        # Build for production
+```
+
+**Viewing the site:**
+- Development: `npm run dev` then visit localhost
+- Static: Open `prompts-site-webflow-export/index.html` in browser
+
+**Adding new AI services:**
+1. Edit `prompts-site-webflow-export/index.html`
+2. Add new link in LLMs section following existing pattern
+3. Commit and push to trigger Vercel deployment
 
 **Adding new prompts:**
 1. Create new HTML file in `personal/` or `work/` directory
@@ -44,8 +75,29 @@ Open `prompts-site-webflow-export/index.html` in a web browser, or serve via a l
 - Main styles are in `css/gptp.css`
 - Component-specific styles in `css/components.css`
 - Avoid editing `css/normalize.css` (CSS reset)
+- Use targeted CSS selectors for service-specific styling
 
 ## Code Patterns
+
+**Service Links**: Follow this pattern for new AI services:
+```html
+<a href="https://service.url/" target="_blank" class="block-link w-inline-block">
+  <div class="div-block-15 block-link-ctnr">
+    <div class="div-block-17">
+      <div class="block-link-title">Service Name</div>
+      <div class="block-link-arrow"></div>
+    </div>
+    <div class="block-link-description">Company Name</div>
+  </div>
+</a>
+```
+
+**Arrow CSS**: Service arrows use Material Icons with targeted selectors:
+```css
+a[href="https://specific-service.url/"] .block-link-arrow:before {
+  content: "arrow_forward";
+}
+```
 
 **Form handling**: Most prompt pages use similar JavaScript patterns for:
 - Copy-to-clipboard functionality
@@ -62,12 +114,25 @@ Open `prompts-site-webflow-export/index.html` in a web browser, or serve via a l
 - State-based UI updates
 - Local storage for user preferences
 
+## Deployment
+
+**Vercel Integration:**
+- Automatic deployments on push to `main` branch
+- Build command: `npm run build` (includes asset copying)
+- Simplified dependencies prevent Linux build issues
+
+**Build Process:**
+1. Vite builds modern assets to `dist/`
+2. Copy script moves Webflow assets to `dist/`
+3. Vercel serves the combined output
+
 ## Important Notes
 
-- This is a Webflow export, so the CSS classes and structure follow Webflow conventions
+- This is a Webflow export, so CSS classes and structure follow Webflow conventions
 - The `js/gptp.js` file is large (626KB) and contains generated Webflow code
-- No build process or package management - pure static HTML/CSS/JS
+- Build process combines Vite tooling with static asset copying
 - All JavaScript is inline or in separate `.js` files loaded via script tags
+- Service link arrows require targeted CSS due to Webflow's existing styling
 ────────────────────────────────────────
 QUICK-START CHECKLIST ✅
 ────────────────────────────────────────
