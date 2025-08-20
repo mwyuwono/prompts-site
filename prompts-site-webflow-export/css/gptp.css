@@ -856,6 +856,10 @@ strong {
   display: flex;
 }
 
+.block-link-arrow:before {
+  content: "arrow_forward";
+}
+
 .div-block-15 {
   line-height: 1.5em;
 }
@@ -3093,7 +3097,7 @@ strong {
     display: flex;
     padding: 0px;
     margin-top: 16px;
-    margin-left: 24px;
+    margin-left: 16px;
     position: fixed;
 
   }
@@ -3403,6 +3407,8 @@ strong {
     font-weight: 400;
     line-height: 1em;
     display: flex;
+
+
   }
 
   .icon-expand-mobile-menu {
@@ -3793,7 +3799,6 @@ strong {
   }
 
   .menu-control {
-    border-radius: 0;
     flex: auto;
     justify-content: center;
     align-items: center;
