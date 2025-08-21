@@ -210,8 +210,8 @@ function enableTextEditing() {
             <div class="section-heading example-heading">Input</div>
             <div class="example-flex-col">
               <div class="input-wrap">
-                <div class="input-heading">Original prompt</div>
-                <div class="example-input-content">###Project name###<br><br>###I’m planning to complete the ‘Project’ above. ###<br><br>First, provide a step-by-step description of the process to complete the ‘Project’. For each step in the process, note any information that is necessary or helpful to complete the step. <br>‍<br>Desired format:[***Insert project name***] <br><br>Leave a blank line<br><br>Process:[insert a numbered list of the steps in the process with a detailed description of each text]<br><br>Leave a blank line<br><br>Next, provide a list of the materials, mediums, supplies and tools required to complete this project. For each required material, recommend the leading brands or suppliers.<br><br>Desired format:Materials:[insert a list of the required materials]</div>
+                <div class="input-heading">User enters original prompt</div>
+                <div class="example-input-content">Write a marketing email for a new coffee subscription service</div>
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ function enableTextEditing() {
             <div class="example-flex-col">
               <div class="section-heading example-heading results">Results</div>
               <div class="input-wrap">
-                <div class="example-input-content results">Project: [insert project]<br>‍<br>I’m embarking on the &#x27;Project&#x27; above.In order to guide my progress, I would appreciate detailed instructions on how to complete this project.<br>‍<strong>Step-by-Step Process:</strong>Please describe the process of completing the project step by step. For each step, include any pertinent information or tips that would assist in its completion.<br><br>Desired format:<br>Project Title: [Insert project title here] Process:<br>1. [Insert Step 1 with a detailed description]<br>2. [Insert Step 2 with a detailed description]<br>...<br><br>Remember to leave a blank line before and after this section.<strong><br>Materials and Supplies:</strong>Next, please list all the materials, mediums, tools, and supplies required to complete this project. For each required item, suggest top-rated brands or suppliers. If there are any cost-effective alternatives, kindly mention those as well.<br><br>Desired format:<br>Materials:<br>- Item 1: [Insert name of item 1] - [Recommended brand or supplier]<br>- Item 2: [Insert name of item 2] - [Recommended brand or supplier]<br>...<br><br>Remember to leave a blank line after this section.<strong><br>Estimated Time and Cost:</strong>Additionally, provide an estimated timeline and cost to complete this project. Break down the cost based on each step or each material required.<br><br>Desired format:<br>Estimated Time: [Insert total estimated time]Estimated Cost: <br>- Step 1/Item 1: [Estimated cost]<br>- Step 2/Item 2: [Estimated cost]<br>...<br>Total: [Sum of the estimated costs]<br><br>Remember to leave a blank line after this section.<br><br>Your help in providing these details will be invaluable in successfully completing this project. Thank you!</div>
+                <div class="example-input-content results">I would like your assistance in refining a prompt. Following this message, I will provide the prompt that I'd like to enhance.<br><br>Instructions: Analyze my draft prompt and suggest improvements focusing on clarity, specificity, and effectiveness. Consider adding context, examples, output format requirements, or constraints that would help generate better results. Please provide both the improved prompt and a brief explanation of the key changes you made. Format your response using Markdown for better readability.<br><br>Original prompt to improve:<br>Write a marketing email for a new coffee subscription service</div>
               </div>
             </div>
           </div>
@@ -322,80 +322,24 @@ function enableTextEditing() {
       <div class="prompt-body personal w-form">
         <div class="div-block-3">
           <div class="prompt-header">
-            <h1>Improve a ChatGPT prompt</h1>
+            <h1>Improve any prompt</h1>
             <div class="header-description">
-              <div>Enhances prompts and applies Markup syntax to make the outputs more easily readable. </div>
-            </div>
-            <div class="prompt-overview-trigger">
-              <div class="overview-trigger-text show">Show prompt overview</div>
-              <div class="overview-trigger-text hide">Hide prompt overview</div>
-              <div class="text-block-7"></div>
-            </div>
-            <div class="prompt-overview-wrap">
-              <div class="prompt-overview">
-                <div class="prompt-overview-section-wrap">
-                  <div class="section-heading">You</div>
-                  <ol role="list" class="instructions-section-content">
-                    <li class="instructions-list-item">
-                      <div>Submit this prompt to ChatGPT.</div>
-                    </li>
-                    <li class="instructions-list-item">
-                      <div>In a separate message, submit the prompt you wish to improve.</div>
-                    </li>
-                  </ol>
-                </div>
-                <div class="prompt-overview-section-wrap">
-                  <div class="section-heading">GPT4</div>
-                  <ol role="list" class="instructions-section-content">
-                    <li class="instructions-list-item">
-                      <div>Rewrites the prompt, adding clarity and context.</div>
-                    </li>
-                  </ol>
-                </div>
-              </div>
+              <div>Enhances prompts and applies Markdown syntax to make the outputs more easily readable. </div>
             </div>
           </div>
         </div>
         <form id="wf-form-Submit" name="wf-form-Submit" data-name="Submit" method="get" class="form" data-wf-page-id="649ee547b0294ccfff25dea1" data-wf-element-id="0c90749a-1460-4529-e96f-6c505437a86f">
-          <div class="div-block-9"><input type="submit" data-wait="Please wait..." class="page-controls copy w-button" value="Copy to clipboard">
-            <div class="edit-button-container">
-              <a id="edit-prompt-button" href="#" class="page-controls edit-prompt-button w-button">Edit prompt</a>
-            </div>
+          <div class="field-element-wrap">
+            <div class="field-label-lockup"><label for="original-prompt" class="field-label-2">Original prompt to improve</label><label for="original-prompt" class="context-hash">"""</label></div><textarea id="original-prompt" name="original-prompt" maxlength="5000" data-name="Original Prompt" placeholder="Enter the prompt you want to improve (e.g., 'Write a blog post about AI')" class="field long-form w-input"></textarea><label for="original-prompt" class="context-hash bottom-hash">"""</label>
           </div>
-          <div style="display:none;height:0px;opacity:0" class="edit-mode-alert">
-            <div class="div-block-21">
-              <div>Edit the prompt below:</div>
-            </div>
+          <div class="div-block-9"><input type="submit" data-wait="Please wait..." class="page-controls copy w-button" value="Copy to clipboard">
           </div>
           <div class="prompt-text-class w-richtext">
             <p>‍</p>
-            <p>“””I would like your assistance in refining a prompt tailored for GPT-4. Following this message, I will provide the prompt that I&#x27;d like to enhance.&quot;&quot;&quot;</p>
-            <p>Instructions: Conduct a careful examination of my draft prompt and propose refinements. If there are any context enhancements or additional requests that you think would improve the prompt, please include them in your suggestions. In the updated prompt, incorporate instructions to use Markup syntax to improve the readability of the prompt outputs.</p>
+            <p>I would like your assistance in refining a prompt. Following this message, I will provide the prompt that I&#x27;d like to enhance.</p>
+            <p>Instructions: Analyze my draft prompt and suggest improvements focusing on clarity, specificity, and effectiveness. Consider adding context, examples, output format requirements, or constraints that would help generate better results. Please provide both the improved prompt and a brief explanation of the key changes you made. Format your response using Markdown for better readability.</p>
           </div>
         </form>
-        <div class="w-form-done">
-          <div>Thank you! Your submission has been received!</div>
-        </div>
-        <div class="w-form-fail">
-          <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
-      </div>
-      <div class="w-embed w-script">
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const promptText = document.querySelector(".prompt-text-class");
-    const editPromptButton = document.getElementById("edit-prompt-button");
-    editPromptButton.addEventListener("click", function () {
-      if (promptText.contentEditable === "true") {
-        promptText.contentEditable = "false";
-        editPromptButton.textContent = "Edit Prompt";
-      } else {
-        promptText.contentEditable = "true";
-        editPromptButton.textContent = "Save";
-      }
-    });
-  });
-</script>
       </div>
     </div>
   </div>
@@ -413,20 +357,29 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.removeChild(textarea);
   }
   function getFormData() {
-    const formFields = document.querySelectorAll('input, textarea');
-    let formData = '';
-    formFields.forEach(field => {
-      if (field.type !== 'submit') {
-        const label = field.previousElementSibling;
-        formData += (label ? label.innerText : field.name) + ': ' + field.value + '\n';
-      }
-    });
+    // Get instructions first
     const richText = document.querySelector('.w-richtext');
-    formData += richText ? richText.innerText : '';
+    let formData = richText ? richText.innerText : '';
+    
+    // Add user's original prompt after instructions
+    const originalPrompt = document.querySelector('#original-prompt');
+    if (originalPrompt && originalPrompt.value.trim()) {
+      formData += '\n\nOriginal prompt to improve:\n' + originalPrompt.value;
+    }
+    
     return formData;
   }
   copyButton.addEventListener('click', function(event) {
     event.preventDefault();
+    
+    // Check if user has entered a prompt
+    const originalPrompt = document.querySelector('#original-prompt');
+    if (!originalPrompt || !originalPrompt.value.trim()) {
+      alert('Please enter a prompt to improve before copying.');
+      originalPrompt.focus();
+      return;
+    }
+    
     const formData = getFormData();
     copyToClipboard(formData);
     // Save original styles and text
@@ -443,26 +396,6 @@ document.addEventListener('DOMContentLoaded', function() {
       copyButton.style.backgroundColor = originalBackgroundColor;
       copyButton.style.color = originalTextColor;
     }, 2000);
-  });
-});
-</script>
-  <script>
-$(document).ready(function(){
-  // Check if the cookie is set
-  if (document.cookie.indexOf('dismissed=true') !== -1) {
-    // If the cookie is found, hide the instructions immediately
-    $('#instructions').hide();
-  }
-  // Attach a click event handler to the dismiss button
-  $('#dismiss-forever').click(function() {
-    // Set a delay of 0.6 seconds (600 ms), then hide the instructions
-    setTimeout(function(){
-      $('#instructions').fadeOut('slow');
-    }, 600);
-    // Set a cookie to remember that the instructions were dismissed
-    var date = new Date();
-    date.setFullYear(date.getFullYear() + 1); // Cookie expires in 1 year
-    document.cookie = 'dismissed=true; expires=' + date.toUTCString() + '; path=/';
   });
 });
 </script>
