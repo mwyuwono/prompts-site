@@ -63,43 +63,30 @@
   }
 }
 
-/* Tablet adjustments */
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .hamburger-menu {
-    display: flex;
-    top: 24px;
-    left: 24px;
-    width: 48px;
-    height: 48px;
-  }
-  
-  .hamburger-icon {
-    font-size: 18px;
-  }
-  
-  /* Hide original menu controls on tablet */
-  .menu-control {
-    display: none !important;
-  }
-}
+
 
 /* Sidebar responsive behavior */
 .left-panel {
   transition: transform 0.3s ease;
 }
 
+/* Mobile: Hide sidebar by default, show with hamburger */
 @media screen and (max-width: 767px) {
   .left-panel {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     height: 100vh;
+    width: 280px; /* Fixed width for consistency */
     transform: translateX(-100%);
     z-index: 999;
+    background-color: var(--sidebar-bg, #ffffff);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
   }
   
   .left-panel.is-open {
     transform: translateX(0);
+    z-index: 1000;
   }
   
   /* Overlay when sidebar is open */
@@ -112,18 +99,34 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 998;
+    pointer-events: auto;
   }
   
   /* Adjust main content when sidebar is open */
   .page-wrap.sidebar-open .right-panel {
-    opacity: 0.3;
     pointer-events: none;
+  }
+  
+  /* Ensure hamburger stays above overlay */
+  .hamburger-menu {
+    z-index: 1001 !important;
   }
 }
 
-/* Remove old mobile prompt controls from sidebar */
-@media screen and (max-width: 767px) {
-  .mobile-prompt-controls {
+/* Hide ALL old menu controls globally */
+.mobile-prompt-controls,
+.mobile-menu-icon,
+.icon-expand-mobile-menu,
+.icon-close-menu {
+  display: none !important;
+}
+
+/* Additional hiding for any responsive breakpoints */
+@media screen and (max-width: 991px) {
+  .mobile-prompt-controls,
+  .mobile-menu-icon,
+  .icon-expand-mobile-menu,
+  .icon-close-menu {
     display: none !important;
   }
 }
