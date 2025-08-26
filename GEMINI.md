@@ -74,6 +74,33 @@ git add . && git commit -m "message" && git push  # Deploy to Vercel
 3. Update sidebar navigation in `index.html` and other pages
 4. Test copy-to-clipboard functionality
 
+## CSS Organization
+
+**CRITICAL: Always Use Separate CSS Files**
+When creating new prompt pages, maintain clean architecture:
+
+1. **Dedicated CSS File**: Create `prompts-site-webflow-export/css/[page-name].css` for page-specific styles
+2. **HTML Linking**: Add `<link href="../css/[page-name].css" rel="stylesheet" type="text/css">` in HTML head
+3. **No Inline Styles**: Avoid `<style>` blocks in HTML - use external files only
+4. **Naming Convention**: Use kebab-case matching HTML filename
+
+**File Organization:**
+```
+css/
+├── normalize.css (base reset)
+├── components.css (reusable components)
+├── gptp.css (main site styles)
+├── image-quick-use.css (page-specific)
+└── [new-page].css (future additions)
+```
+
+**Implementation Benefits:**
+- Cleaner HTML markup
+- Better browser caching
+- Easier maintenance
+- Consistent with site architecture
+- Improved performance
+
 ## Code Patterns
 
 **Service Link Structure:**

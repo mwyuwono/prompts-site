@@ -77,6 +77,32 @@ npm run build        # Build for production
 - Avoid editing `css/normalize.css` (CSS reset)
 - Use targeted CSS selectors for service-specific styling
 
+## CSS Organization
+
+**IMPORTANT: Separate CSS Files for New Pages**
+When creating new prompt pages, always follow this pattern:
+
+1. **Create dedicated CSS file**: Place page-specific styles in `prompts-site-webflow-export/css/[page-name].css`
+2. **Link in HTML head**: Add `<link href="../css/[page-name].css" rel="stylesheet" type="text/css">` after existing CSS links
+3. **No inline styles**: Never use `<style>` tags in HTML - always use external CSS files
+4. **Consistent naming**: Use kebab-case for CSS filenames matching the HTML filename
+
+**Example Structure:**
+```
+css/
+├── normalize.css (existing)
+├── components.css (existing) 
+├── gptp.css (existing)
+├── image-quick-use.css (new page styles)
+└── audio-essay.css (future page styles)
+```
+
+**Benefits:**
+- Cleaner HTML structure
+- Better caching and performance
+- Easier maintenance and updates
+- Follows site architecture patterns
+
 ## Code Patterns
 
 **Service Links**: Follow this pattern for new AI services:
