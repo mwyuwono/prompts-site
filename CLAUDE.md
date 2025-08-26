@@ -39,7 +39,14 @@ This is a static website for organizing AI prompts, built as a Webflow export wi
 
 ## Recent Changes & Fixes
 
-**Latest Updates (2025-01-20):**
+**Latest Updates (2025-08-26):**
+- ✅ Implemented modular sidebar navigation component system
+- ✅ Created centralized navigation data structure for consistency
+- ✅ Added tab switching functionality with proper state management
+- ✅ Established component-based architecture for reusable navigation
+- ✅ Added Audio Essay Generator and Image Quick-Use Prompts pages
+
+**Previous Updates (2025-01-20):**
 - ✅ Added Qwen AI service link (https://chat.qwen.ai/) to LLMs section
 - ✅ Fixed arrow visibility issue for service links (Perchance, Qwen)
 - ✅ Resolved Vercel deployment Rollup dependency conflicts
@@ -48,6 +55,7 @@ This is a static website for organizing AI prompts, built as a Webflow export wi
 **Known UI Fixes:**
 - Service link arrows now display correctly using targeted CSS selectors
 - Material Icons arrows work properly on desktop (hidden on mobile per design)
+- Sidebar component maintains consistent navigation across all pages
 
 ## Development Workflow
 
@@ -102,6 +110,51 @@ css/
 - Better caching and performance
 - Easier maintenance and updates
 - Follows site architecture patterns
+
+## Sidebar Navigation Component System
+
+**Component Architecture**: The site uses a modular sidebar component system to maintain navigation consistency across all 35 pages.
+
+**Core Files:**
+- `js/navigation-data.js` - Single source of truth for all navigation links
+- `js/sidebar-component.js` - SidebarNavigation class for rendering and functionality  
+- `js/sidebar-loader.js` - Auto-detection, initialization, and fallback handling
+
+**Implementation Pattern:**
+```html
+<!-- In HTML head section -->
+<script src="../js/navigation-data.js" type="text/javascript"></script>
+<script src="../js/sidebar-component.js" type="text/javascript"></script>
+<script src="../js/sidebar-loader.js" type="text/javascript"></script>
+
+<!-- In HTML body section -->
+<body data-current-page="page-name.html" data-current-section="personal">
+  <div class="left-panel">
+    <div id="sidebar-container"></div>
+  </div>
+</body>
+```
+
+**Key Features:**
+- **Auto-detection**: Automatically detects current page and section from data attributes or URL
+- **Tab switching**: Personal/Work tabs with proper show/hide functionality
+- **Path resolution**: Smart href building based on current page location (personal/, work/, root)
+- **Current page highlighting**: Applies `w--current` class to active navigation link
+- **Error handling**: Fallback system prevents navigation failure if component loading fails
+- **Progressive enhancement**: Maintains existing functionality while adding new features
+
+**Adding New Prompts:**
+1. Add entry to appropriate section in `navigation-data.js`
+2. Create HTML page with proper data attributes
+3. Include component scripts in head section
+4. Component automatically renders with new navigation
+
+**Benefits:**
+- Eliminates navigation inconsistencies across pages
+- Single source of truth for all navigation links
+- Automatic current page detection and highlighting
+- Consistent tab switching behavior site-wide
+- Easy maintenance - update once, applies everywhere
 
 ## Code Patterns
 
