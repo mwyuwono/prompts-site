@@ -104,8 +104,12 @@ function enableTextEditing() {
   });
 </script>
   <script src="edit-text.js"></script>
+  <!-- Sidebar Component Scripts -->
+  <script src="../js/navigation-data.js" type="text/javascript"></script>
+  <script src="../js/sidebar-component.js" type="text/javascript"></script>
+  <script src="../js/sidebar-loader.js" type="text/javascript"></script>
 </head>
-<body>
+<body data-current-page="work-email-reply.html" data-current-section="work">
   <div class="page-wrap">
     <div class="menu-control">
       <div class="icon-expand-mobile-menu"></div>
@@ -115,92 +119,9 @@ function enableTextEditing() {
         <div class="close-element r"></div>
       </div>
     </div>
-    <div class="left-panel">
-      <div class="sidebar">
-        <div class="mobile-prompt-controls">
-          <div class="icon-close-menu"></div>
-          <div class="prompts-text">Prompts</div>
-        </div>
-        <div class="sidebar-all-content-wrap">
-          <div class="sidebar-section-head">
-            <div class="tab personal">
-              <div>Personal <span class="mobile-hide">prompts</span></div>
-            </div>
-            <div class="tab work">
-              <div>Work<span class="mobile-hide"> prompts</span></div>
-            </div>
-          </div>
-          <div class="sidebar-content personal">
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">Utilities</div>
-              <div class="sidebar-links-container">
-                <a href="../personal/prompt-improver.html" class="sidebar-link">Prompt improver</a>
-                <a href="../personal/copy-editor.html" class="sidebar-link">Proofreader</a>
-                <a href="../work/meeting-notes.html" class="sidebar-link">Meeting notes</a>
-                <a href="../personal/sell-something.html" class="sidebar-link">Sell something</a>
-                <a href="../personal/shipping-antiques.html" class="sidebar-link">Request shipping quote</a>
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">Research</div>
-              <div class="sidebar-links-container">
-                <a href="../personal/quiz-me.html" class="sidebar-link">Expertise test</a>
-                <a href="../personal/new-topic.html" class="sidebar-link">Learn any topic</a>
-                <a href="../personal/sourcing-products-materials.html" class="sidebar-link">Research products &amp; materials</a>
-                <a href="../personal/antiques.html" class="sidebar-link">Antiques Expert</a>
-                <a href="../personal/restaurant-finder.html" class="sidebar-link">Restaurant finder</a>
-                <a href="../personal/lodging-finder.html" class="sidebar-link">Accommodations finder</a>
-                <a href="../personal/travel-dates-timeline.html" class="sidebar-link">Visualize trip timeline</a>
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">Creativity</div>
-              <div class="sidebar-links-container">
-                <a href="../personal/mj.html" class="sidebar-link">Midjourney visual prompts</a>
-                <a href="../personal/midjourney-prompts.html" class="sidebar-link">Midjourney text prompts</a>
-                <a href="../personal/project-guidance.html" class="sidebar-link">Project how-to guide</a>
-                <a href="../personal/architecture-critic.html" class="sidebar-link">Architecture critic</a>
-              </div>
-            </div>
-          </div>
-          <div class="sidebar-content work">
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">Banking</div>
-              <div class="sidebar-links-container">
-                <a href="../work/general-banking.html" class="sidebar-link">General design request</a>
-                <a href="../work/magic-use-case.html" class="sidebar-link">MAGIC use cases</a>
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">Miscellaneous</div>
-              <div class="sidebar-links-container">
-                <a href="../work/work-email-reply.html" aria-current="page" class="sidebar-link w--current">E-mail reply</a>
-                <a href="../work/project-summary.html" class="sidebar-link">Project impact summary</a>
-                <a href="../work/jira.html" class="sidebar-link">Jira task</a>
-                <a href="../work/impact.html" class="sidebar-link">Self assessment</a>
-                <a href="../work/assessments.html" class="sidebar-link">Colleague assessment</a>
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-section">
-                <div class="sidebar-category-head">Prototyping</div>
-                <div class="sidebar-links-container">
-                  <a href="../work/replay-user-inputs.html" class="sidebar-link">jQuery: Replay user inputs</a>
-                  <a href="../work/webflow.html" class="sidebar-link">Webflow code assistance</a>
-                  <a href="../work/data-viz.html" class="sidebar-link">Interactive charts</a>
-                  <a href="../work/bar-chart-sizing.html" class="sidebar-link">Bar charts: Calculate pixel heights</a>
-                </div>
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-category-head">E.H.C.</div>
-              <div class="sidebar-links-container">
-                <a href="../work/eh-emails.html" class="sidebar-link">Email newsletters</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <div class="left-panel">
+      <!-- Sidebar rendered by component system -->
+      <div id="sidebar-container"></div>
     </div>
     <div class="right-panel">
       <div id="Examples" class="example-section-wrap">
