@@ -175,4 +175,47 @@ function initializeSidebar() {
   // Create and render sidebar
   const sidebar = new SidebarNavigation(currentPage, currentSection);
   sidebarContainer.innerHTML = sidebar.render();
+  
+  // Initialize tab switching functionality
+  initializeTabSwitching(currentSection);
+}
+
+/**
+ * Initialize tab switching functionality
+ */
+function initializeTabSwitching(currentSection) {
+  const personalTab = document.querySelector('.tab.personal');
+  const workTab = document.querySelector('.tab.work');
+  const personalContent = document.querySelector('.sidebar-content.personal');
+  const workContent = document.querySelector('.sidebar-content.work');
+  
+  if (!personalTab || !workTab || !personalContent || !workContent) return;
+  
+  // Set initial active state based on current section
+  if (currentSection === 'work') {
+    workTab.classList.add('w--current');
+    personalTab.classList.remove('w--current');
+    workContent.style.display = 'block';
+    personalContent.style.display = 'none';
+  } else {
+    personalTab.classList.add('w--current');
+    workTab.classList.remove('w--current');
+    personalContent.style.display = 'block';
+    workContent.style.display = 'none';
+  }
+  
+  // Add click handlers for tab switching
+  personalTab.addEventListener('click', function() {
+    personalTab.classList.add('w--current');
+    workTab.classList.remove('w--current');
+    personalContent.style.display = 'block';
+    workContent.style.display = 'none';
+  });
+  
+  workTab.addEventListener('click', function() {
+    workTab.classList.add('w--current');
+    personalTab.classList.remove('w--current');
+    workContent.style.display = 'block';
+    personalContent.style.display = 'none';
+  });
 }
