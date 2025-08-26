@@ -1,0 +1,155 @@
+/**
+ * Unified Hamburger Menu Component Styles
+ * Single, consistent hamburger menu for all pages
+ */
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+  display: none; /* Hidden on desktop by default */
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background-color: var(--white, #ffffff);
+  border: none;
+  border-radius: 100%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.hamburger-menu:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--black, #000000);
+  transition: transform 0.2s ease;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Open state styling */
+.hamburger-menu.is-open {
+  background-color: var(--white, #ffffff);
+}
+
+.hamburger-menu.is-open .hamburger-icon {
+  transform: rotate(90deg);
+  color: #333;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 767px) {
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  /* Hide original menu controls on mobile */
+  .menu-control {
+    display: none !important;
+  }
+}
+
+/* Tablet adjustments */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+    top: 24px;
+    left: 24px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .hamburger-icon {
+    font-size: 18px;
+  }
+  
+  /* Hide original menu controls on tablet */
+  .menu-control {
+    display: none !important;
+  }
+}
+
+/* Sidebar responsive behavior */
+.left-panel {
+  transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .left-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+  
+  .left-panel.is-open {
+    transform: translateX(0);
+  }
+  
+  /* Overlay when sidebar is open */
+  .page-wrap.sidebar-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+  
+  /* Adjust main content when sidebar is open */
+  .page-wrap.sidebar-open .right-panel {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+/* Remove old mobile prompt controls from sidebar */
+@media screen and (max-width: 767px) {
+  .mobile-prompt-controls {
+    display: none !important;
+  }
+}
+
+/* Accessibility improvements */
+.hamburger-menu:focus {
+  outline: 2px solid #007cba;
+  outline-offset: 2px;
+}
+
+.hamburger-menu:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hamburger-menu {
+  animation: fadeIn 0.2s ease-out;
+}

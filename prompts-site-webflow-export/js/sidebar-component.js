@@ -17,10 +17,6 @@ class SidebarNavigation {
   render() {
     return `
       <div class="sidebar">
-        <div class="mobile-prompt-controls">
-          <div class="icon-close-menu"></div>
-          <div class="prompts-text">Prompts</div>
-        </div>
         <div class="sidebar-all-content-wrap">
           ${this.renderSectionTabs()}
           ${this.renderPersonalContent()}
