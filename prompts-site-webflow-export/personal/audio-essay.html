@@ -2,9 +2,9 @@
 <html data-wf-page="64b19ae2718998f26afa62ad" data-wf-site="6448171057d708e03d845245">
 <head>
   <meta charset="utf-8">
-  <title>Learn a new topic</title>
-  <meta content="Learn a new topic" property="og:title">
-  <meta content="Learn a new topic" property="twitter:title">
+  <title>Audio Essay Generator</title>
+  <meta content="Audio Essay Generator" property="og:title">
+  <meta content="Audio Essay Generator" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="../css/normalize.css" rel="stylesheet" type="text/css">
   <link href="../css/components.css" rel="stylesheet" type="text/css">
@@ -78,37 +78,11 @@ function enableTextEditing() {
     animate();
   }
 </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const copyBtn = document.querySelector('.copy-btn');
-    const form = copyBtn.closest('form');
-    async function copyToClipboard(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        alert('Content copied to clipboard!');
-      } catch (err) {
-        console.error('Failed to copy text: ', err);
-      }
-    }
-    copyBtn.addEventListener('click', function() {
-      let content = '';
-      form.querySelectorAll('label, input, textarea, .w-richtext').forEach(el => {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          content += el.value + '\n';
-        } else {
-          content += el.textContent + '\n';
-        }
-      });
-      copyToClipboard(content);
-    });
-  });
-</script>
-  <script src="edit-text.js"></script>
 </head>
 <body>
   <div class="page-wrap">
     <div class="menu-control">
-      <div class="icon-expand-mobile-menu"></div>
+      <div class="icon-expand-mobile-menu"></div>
       <div class="prompts-text">Prompts</div>
       <div class="close-btn">
         <div class="close-element l"></div>
@@ -118,7 +92,7 @@ function enableTextEditing() {
     <div class="left-panel">
       <div class="sidebar">
         <div class="mobile-prompt-controls">
-          <div class="icon-close-menu"></div>
+          <div class="icon-close-menu"></div>
           <div class="prompts-text">Prompts</div>
         </div>
         <div class="sidebar-all-content-wrap">
@@ -145,7 +119,7 @@ function enableTextEditing() {
               <div class="sidebar-category-head">Research</div>
               <div class="sidebar-links-container">
                 <a href="../personal/quiz-me.html" class="sidebar-link">Expertise test</a>
-                <a href="../personal/new-topic.html" aria-current="page" class="sidebar-link w--current">Learn any topic</a>
+                <a href="../personal/new-topic.html" class="sidebar-link">Learn any topic</a>
                 <a href="../personal/sourcing-products-materials.html" class="sidebar-link">Research products &amp; materials</a>
                 <a href="../personal/antiques.html" class="sidebar-link">Antiques Expert</a>
                 <a href="../personal/restaurant-finder.html" class="sidebar-link">Restaurant finder</a>
@@ -160,7 +134,7 @@ function enableTextEditing() {
                 <a href="../personal/midjourney-prompts.html" class="sidebar-link">Midjourney text prompts</a>
                 <a href="../personal/project-guidance.html" class="sidebar-link">Project how-to guide</a>
                 <a href="../personal/architecture-critic.html" class="sidebar-link">Architecture critic</a>
-                <a href="../personal/audio-essay.html" class="sidebar-link">Audio Essay Generator</a>
+                <a href="../personal/audio-essay.html" aria-current="page" class="sidebar-link w--current">Audio Essay Generator</a>
               </div>
             </div>
           </div>
@@ -224,7 +198,7 @@ function enableTextEditing() {
           </div>
           <div data-w-id="924aa154-11da-880c-f3f5-8b080d169af3" data-animation-type="lottie" data-src="../documents/Animation---1719531472609.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="2"></div>
         </div>
-        <div class="mobile-menu-icon"></div>
+        <div class="mobile-menu-icon"></div>
         <div class="services-dropdown-trigger">
           <a href="https://chat.openai.com/?model=gpt-4-code-interpreter" target="_blank" class="universal-heading-icon gpt w-inline-block">
             <div class="tooltip">
@@ -239,7 +213,7 @@ function enableTextEditing() {
             <div class="icon home"><img src="../images/claude-logo.svg" loading="eager" alt="ChatGPT Logo" class="ai-icon"></div>
           </a>
           <div class="services-dropdown">
-            <div class="icon dropdown-trigger"></div>
+            <div class="icon dropdown-trigger"></div>
             <div class="services-popup-menu">
               <div class="ai-menu-heading">Services</div>
               <div class="link-list">
@@ -247,7 +221,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">Claude</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -255,7 +229,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">ChatGPT</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -263,7 +237,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">Perplexity</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -271,7 +245,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">Copilot</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -279,7 +253,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">Gemini</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -287,7 +261,7 @@ function enableTextEditing() {
                   <div class="div-block-15 block-link-ctnr">
                     <div class="div-block-17">
                       <div class="block-link-title">Midjourney</div>
-                      <div class="block-link-arrow"></div>
+                      <div class="block-link-arrow"></div>
                     </div>
                   </div>
                 </a>
@@ -300,14 +274,14 @@ function enableTextEditing() {
       <div style="-webkit-transform:translate3d(0, 300px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 300px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 300px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 300px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="prompt-body w-form">
         <div class="div-block-3">
           <div class="prompt-header">
-            <h1>Learn a new topic</h1>
+            <h1>Audio Essay Generator</h1>
             <div class="header-description">
-              <div>Provides an overview of any topic, followed by resources for deeper learning.</div>
+              <div>Creates detailed, narrative-style essays optimized for audio listening with proper pronunciation and flow.</div>
             </div>
             <div class="prompt-overview-trigger">
               <div class="overview-trigger-text show">Show prompt overview</div>
               <div class="overview-trigger-text hide">Hide prompt overview</div>
-              <div class="text-block-7"></div>
+              <div class="text-block-7"></div>
             </div>
             <div class="prompt-overview-wrap">
               <div class="prompt-overview">
@@ -315,24 +289,21 @@ function enableTextEditing() {
                   <div class="section-heading">You</div>
                   <ol role="list" class="instructions-section-content">
                     <li class="instructions-list-item">
-                      <div>Submit a topic to ChatGPT</div>
+                      <div>Enter any topic you want an audio essay written about</div>
                     </li>
                   </ol>
                 </div>
                 <div class="prompt-overview-section-wrap">
-                  <div class="section-heading">GPT4</div>
+                  <div class="section-heading">AI</div>
                   <ol role="list" class="instructions-section-content">
                     <li class="instructions-list-item">
-                      <div>Provides a brief overview of the topic</div>
+                      <div>Creates a 3,000-word narrative essay structured for audio listening</div>
                     </li>
                     <li class="instructions-list-item">
-                      <div>Lists leading experts</div>
+                      <div>Uses audio-friendly language (no symbols, spelled-out numbers)</div>
                     </li>
                     <li class="instructions-list-item">
-                      <div>Provides a reading list</div>
-                    </li>
-                    <li class="instructions-list-item">
-                      <div>Offers guidance on how to discuss the topic at a cocktail party</div>
+                      <div>Includes references section and learning extensions</div>
                     </li>
                   </ol>
                 </div>
@@ -342,7 +313,7 @@ function enableTextEditing() {
         </div>
         <form id="wf-form-Submit" name="wf-form-Submit" data-name="Submit" method="get" class="form" data-wf-page-id="64b19ae2718998f26afa62ad" data-wf-element-id="0c90749a-1460-4529-e96f-6c505437a86f">
           <div class="field-element-wrap">
-            <div class="field-label-lockup"><label for="field-3" class="field-label-2">Topic</label></div><textarea id="field" name="field" maxlength="5000" data-name="Field" placeholder="Choose any topic" class="field w-input"></textarea>
+            <div class="field-label-lockup"><label for="field-3" class="field-label-2">Topic</label></div><textarea id="field" name="field" maxlength="5000" data-name="Field" placeholder="Enter the topic for your audio essay" class="field w-input"></textarea>
           </div>
           <div class="div-block-9"><input type="submit" data-wait="Please wait..." class="page-controls copy w-button" value="Copy to clipboard">
             <div class="edit-button-container">
@@ -355,19 +326,48 @@ function enableTextEditing() {
             </div>
           </div>
           <div class="prompt-text-class w-richtext">
-            <p>‍</p>
-            <h4>Context:</h4>
-            <p>I want to deepen my understanding of the aforementioned topic, and you are an expert in this field.</p>
-            <h4>Instructions:</h4>
-            <p>In your response, use <strong>Markup syntax</strong> for better readability and structure.</p>
+            <p><strong>Topic:</strong> (insert topic here)</p>
+            <p>Write a three-thousand-word essay on the topic above. Structure the essay entirely in paragraphs, avoiding lists, bullet points, or outline formatting. The goal is to create a continuous narrative suitable for listening as if it were a chapter of a book read aloud by a professional narrator.</p>
+            <p><strong>Style and Language Rules:</strong></p>
             <ul role="list">
-              <li><strong>Summary</strong>: Start by providing a brief overview of the topic. Your summary should highlight the latest thoughts, findings, or theories related to this subject.</li>
-              <li><strong>Leading Figures</strong>: Please list and describe the leading thinkers or experts in this domain, their contributions, and why they are important.</li>
-              <li><strong>Reading List</strong>: Recommend a comprehensive reading list (including books, articles, papers, etc.) that would facilitate gaining a scholarly understanding of the topic.</li>
+              <li>Spell out numbers and dates fully. For example:
+                <ul role="list">
+                  <li>Instead of "1st," write "first."</li>
+                  <li>Instead of "1950s," write "nineteen fifties."</li>
+                  <li>Instead of "2024," write "twenty twenty-four."</li>
+                  <li>Instead of "5%," write "five percent."</li>
+                  <li>Instead of "24/7," write "twenty-four hours a day, seven days a week."</li>
+                </ul>
+              </li>
+              <li>Avoid abbreviations and acronyms unless they are spelled out in full (e.g., write "McKinsey and Company" instead of "McKinsey & Co.").</li>
+              <li>Do not use symbols (%, $, &). Always write the words out.</li>
+              <li>Avoid inline references such as "(Smith, 1999)" or "[1]". Instead, all references and sources should be collected at the end of the essay in a concise "References" section.</li>
+              <li>Write in complete sentences, maintaining fluid transitions between ideas.</li>
+              <li>Favor rich descriptive language that aids the ear. Repetition for clarity is acceptable if it improves oral comprehension.</li>
             </ul>
-            <p>After addressing the above, imagine that I&#x27;ve met an expert on the subject at a cocktail party.</p>
+            <p><strong>Audience and Depth:</strong></p>
             <ul role="list">
-              <li><strong>Social Interaction Guide</strong>: Provide a set of potential conversation points, questions to ask, and relevant pieces of information that would allow me to engage in an intelligent and meaningful conversation about the topic.</li>
+              <li>Write for a highly intelligent general audience that expects both accuracy and originality. Provide insights that go beyond common knowledge and surface-level facts.</li>
+              <li>Incorporate historical, cultural, and technical context where relevant to deepen understanding.</li>
+              <li>Use metaphors or analogies sparingly and only if they improve clarity.</li>
+            </ul>
+            <p><strong>Factual Rigor:</strong></p>
+            <ul role="list">
+              <li>Verify claims with precise supporting details. For example, if you write "the Sumner Tunnel was once the deepest underwater tunnel in the world," also state its depth in feet and meters, the year it was completed, and the context of what surpassed it.</li>
+              <li>Where possible, provide exact figures, dates, names, or dimensions to anchor the narrative in concrete fact.</li>
+              <li>Do not leave generalizations unsupported. For instance, if you say something was "transformative," explain what specific change it caused, how it was measured, and what its consequences were.</li>
+              <li>Ensure balance: acknowledge counterpoints or differing interpretations when relevant, and explain why one perspective became dominant.</li>
+            </ul>
+            <p><strong>Tone:</strong></p>
+            <ul role="list">
+              <li>Aim for the cadence of a long-form essay or nonfiction book chapter. Think of the style of Bill Bryson or Alan Taylor: approachable, informed, and precise.</li>
+              <li>Strive for clarity without oversimplifying.</li>
+              <li>Keep the prose natural for the ear; avoid overly dense academic phrasing.</li>
+            </ul>
+            <p><strong>Conclusion and Learning Extensions:</strong></p>
+            <ul role="list">
+              <li>At the end of the essay, provide a short "References" section with the sources used.</li>
+              <li>After the references, concisely state three areas for deeper learning. These should not be remedial but rather fascinating and informative avenues for a curious and well-studied reader to pursue further.</li>
             </ul>
           </div>
         </form>
@@ -402,6 +402,7 @@ function enableTextEditing() {
   <script>
 document.addEventListener('DOMContentLoaded', function() {
   const copyButton = document.querySelector('input[type="submit"]');
+  
   function copyToClipboard(text) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -410,57 +411,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.execCommand('copy');
     document.body.removeChild(textarea);
   }
+  
   function getFormData() {
-    const formFields = document.querySelectorAll('input, textarea');
-    let formData = '';
-    formFields.forEach(field => {
-      if (field.type !== 'submit') {
-        const label = field.previousElementSibling;
-        formData += (label ? label.innerText : field.name) + ': ' + field.value + '\n';
-      }
-    });
-    const richText = document.querySelector('.w-richtext');
-    formData += richText ? richText.innerText : '';
-    return formData;
+    const topicInput = document.querySelector('#field');
+    const richText = document.querySelector('.prompt-text-class');
+    let promptText = richText ? richText.innerText : '';
+    
+    // Replace the placeholder with the actual topic
+    const topic = topicInput.value || '[Topic not specified]';
+    promptText = promptText.replace('(insert topic here)', topic);
+    
+    return promptText;
   }
+  
   copyButton.addEventListener('click', function(event) {
     event.preventDefault();
     const formData = getFormData();
     copyToClipboard(formData);
+    
     // Save original styles and text
     const originalText = copyButton.value;
     const originalBackgroundColor = copyButton.style.backgroundColor;
     const originalTextColor = copyButton.style.color;
+    
     // Change styles and text to indicate 'Copied!'
     copyButton.value = 'Copied!';
     copyButton.style.backgroundColor = 'sienna';
     copyButton.style.color = 'white';
+    
     // Revert styles and text after 2 seconds
     setTimeout(() => {
       copyButton.value = originalText;
       copyButton.style.backgroundColor = originalBackgroundColor;
       copyButton.style.color = originalTextColor;
     }, 2000);
-  });
-});
-</script>
-  <script>
-$(document).ready(function(){
-  // Check if the cookie is set
-  if (document.cookie.indexOf('dismissed=true') !== -1) {
-    // If the cookie is found, hide the instructions immediately
-    $('#instructions').hide();
-  }
-  // Attach a click event handler to the dismiss button
-  $('#dismiss-forever').click(function() {
-    // Set a delay of 0.6 seconds (600 ms), then hide the instructions
-    setTimeout(function(){
-      $('#instructions').fadeOut('slow');
-    }, 600);
-    // Set a cookie to remember that the instructions were dismissed
-    var date = new Date();
-    date.setFullYear(date.getFullYear() + 1); // Cookie expires in 1 year
-    document.cookie = 'dismissed=true; expires=' + date.toUTCString() + '; path=/';
   });
 });
 </script>
