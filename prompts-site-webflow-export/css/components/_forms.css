@@ -106,3 +106,16 @@
   margin-bottom: 0;
 }
 
+
+
+/* === Extracted from gptp.css === */
+
+
+
+.field:focus {
+  border-width: 3px;
+  border-color: var(--highlight);
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 9px 8px #073429c4;
+}
