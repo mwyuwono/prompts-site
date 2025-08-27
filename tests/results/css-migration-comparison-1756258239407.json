@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-08-27T01:30:39.406Z",
-  "passed": true,
-  "issues": [],
-  "metrics": {
-    "cssRuleCountDiff": 1,
-    "fileSizeDiff": 495
-  }
-}

@@ -17,7 +17,9 @@
     "css-migration:migrate": "./scripts/migration-safety.sh migrate",
     "css-migration:status": "./scripts/migration-safety.sh status",
     "css-migration:backup": "./scripts/migration-safety.sh backup",
-    "css-migration:rollback": "./scripts/migration-safety.sh rollback"
+    "css-migration:rollback": "./scripts/migration-safety.sh rollback",
+    "test:quality": "node tests/migration-quality-test.js",
+    "test:migration": "npm run test:quality && echo 'Quality tests complete! Open tests/browser-migration-test.html for visual testing'"
   },
   "keywords": [],
   "author": "",

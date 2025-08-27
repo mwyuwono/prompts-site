@@ -118,6 +118,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .sidebar {
+    background-color: white;
+  }
+  
+  .sidebar-section-head {
+    background-color: white;
+  }
+  
   #sidebar-container > div > div > div.sidebar-section-head {
     background-color: white;
   }
@@ -402,6 +410,7 @@
     margin-top: 0;
     position: fixed;
     inset: 0 0% 0%;
+    background-color: white;
   }
 
   .sidebar-content {
@@ -447,6 +456,7 @@
     align-items: stretch;
     width: 100%;
     padding: 16px 96px 16px 80px;
+    background-color: white;
   }
 
   .sidebar-category-head {
