@@ -34,6 +34,7 @@
 }
 
 .sidebar {
+  background-color: var(--main-background);
   border-right: 1px #000;
   flex-direction: column;
   flex: none;
