@@ -3126,6 +3126,10 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     padding: 16px 96px 16px 80px;
   }
 
+  #sidebar-container > div > div > div.sidebar-section-head {
+    background-color: white;
+  }
+
   .sidebar-category-head {
     text-align: left;
     flex-direction: column;
