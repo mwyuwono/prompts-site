@@ -104,10 +104,10 @@ class HamburgerMenu {
     if (!iconElement) return;
 
     if (this.isOpen) {
-      iconElement.innerHTML = '✕'; // Close icon
+      iconElement.innerHTML = 'close'; // Material Icons close icon
       iconElement.setAttribute('aria-label', 'Close menu');
     } else {
-      iconElement.innerHTML = '☰'; // Hamburger icon
+      iconElement.innerHTML = 'menu'; // Material Icons hamburger icon
       iconElement.setAttribute('aria-label', 'Open menu');
     }
   }

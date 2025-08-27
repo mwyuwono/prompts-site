@@ -10,7 +10,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp -r prompts-site-webflow-export/personal dist/personal && cp -r prompts-site-webflow-export/work dist/work && cp -r prompts-site-webflow-export/css dist/css && cp -r prompts-site-webflow-export/images dist/images && cp -r prompts-site-webflow-export/js dist/js && cp -r prompts-site-webflow-export/documents dist/documents",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-migration:analyze": "node scripts/extract-component.js analyze",
+    "css-migration:test-before": "node tests/css-migration-test.js before",
+    "css-migration:test-after": "node tests/css-migration-test.js after",
+    "css-migration:migrate": "./scripts/migration-safety.sh migrate",
+    "css-migration:status": "./scripts/migration-safety.sh status",
+    "css-migration:backup": "./scripts/migration-safety.sh backup",
+    "css-migration:rollback": "./scripts/migration-safety.sh rollback"
   },
   "keywords": [],
   "author": "",
