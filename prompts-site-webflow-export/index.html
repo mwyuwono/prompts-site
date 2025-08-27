@@ -53,17 +53,21 @@ function enableTextEditing() {
     const popupNotification = document.querySelector(".popup-notification");
     const closeButton = document.querySelector(".close-popup");
     const visitCount = parseInt(localStorage.getItem("visitCount"), 10) || 0;
-    if (visitCount % 4 === 3) {
+    
+    // Only show popup if elements exist
+    if (popupNotification && closeButton && visitCount % 4 === 3) {
       fadeInAndScaleUp(popupNotification, 500, function() {
         popupNotification.style.display = "block";
       });
     }
     localStorage.setItem("visitCount", visitCount + 1);
-    closeButton.addEventListener("click", function () {
-      fadeOutAndMoveDown(popupNotification, 500, 200, "easeOut", function() {
-        popupNotification.style.display = "none";
+    if (closeButton) {
+      closeButton.addEventListener("click", function () {
+        fadeOutAndMoveDown(popupNotification, 500, 200, "easeOut", function() {
+          popupNotification.style.display = "none";
+        });
       });
-    });
+    }
   });
   function fadeInAndScaleUp(element, duration, callback) {
     element.style.display = "block";
