@@ -1,0 +1,121 @@
+.form {
+  flex-direction: column;
+  flex: 1;
+  margin-top: 32px;
+  display: flex;
+}
+
+.field {
+  background-color: var(--field-background);
+  box-shadow: none;
+  color: var(--black);
+  border: 8px solid #fff0;
+  border-radius: 16px;
+  flex-direction: column;
+  flex: none;
+  justify-content: flex-start;
+  min-height: 100px;
+  margin-bottom: 24px;
+  padding: 16px;
+  font-family: Playfair Display, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+  transition: box-shadow .2s, background-color .23s ease-in-out;
+  display: flex;
+}
+
+.field:focus {
+  border-width: 3px;
+  border-color: var(--highlight);
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 9px 8px #073429c4;
+}
+
+.field::placeholder {
+  color: #08a054;
+  font-family: Cousine, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.field.tall {
+  border-width: 4px;
+  min-height: 120px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.field.extra-tall {
+  border-width: 4px;
+  height: 300px;
+  min-height: 200px;
+  max-height: 70vh;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.field.standard {
+  background-color: #ffffff73;
+}
+
+.field.standard::placeholder {
+  color: #0000008f;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.field.long-form {
+  border-width: 4px;
+  min-height: 300px;
+}
+
+.field.medium-form {
+  min-height: 200px;
+}
+
+.field.short {
+  height: 60px;
+  min-height: 0;
+  padding-top: 8px;
+}
+
+.field-label-2 {
+  margin-bottom: 8px;
+  font-family: Cousine, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.field-label-2.helper {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.field-label-2.with-helper {
+  margin-bottom: 0;
+}
+
+
+
+/* === Extracted from gptp.css === */
+
+
+
+.field:focus {
+  border-width: 3px;
+  border-color: var(--highlight);
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 9px 8px #073429c4;
+}
