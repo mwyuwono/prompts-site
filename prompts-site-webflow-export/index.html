@@ -43,6 +43,16 @@ function enableTextEditing() {
       
       link.addEventListener('load', () => {
         console.log(`✅ CSS Loaded: ${link.href.split('/').pop()}`);
+        // Test if CSS actually has content
+        fetch(link.href)
+          .then(response => response.text())
+          .then(css => {
+            console.log(`📄 CSS Content length for ${link.href.split('/').pop()}:`, css.length, 'chars');
+            if (css.length < 100) {
+              console.warn(`⚠️ CSS file seems empty or very small:`, css.substring(0, 200));
+            }
+          })
+          .catch(err => console.error(`❌ Failed to fetch CSS content:`, err));
       });
       
       link.addEventListener('error', () => {
