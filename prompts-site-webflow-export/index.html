@@ -25,7 +25,31 @@ function enableTextEditing() {
 }
 </script>
   <script>
+  console.log('🔍 CSS Debug: Starting page load at', new Date().toISOString());
+  console.log('🔍 CSS Debug: Loading CSS files...', {
+    normalize: 'css/normalize.css',
+    components: 'css/components.css', 
+    gptp: 'css/gptp.css',
+    hamburger: 'css/hamburger-menu.css'
+  });
+  
   document.addEventListener("DOMContentLoaded", function () {
+    console.log('🔍 CSS Debug: DOM loaded, checking CSS files...');
+    
+    // Check if CSS files are loading
+    const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+    stylesheets.forEach((link, index) => {
+      console.log(`🔍 CSS Debug: Stylesheet ${index + 1}:`, link.href);
+      
+      link.addEventListener('load', () => {
+        console.log(`✅ CSS Loaded: ${link.href.split('/').pop()}`);
+      });
+      
+      link.addEventListener('error', () => {
+        console.error(`❌ CSS Failed: ${link.href.split('/').pop()}`);
+      });
+    });
+    
     const popupNotification = document.querySelector(".popup-notification");
     const closeButton = document.querySelector(".close-popup");
     const visitCount = parseInt(localStorage.getItem("visitCount"), 10) || 0;
