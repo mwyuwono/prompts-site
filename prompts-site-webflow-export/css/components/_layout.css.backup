@@ -1,0 +1,1836 @@
+/* Layout Component Styles */
+/* Auto-generated - duplicates removed */
+
+.egroup-wrap {
+  background-color: var(--main-background);
+  
+  
+  border-radius: 20px;
+  
+  
+  flex-flow: column;
+  
+  
+  flex: none;
+  
+  
+  place-content: flex-start;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: stretch;
+  
+  
+  max-width: 100%;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 16px;
+  
+  
+  line-height: 1.5em;
+  
+  
+  transition: all .2s;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.egroup-wrap.instructions {
+  grid-column-gap: 8px;
+  
+  
+  grid-row-gap: 8px;
+  
+  
+  background-color: var(--secondary-highlight);
+  
+  
+  flex-flow: wrap;
+  
+  
+  place-content: flex-end flex-start;
+  
+  
+  align-items: flex-end;
+  
+  
+  transition: all .2s;
+;
+}
+
+.egroup-wrap.operators {
+  flex-flow: column;
+  
+  
+  place-content: flex-start;
+  
+  
+  align-items: flex-start;
+  
+  
+  transition: all .2s;
+  
+  
+  display: flex;
+;
+}
+
+.example-section-wrap.with-header-image {
+  padding-top: 0;
+  
+  
+  padding-left: 0;
+  
+  
+  padding-right: 0;
+  
+  
+  display: none;
+;
+}
+
+.manual-legend-wrap {
+  grid-column-gap: 20px;
+  
+  
+  grid-row-gap: 8px;
+  
+  
+  flex-wrap: wrap;
+  
+  
+  align-items: flex-end;
+  
+  
+  display: flex;
+;
+}
+
+.resources-wrap {
+  flex-wrap: wrap;
+  
+  
+  align-self: stretch;
+  
+  
+  display: flex;
+;
+}
+
+.return-to-start-wrap {
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: stretch;
+  
+  
+  display: flex;
+;
+}
+
+.field-element-wrap {
+  flex-direction: column;
+  
+  
+  margin-bottom: 8px;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.input-wrap {
+  flex-direction: column;
+  
+  
+  flex: 1;
+  
+  
+  align-self: stretch;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  display: flex;
+;
+}
+
+.w-layout-layout {
+  grid-row-gap: 20px;
+  
+  
+  grid-column-gap: 20px;
+  
+  
+  grid-auto-columns: 1fr;
+  
+  
+  justify-content: center;
+  
+  
+  padding: 20px;
+;
+}
+
+.w-layout-cell {
+  flex-direction: column;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: flex-start;
+  
+  
+  display: flex;
+;
+}
+
+.w-layout-hflex {
+  flex-direction: row;
+  
+  
+  align-items: flex-start;
+  
+  
+  display: flex;
+;
+}
+
+.w-layout-vflex {
+  flex-direction: column;
+  
+  
+  align-items: flex-start;
+  
+  
+  display: flex;
+;
+}
+
+.page-wrap {
+  flex-direction: row;
+  
+  
+  width: 100%;
+  
+  
+  height: 100vh;
+  
+  
+  display: flex;
+;
+}
+
+.right-panel {
+  flex-direction: column;
+  
+  
+  flex: 1;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: center;
+  
+  
+  padding: 20px 40px 40px;
+  
+  
+  display: flex;
+  
+  
+  overflow: auto;
+;
+}
+
+.right-panel.start-page {
+  flex: 1;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: center;
+  
+  
+  padding-top: 116px;
+  
+  
+  padding-bottom: 40px;
+  
+  
+  padding-left: 40px;
+;
+}
+
+.right-panel._100vh {
+  height: 100vh;
+  
+  
+  padding-top: 72px;
+  
+  
+  position: relative;
+;
+}
+
+.left-panel {
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  align-self: stretch;
+  
+  
+  width: 32%;
+  
+  
+  height: 100vh;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.builder-column {
+  grid-column-gap: 16px;
+  
+  
+  grid-row-gap: 16px;
+  
+  
+  background-color: var(--transparent-black);
+  
+  
+  border-radius: 24px;
+  
+  
+  flex-flow: column;
+  
+  
+  flex: 1;
+  
+  
+  width: auto;
+  
+  
+  padding: 16px;
+  
+  
+  display: flex;
+;
+}
+
+.builder-column.delete {
+  grid-column-gap: 32px;
+  
+  
+  grid-row-gap: 32px;
+  
+  
+  border-radius: 24px;
+  
+  
+  align-self: flex-start;
+  
+  
+  transition: all .2s;
+  
+  
+  position: sticky;
+  
+  
+  top: 96px;
+  
+  
+  overflow: auto;
+;
+}
+
+.cell {
+  flex-direction: column;
+;
+}
+
+.cell-2 {
+  flex-wrap: wrap;
+;
+}
+
+.div-block-15 {
+  line-height: 1.5em;
+;
+}
+
+.div-block-17 {
+  flex: none;
+  
+  
+  align-items: center;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-18 {
+  flex-direction: column;
+  
+  
+  flex: 1;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-21 {
+  background-color: var(--background);
+  
+  
+  color: var(--white);
+  
+  
+  border-top-left-radius: 16px;
+  
+  
+  border-top-right-radius: 16px;
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: flex-start;
+  
+  
+  margin-bottom: -20px;
+  
+  
+  padding: 8px 16px 8px 32px;
+  
+  
+  font-family: Playfair Display, sans-serif;
+  
+  
+  font-size: 20px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 400;
+  
+  
+  line-height: 1.6em;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.div-block-22 {
+  flex: 1;
+;
+}
+
+.div-block-23 {
+  flex: none;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: flex-end;
+  
+  
+  margin-bottom: 20px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-24 {
+  flex: 1;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: center;
+  
+  
+  margin-left: 12px;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-25 {
+  align-self: stretch;
+  
+  
+  align-items: center;
+  
+  
+  margin-bottom: 8px;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-27 {
+  background-color: var(--main-background);
+  
+  
+  flex-direction: column;
+  
+  
+  justify-content: center;
+  
+  
+  padding: 24px;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-28 {
+  border-top: 1px solid #000;
+  
+  
+  flex-direction: column;
+  
+  
+  margin-top: 8px;
+  
+  
+  padding-top: 8px;
+  
+  
+  font-size: 14px;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-29 {
+  background-color: var(--highlight);
+  
+  
+  color: var(--white);
+  
+  
+  flex: 1;
+  
+  
+  padding: 16px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-3 {
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  display: flex;
+;
+}
+
+.div-block-30 {
+  background-color: var(--highlight);
+  
+  
+  width: 100%;
+  
+  
+  height: 1px;
+;
+}
+
+.div-block-31 {
+  background-color: var(--contrast-background);
+  
+  
+  border-radius: 34px;
+  
+  
+  flex: 1;
+  
+  
+  align-self: stretch;
+;
+}
+
+.div-block-4 {
+  border: 2px solid var(--highlight);
+  
+  
+  background-color: var(--secondary-highlight);
+  
+  
+  color: var(--highlight);
+  
+  
+  flex-direction: row;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: center;
+  
+  
+  padding: 16px 32px 16px 16px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 16px;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.div-block-8 {
+  font-family: Inconsolata, monospace;
+  
+  
+  font-size: 29px;
+  
+  
+  line-height: 1.5em;
+;
+}
+
+.div-block-9 {
+  grid-column-gap: 8px;
+  
+  
+  border: 1px #000;
+  
+  
+  flex-direction: row-reverse;
+  
+  
+  flex: none;
+  
+  
+  justify-content: flex-end;
+  
+  
+  align-items: flex-start;
+  
+  
+  margin-top: 0;
+  
+  
+  margin-bottom: 0;
+  
+  
+  display: flex;
+;
+}
+
+.edit-button-container {
+  text-align: center;
+  
+  
+  border-radius: 100px;
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  order: -1;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  margin-bottom: 64px;
+  
+  
+  display: flex;
+;
+}
+
+.logo-image-container {
+  z-index: 10;
+  
+  
+  border-radius: 100%;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  position: absolute;
+  
+  
+  top: auto;
+  
+  
+  bottom: auto;
+  
+  
+  right: auto;
+;
+}
+
+.qiuckstack-cell {
+  flex: 1;
+;
+}
+
+.example-section-wrap {
+  z-index: 20;
+  
+  
+  border: 16px solid var(--highlight);
+  
+  
+  background-color: var(--main-background);
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  align-items: center;
+  
+  
+  padding: 32px;
+  
+  
+  display: none;
+  
+  
+  position: fixed;
+  
+  
+  inset: 0%;
+  
+  
+  overflow: auto;
+;
+}
+
+.sidebar-all-content-wrap {
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  align-self: stretch;
+  
+  
+  padding-bottom: 24px;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.sidebar-links-container {
+  grid-row-gap: 1px;
+  
+  
+  flex-direction: column;
+  
+  
+  align-items: flex-start;
+  
+  
+  display: flex;
+;
+}
+
+.start-body-wrap {
+  border-bottom-width: 2px;
+  
+  
+  border-bottom-color: #000;
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  align-self: stretch;
+  
+  
+  display: flex;
+  
+  
+  position: relative;
+;
+}
+
+.prompt-overview-section-wrap {
+  flex-direction: column;
+  
+  
+    padding: 12px 12px 4px;
+;
+}
+
+.prompt-overview-wrap {
+  flex-direction: column;
+  
+  
+    flex: none;
+  
+  
+    display: flex;
+;
+}
+
+.example-input-content.results.wrap-anywhere {
+  overflow-wrap: anywhere;
+;
+}
+
+.link-list-wrap {
+  align-self: stretch;
+;
+}
+
+.labels-toggle-text-wrap {
+  flex: none;
+;
+}
+
+.image-3, .logo {
+  height: 64px;
+}
+
+/* === SYSTEMATIC RESTORATION - 2025-08-28 === */
+/* Added 63 missing rules from restore-layout.css */
+
+/* Missing rule #10 - .section-heading.example-heading */
+.section-heading.example-heading {
+  color: var(--black);
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: none;
+  margin-bottom: 24px;
+  font-family: Playfair Display, sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5em;
+  display: flex;
+}
+
+/* Missing rule #16 - .block-link-arrow */
+.block-link-arrow {
+  flex: 1;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-left: 8px;
+  font-family: Material Icons, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+}
+
+/* Missing rule #17 - a[href="https://perchance.org/"] .block-link-arrow:before, a[href="https://chat.qwen.ai/"] .block-link-arrow:before */
+a[href="https://perchance.org/"] .block-link-arrow:before,
+a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
+  content: "arrow_forward";
+}
+
+/* Missing rule #22 - .prompt-overview-section-wrap */
+.prompt-overview-section-wrap {
+  color: var(--black);
+  background-color: #0000000d;
+  border-radius: 16px;
+  flex-direction: row;
+  flex: 1;
+  padding: 12px 8px 0 12px;
+  display: flex;
+}
+
+/* Missing rule #42 - .builder-column.prompt */
+.builder-column.prompt {
+  position: sticky;
+  top: 72px;
+}
+
+/* Missing rule #56 - .div-block-9 */
+.div-block-9 {
+  flex: none;
+}
+
+/* Missing rule #67 - .sidebar-section */
+.sidebar-section {
+  margin-top: 24px;
+}
+
+/* Missing rule #68 - .sidebar-section-head */
+.sidebar-section-head {
+  grid-column-gap: 0px;
+    grid-row-gap: 4px;
+    flex-direction: row;
+    width: 40vw;
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+/* Missing rule #70 - .instructions-section-content */
+.instructions-section-content {
+  padding-left: 24px;
+}
+
+/* Missing rule #73 - .section-heading */
+.section-heading {
+  flex: 1;
+    margin-right: 0;
+}
+
+/* Missing rule #74 - .section-heading.example-heading */
+.section-heading.example-heading {
+  flex: none;
+    margin-top: 20px;
+}
+
+/* Missing rule #75 - .section-heading.example-heading.super */
+.section-heading.example-heading.super {
+  color: var(--main-background);
+}
+
+/* Missing rule #78 - .prompt-overview-section-wrap */
+.prompt-overview-section-wrap {
+  padding-left: 0;
+}
+
+/* Missing rule #79 - .example-section-wrap */
+.example-section-wrap {
+  border-color: var(--contrast-background);
+    background-color: var(--highlight);
+    padding: 0 0 24px;
+}
+
+/* Missing rule #80 - .examples-section-ctnr */
+.examples-section-ctnr {
+  flex-direction: column;
+    padding: 0 20px;
+}
+
+/* Missing rule #81 - .examples-section-ctnr.vertical */
+.examples-section-ctnr.vertical {
+  grid-row-gap: 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Missing rule #82 - .examples-section-ctnr.with-header-image */
+.examples-section-ctnr.with-header-image {
+  padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Missing rule #87 - .div-block-21 */
+.div-block-21 {
+  align-self: stretch;
+}
+
+/* Missing rule #92 - .div-block-23 */
+.div-block-23 {
+  grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-flow: wrap;
+}
+
+/* Missing rule #93 - .div-block-27 */
+.div-block-27 {
+  max-width: 100%;
+}
+
+/* Missing rule #100 - .flex-block-2 */
+.flex-block-2 {
+  grid-column-gap: 0px;
+    grid-row-gap: 24px;
+    flex-direction: column;
+}
+
+/* Missing rule #107 - .flex-block-5 */
+.flex-block-5 {
+  grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-flow: wrap;
+}
+
+/* Missing rule #118 - .div-block-3 */
+.div-block-3 {
+  flex: none;
+}
+
+/* Missing rule #131 - .sidebar-section */
+.sidebar-section {
+  flex-direction: column;
+    margin-top: 0;
+    display: flex;
+}
+
+/* Missing rule #132 - .sidebar-section-head */
+.sidebar-section-head {
+  grid-row-gap: 8px;
+    align-items: stretch;
+    width: 100%;
+    padding: 16px 96px 16px 80px;
+}
+
+/* Missing rule #134 - .sidebar-links-container */
+.sidebar-links-container {
+  background-color: #0000;
+    flex: none;
+    justify-content: center;
+}
+
+/* Missing rule #137 - .instructions-section-content */
+.instructions-section-content {
+  padding-left: 28px;
+}
+
+/* Missing rule #140 - .section-heading */
+.section-heading {
+  max-width: 80px;
+}
+
+/* Missing rule #141 - .section-heading.example-heading */
+.section-heading.example-heading {
+  margin-top: 0;
+    font-size: 24px;
+    line-height: 1.5em;
+}
+
+/* Missing rule #142 - .section-heading.example-heading.super */
+.section-heading.example-heading.super {
+  margin-bottom: 0;
+    font-size: 32px;
+}
+
+/* Missing rule #153 - .prompt-overview-section-wrap */
+.prompt-overview-section-wrap {
+  grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+}
+
+/* Missing rule #154 - .example-section-wrap */
+.example-section-wrap {
+  z-index: 999;
+    border-style: none;
+    padding: 24px;
+}
+
+/* Missing rule #155 - .examples-section-ctnr */
+.examples-section-ctnr {
+  grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-direction: column;
+    flex: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+/* Missing rule #156 - .examples-section-ctnr.vertical */
+.examples-section-ctnr.vertical {
+  grid-row-gap: 16px;
+    border: 1px #000;
+    width: auto;
+    margin-top: 12px;
+}
+
+/* Missing rule #157 - .examples-section-ctnr.with-header-image */
+.examples-section-ctnr.with-header-image {
+  margin-top: -56px;
+}
+
+/* Missing rule #163 - .example-flex-col */
+.example-flex-col {
+  margin-bottom: 16px;
+}
+
+/* Missing rule #172 - .div-block-27 */
+.div-block-27 {
+  padding: 16px;
+}
+
+/* Missing rule #189 - .logo-image-container */
+.logo-image-container {
+  background-color: #0000;
+    border-radius: 0%;
+    flex-direction: column;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 8px;
+    padding: 8px;
+    display: flex;
+    position: static;
+    left: auto;
+    right: auto;
+}
+
+/* Missing rule #190 - .flex-block-3 */
+.flex-block-3 {
+  flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 72px;
+    display: flex;
+    position: relative;
+}
+
+/* Missing rule #195 - .builder-column */
+.builder-column {
+  padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Missing rule #196 - .builder-column.prompt */
+.builder-column.prompt {
+  top: 16px;
+}
+
+/* Missing rule #197 - .flex-block-5 */
+.flex-block-5 {
+  grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    flex-flow: row;
+}
+
+/* Missing rule #213 - .div-block-4 */
+.div-block-4 {
+  border-color: var(--highlight);
+    flex: none;
+}
+
+/* Missing rule #214 - .div-block-9 */
+.div-block-9 {
+  flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Missing rule #224 - .sidebar-section */
+.sidebar-section {
+  border-bottom-style: none;
+}
+
+/* Missing rule #225 - .sidebar-section-head */
+.sidebar-section-head {
+  padding-left: 64px;
+    padding-right: 16px;
+}
+
+/* Missing rule #231 - .instructions-section-content */
+.instructions-section-content {
+  flex-direction: column;
+    flex: none;
+    margin-left: 8px;
+    display: block;
+}
+
+/* Missing rule #232 - .section-heading */
+.section-heading {
+  justify-content: flex-start;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-family: Cousine, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* Missing rule #233 - .section-heading.example-heading */
+.section-heading.example-heading {
+  align-self: flex-start;
+}
+
+/* Missing rule #234 - .section-heading.example-heading.super */
+.section-heading.example-heading.super {
+  background-color: #0000;
+    margin-top: 8px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Missing rule #239 - .div-block-17 */
+.div-block-17 {
+  flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Missing rule #245 - .example-section-wrap */
+.example-section-wrap {
+  border-style: none;
+    align-self: stretch;
+    width: auto;
+    padding-top: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* Missing rule #246 - .examples-section-ctnr */
+.examples-section-ctnr {
+  border: 1px #000;
+    flex-direction: column;
+    flex: none;
+    align-self: stretch;
+    width: auto;
+    padding-bottom: 12px;
+    position: static;
+}
+
+/* Missing rule #247 - .examples-section-ctnr.vertical */
+.examples-section-ctnr.vertical {
+  margin-top: 0;
+}
+
+/* Missing rule #248 - .examples-section-ctnr.with-header-image */
+.examples-section-ctnr.with-header-image {
+  margin-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Missing rule #252 - .example-flex-col */
+.example-flex-col {
+  flex-direction: column;
+    align-self: stretch;
+    align-items: flex-start;
+    display: flex;
+}
+
+/* Missing rule #259 - .div-block-23 */
+.div-block-23 {
+  flex-direction: column;
+}
+
+/* Missing rule #260 - .div-block-24 */
+.div-block-24 {
+  order: -1;
+    align-self: stretch;
+    margin-top: -12px;
+    margin-bottom: 12px;
+    margin-right: 0;
+}
+
+/* Missing rule #263 - .div-block-28 */
+.div-block-28 {
+  margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+/* Missing rule #270 - .logo-image-container */
+.logo-image-container {
+  align-items: flex-start;
+    padding: 0;
+    position: static;
+    bottom: -27px;
+}
+
+/* Missing rule #271 - .flex-block-3, .logo-lockup-ctnr */
+.flex-block-3,
+  .logo-lockup-ctnr {
+  justify-content: flex-start;
+}
+
+/* Missing rule #276 - .builder-column.elements, .builder-column.prompt */
+.builder-column.elements,
+  .builder-column.prompt {
+  background-color: var(--main-background);
+}
+
+/* Missing rule #277 - .flex-block-5 */
+.flex-block-5 {
+  flex-flow: wrap;
+}
+
+
+
+/* === SYSTEMATIC RESTORATION - 2025-08-28 === */
+/* Added 68 missing rules from restore-unknown.css */
+
+/* Missing rule #2 - .page-controls */
+.page-controls {
+  background-color: var(--background);
+  text-align: center;
+  border-radius: 100px;
+  width: 200px;
+  padding: 16px 0;
+  font-family: Cousine, sans-serif;
+  font-size: 16px;
+  line-height: 1em;
+}
+
+/* Missing rule #8 - .prompt-header */
+.prompt-header {
+  color: var(--black);
+  margin-bottom: 8px;
+  padding-top: 32px;
+}
+
+/* Missing rule #9 - .prompt-overview */
+.prompt-overview {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  flex-flow: column;
+  display: flex;
+}
+
+/* Missing rule #12 - .prompt-overview-trigger */
+.prompt-overview-trigger {
+  cursor: pointer;
+  margin-top: 4px;
+  font-weight: 400;
+  display: none;
+}
+
+/* Missing rule #13 - .start-page-content-wrap */
+.start-page-content-wrap {
+  grid-column-gap: 24px;
+  background-color: var(--contrast-background);
+  border-radius: 32px;
+  flex-direction: column;
+  flex: none;
+  justify-content: flex-start;
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+}
+
+/* Missing rule #24 - .edit-mode-alert */
+.edit-mode-alert {
+  flex-direction: column;
+  flex: none;
+  align-self: stretch;
+  display: flex;
+}
+
+/* Missing rule #28 - .embedded-example */
+.embedded-example {
+  border-bottom: 1px solid #00000026;
+  padding-bottom: 6px;
+}
+
+/* Missing rule #38 - .universal-prompt-head */
+.universal-prompt-head {
+  z-index: 5;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border-radius: 100px;
+  flex-direction: row;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 8px 8px 16px;
+  display: flex;
+  position: sticky;
+  inset: 8px 40px auto auto;
+}
+
+/* Missing rule #40 - .copied */
+.copied {
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 32px;
+  display: none;
+  position: fixed;
+  inset: auto 32px 0% auto;
+}
+
+/* Missing rule #41 - .color-swatch */
+.color-swatch {
+  background-color: var(--sienna);
+  width: 56px;
+  height: 56px;
+}
+
+/* Missing rule #46 - .right-panel */
+.right-panel {
+  padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Missing rule #47 - .right-panel.start-page */
+.right-panel.start-page {
+  justify-content: flex-start;
+    padding: 16px;
+}
+
+/* Missing rule #48 - .prompt-body */
+.prompt-body {
+  box-shadow: none;
+    max-width: none;
+    padding: 24px;
+}
+
+/* Missing rule #49 - .prompt-body.personal */
+.prompt-body.personal {
+  background-color: var(--contrast-background);
+}
+
+/* Missing rule #57 - .page-wrap */
+.page-wrap {
+  min-height: 100vh;
+}
+
+/* Missing rule #61 - .close-element.l, .close-element.r */
+.close-element.l,
+  .close-element.r {
+  height: 24px;
+}
+
+/* Missing rule #66 - .left-panel */
+.left-panel {
+  border-right-color: #00000026;
+    flex: 0 auto;
+    width: 40%;
+    padding-top: 0;
+}
+
+/* Missing rule #71 - .prompt-header */
+.prompt-header {
+  margin-bottom: 24px;
+}
+
+/* Missing rule #72 - .prompt-overview */
+.prompt-overview {
+  flex-direction: column;
+}
+
+/* Missing rule #76 - .start-page-content-wrap */
+.start-page-content-wrap {
+  background-color: var(--contrast-background);
+    padding: 32px;
+}
+
+/* Missing rule #89 - .header-description */
+.header-description {
+  font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/* Missing rule #90 - .fact-check-warning */
+.fact-check-warning {
+  justify-content: center;
+}
+
+/* Missing rule #91 - .quick-stack */
+.quick-stack {
+  background-color: #0000;
+}
+
+/* Missing rule #108 - .statement-controls */
+.statement-controls {
+  margin-top: 16px;
+}
+
+/* Missing rule #110 - .right-panel */
+.right-panel {
+  padding-top: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Missing rule #111 - .right-panel.start-page */
+.right-panel.start-page {
+  background-color: var(--contrast-background);
+}
+
+/* Missing rule #112 - .prompt-body */
+.prompt-body {
+  box-shadow: none;
+    max-width: none;
+    padding: 16px;
+}
+
+/* Missing rule #113 - .prompt-body.personal */
+.prompt-body.personal {
+  padding: 32px;
+}
+
+/* Missing rule #117 - .page-controls */
+.page-controls {
+  min-height: 56px;
+}
+
+/* Missing rule #124 - .close-element.l, .close-element.r */
+.close-element.l,
+  .close-element.r {
+  height: 24px;
+}
+
+/* Missing rule #130 - .left-panel */
+.left-panel {
+  z-index: 99;
+    flex-direction: column;
+    flex: none;
+    width: 100%;
+    display: none;
+    position: relative;
+}
+
+/* Missing rule #138 - .prompt-header */
+.prompt-header {
+  flex-direction: column;
+    flex: 1;
+    margin-bottom: 0;
+    padding-top: 0;
+    display: flex;
+    position: relative;
+}
+
+/* Missing rule #139 - .prompt-overview */
+.prompt-overview {
+  grid-row-gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 33px;
+    display: flex;
+}
+
+/* Missing rule #143 - .prompt-overview-trigger */
+.prompt-overview-trigger {
+  text-align: center;
+    border-bottom: 1px solid #000;
+    justify-content: center;
+    align-self: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 4px;
+    font-family: Cousine, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1em;
+    display: flex;
+}
+
+/* Missing rule #145 - .start-page-content-wrap */
+.start-page-content-wrap {
+  background-color: #0000;
+    margin-top: 72px;
+    padding: 16px;
+}
+
+/* Missing rule #160 - .quickstack.example */
+.quickstack.example {
+  grid-column-gap: 8px;
+    grid-row-gap: 0px;
+}
+
+/* Missing rule #164 - .header-description */
+.header-description {
+  margin-top: 0;
+}
+
+/* Missing rule #165 - .fact-check-warning */
+.fact-check-warning {
+  margin-bottom: 24px;
+}
+
+/* Missing rule #166 - .mobile-prompt-controls */
+.mobile-prompt-controls {
+  z-index: 999;
+    background-color: white;
+    color: var(--black);
+    border-radius: 100%;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    font-weight: 700;
+    line-height: 1em;
+    display: flex;
+    position: fixed;
+    inset: 16px auto auto 24px;
+}
+
+/* Missing rule #167 - .manual-legend */
+.manual-legend {
+  flex-direction: column;
+}
+
+/* Missing rule #168 - .manual-legend-wrap */
+.manual-legend-wrap {
+  margin-top: 16px;
+}
+
+/* Missing rule #169 - .quick-stack */
+.quick-stack {
+  padding: 32px;
+}
+
+/* Missing rule #171 - .instructions-ctnr */
+.instructions-ctnr {
+  padding-left: 0;
+    position: relative;
+}
+
+/* Missing rule #174 - .return-to-start-wrap */
+.return-to-start-wrap {
+  background-color: #0000;
+    justify-content: center;
+    align-self: stretch;
+    align-items: stretch;
+    display: flex;
+}
+
+/* Missing rule #175 - .return-to-start-ctnr */
+.return-to-start-ctnr {
+  color: var(--white);
+    background-color: #0000;
+    flex: 1;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    display: flex;
+}
+
+/* Missing rule #184 - .cousine */
+.cousine {
+  font-size: 20px;
+}
+
+/* Missing rule #187 - .universal-prompt-head */
+.universal-prompt-head {
+  justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+}
+
+/* Missing rule #194 - .copied */
+.copied {
+  margin-bottom: 16px;
+    right: 8px;
+}
+
+/* Missing rule #198 - .egroup-wrap */
+.egroup-wrap {
+  grid-column-gap: 8px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Missing rule #199 - .egroup.collapseable */
+.egroup.collapseable {
+  flex-flow: wrap;
+    flex: 1;
+}
+
+/* Missing rule #203 - .right-panel */
+.right-panel {
+  max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Missing rule #204 - .right-panel.start-page */
+.right-panel.start-page {
+  padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Missing rule #205 - .prompt-body */
+.prompt-body {
+  outline-color: var(--contrast-background);
+    outline-offset: 0px;
+    outline-width: 8px;
+    outline-style: none;
+    flex: 1;
+    margin-bottom: 0;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Missing rule #206 - .prompt-body.personal */
+.prompt-body.personal {
+  padding: 24px;
+}
+
+/* Missing rule #209 - .page-controls */
+.page-controls {
+  text-align: center;
+    order: -1;
+    align-self: stretch;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Missing rule #211 - .page-controls.copy */
+.page-controls.copy {
+  align-self: stretch;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Missing rule #215 - .page-wrap */
+.page-wrap {
+  flex-direction: column;
+    flex: none;
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Missing rule #236 - .start-page-content-wrap */
+.start-page-content-wrap {
+  padding: 0;
+}
+
+/* Missing rule #253 - .header-description */
+.header-description {
+  margin-top: 0;
+    font-size: 22px;
+    line-height: 1.5em;
+}
+
+/* Missing rule #254 - .fact-check-warning-ctnr */
+.fact-check-warning-ctnr {
+  margin-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+}
+
+/* Missing rule #255 - .fact-warning-content-ctnr */
+.fact-warning-content-ctnr {
+  margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+/* Missing rule #256 - .dismiss-warning */
+.dismiss-warning {
+  margin-bottom: 0;
+}
+
+/* Missing rule #258 - .quick-stack */
+.quick-stack {
+  padding: 0;
+}
+
+/* Missing rule #262 - .instructions-ctnr */
+.instructions-ctnr {
+  padding-right: 0;
+}
+
+/* Missing rule #264 - .return-to-start-wrap */
+.return-to-start-wrap {
+  align-items: center;
+}
+
+/* Missing rule #265 - .return-to-start-ctnr */
+.return-to-start-ctnr {
+  text-align: center;
+    justify-content: center;
+}
+
+/* Missing rule #275 - .copied */
+.copied {
+  margin-bottom: 8px;
+}
+
+/* Missing rule #278 - #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 */
+#w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+}
+

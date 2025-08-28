@@ -1,0 +1,803 @@
+/* Typography Component Styles */
+/* Auto-generated - duplicates removed */
+
+.field-label-2.helper {
+  margin-bottom: 8px;
+  
+  
+  font-size: 12px;
+  
+  
+  font-weight: 400;
+  
+  
+  line-height: 1.5em;
+}
+
+.field-label-2.with-helper {
+  margin-bottom: 0;
+}
+
+.section-heading.example-heading {
+  align-items: flex-start;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  font-family: Playfair Display, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1em;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.universal-heading-icon.w--current {
+  background-color: var(--sienna);
+  color: var(--main-background);
+  display: none;
+  justify-content: flex-start;
+  width: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.body-fontface {
+  border-bottom: 1px solid var(--black);
+  
+  
+  color: var(--black);
+  
+  
+  align-self: flex-start;
+  
+  
+  margin-bottom: 12px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  margin-top: 0;
+  
+  
+  margin-bottom: 8px;
+  
+  
+  font-size: 42px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.5em;
+}
+
+h3 {
+  color: var(--highlight);
+  
+  
+  margin-top: 0;
+  
+  
+  margin-bottom: 12px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 24px;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.5em;
+}
+
+h4 {
+  margin-top: 10px;
+  
+  
+  margin-bottom: 10px;
+  
+  
+  font-size: 18px;
+  
+  
+  line-height: 24px;
+}
+
+h5 {
+  margin-top: 0;
+  
+  
+  margin-bottom: 12px;
+  
+  
+  font-size: 20px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 600;
+  
+  
+  line-height: 1.4em;
+}
+
+h6 {
+  margin-top: 10px;
+  
+  
+  margin-bottom: 10px;
+  
+  
+  font-size: 14px;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.5em;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.plastic-label {
+  color: var(--highlight);
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: center;
+  
+  
+  margin-bottom: 0;
+  
+  
+  font-family: Playfair Display, sans-serif;
+  
+  
+  font-size: 32px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 600;
+  
+  
+  line-height: 1.5em;
+  
+  
+  display: flex;
+}
+
+.egroup-label.prompt {
+  flex: none;
+  
+  
+  display: flex;
+}
+
+.ai-menu-heading {
+  color: var(--white);
+  
+  
+  margin-top: 8px;
+  
+  
+  margin-bottom: 16px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-weight: 400;
+}
+
+.block-link-title {
+  flex: 0 auto;
+}
+
+label {
+  color: var(--black);
+  
+  
+  margin-bottom: 5px;
+  
+  
+  font-family: Nunito Sans, sans-serif;
+  
+  
+  font-size: 14px;
+  
+  
+  font-weight: 800;
+  
+  
+  line-height: 1.5em;
+  
+  
+  display: block;
+}
+
+.egroup-label {
+  color: var(--faded-dark);
+  
+  
+  font-size: 16px;
+  
+  
+  font-weight: 400;
+  
+  
+  line-height: 1.5em;
+}
+
+.egroup-label.collapsable {
+  align-self: stretch;
+}
+
+.egroup-label.collapsable:hover {
+  color: var(--sienna);
+}
+
+.labels-toggle-text {
+  margin-left: 8px;
+  
+  
+  margin-right: 16px;
+  
+  
+  font-size: 14px;
+}
+
+.label-content {
+  flex: 1;
+  
+  
+  justify-content: space-between;
+  
+  
+  align-items: flex-start;
+  
+  
+  padding: 12px 16px;
+  
+  
+  display: flex;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.bold-text {
+  font-weight: 400;
+}
+
+.chart-title {
+  flex: none;
+  
+  
+  align-items: center;
+  
+  
+  margin-top: 0;
+  
+  
+  margin-bottom: 0;
+  
+  
+  margin-right: 32px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  display: flex;
+}
+
+.heading {
+  max-width: 90%;
+  
+  
+  font-family: Playfair Display, sans-serif;
+  
+  
+  font-weight: 700;
+}
+
+.heading-6 {
+  color: var(--highlight);
+}
+
+.input-heading {
+  color: var(--black);
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  margin-top: 20px;
+  
+  
+  margin-bottom: 8px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 16px;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.5em;
+  
+  
+  display: flex;
+}
+
+.section-heading {
+  flex: 1;
+  
+  
+  justify-content: center;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: center;
+  
+  
+  max-width: 120px;
+  
+  
+  margin-bottom: 12px;
+  
+  
+  margin-right: 24px;
+  
+  
+  font-family: Playfair Display, sans-serif;
+  
+  
+  font-size: 20px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 500;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+}
+
+.section-heading.example-heading.results {
+  color: var(--black);
+  
+  
+  -webkit-text-stroke-color: var(--black);
+  
+  
+  font-weight: 700;
+}
+
+.section-heading.example-heading.super {
+  color: var(--black);
+  
+  
+  margin-bottom: 0;
+  
+  
+  font-size: 42px;
+  
+  
+  font-weight: 500;
+}
+
+.text-block-17 {
+  color: var(--contrast-background);
+  
+  
+  font-size: 16px;
+}
+
+.text-block-18 {
+  margin-top: 16px;
+  
+  
+  margin-bottom: 8px;
+  
+  
+  font-size: 20px;
+  
+  
+  font-weight: 700;
+  
+  
+  line-height: 1.8em;
+}
+
+.text-block-19 {
+  margin-bottom: 32px;
+  
+  
+  font-size: 42px;
+  
+  
+  line-height: 1.5em;
+}
+
+.text-block-2 {
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  
+  
+  font-weight: 700;
+}
+
+.text-block-20 {
+  font-size: 16px;
+  
+  
+  font-weight: 600;
+  
+  
+  line-height: 1.5em;
+}
+
+.text-block-21 {
+  font-family: Cousine, sans-serif;
+  
+  
+  font-style: normal;
+  
+  
+  font-weight: 600;
+  
+  
+  display: inline;
+}
+
+.text-block-22 {
+  font-family: Cousine, sans-serif;
+  
+  
+  font-style: normal;
+  
+  
+  display: flex;
+}
+
+.text-block-24 {
+  font-size: 16px;
+}
+
+.text-block-25 {
+  font-family: Material Icons, sans-serif;
+}
+
+.text-block-26 {
+  font-size: 24px;
+  
+  
+  line-height: 1.5em;
+}
+
+.text-block-27 {
+  flex-flow: wrap;
+  
+  
+  display: inline-flex;
+}
+
+.text-block-28 {
+  display: inline-flex;
+}
+
+.text-block-29 {
+  font-style: italic;
+}
+
+.text-block-30 {
+  font-size: 24px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 400;
+  
+  
+  line-height: 1.5em;
+}
+
+.text-block-32 {
+  font-family: Cousine, sans-serif;
+}
+
+.text-block-33 {
+  color: var(--background);
+}
+
+.text-block-7 {
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  margin-left: 8px;
+  
+  
+  font-family: Material Icons, sans-serif;
+  
+  
+  font-size: 24px;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+}
+
+.text-block-8 {
+  flex: none;
+  
+  
+  margin-bottom: 20px;
+  
+  
+  font-size: 40px;
+  
+  
+  font-style: italic;
+  
+  
+  font-weight: 400;
+  
+  
+  line-height: 1.4em;
+  
+  
+  display: flex;
+}
+
+.text-block-9 {
+  flex: 1;
+  
+  
+  margin-top: 12px;
+}
+
+.universal-heading-icon {
+  border: 1px solid var(--lightest-green);
+  
+  
+  background-color: var(--lightest-green);
+  
+  
+  color: var(--highlight);
+  
+  
+  border-radius: 100%;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  width: 42px;
+  
+  
+  height: 42px;
+  
+  
+  margin-right: 8px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 24px;
+  
+  
+  line-height: 24px;
+  
+  
+  display: flex;
+}
+
+.universal-heading-icon.chatgpt {
+  background-color: var(--transparent-black);
+  
+  
+  border-style: none;
+  
+  
+  flex: none;
+  
+  
+  margin-right: 0;
+}
+
+.universal-heading-icon.gpt {
+  background-color: var(--white);
+  
+  
+  position: relative;
+}
+
+.universal-heading-icon:hover {
+  color: var(--highlight);
+}
+
+.heading-5, .heading-6 {
+  color: var(--highlight);
+}
+
+/* === SYSTEMATIC RESTORATION - 2025-08-28 === */
+/* Added 18 missing rules from restore-typography.css */
+
+/* Missing rule #1 - .prompt-text-class */
+.prompt-text-class {
+  background-color: var(--secondary-highlight);
+  border-radius: 16px;
+  flex-direction: column;
+  order: 1;
+  padding: 0 32px 20px;
+  font-family: Cousine, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  transition: all .2s;
+  display: flex;
+}
+
+/* Missing rule #39 - .universal-heading-icon.w--current */
+.universal-heading-icon.w--current {
+  background-color: var(--sienna);
+  color: var(--main-background);
+  display: none;
+}
+
+/* Missing rule #45 - @media screen and (max-width: 991px) { h1 */
+@media screen and (max-width: 991px) {
+  h1 {
+  font-size: 48px;
+    line-height: 1.4em;
+  }
+}
+
+/* Missing rule #52 - .prompt-text-class */
+.prompt-text-class {
+  padding: 0 16px 16px;
+}
+
+/* Missing rule #101 - .universal-heading-icon:hover */
+.universal-heading-icon:hover {
+  background-color: #e4e9e8;
+}
+
+/* Missing rule #102 - .universal-heading-icon.w--current */
+.universal-heading-icon.w--current {
+  justify-content: flex-start;
+    width: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: none;
+}
+
+/* Missing rule #103 - .text-block-26 */
+.text-block-26 {
+  font-size: 20px;
+    line-height: 1.5em;
+}
+
+/* Missing rule #109 - @media screen and (max-width: 767px) { h1 */
+@media screen and (max-width: 767px) {
+  h1 {
+  max-width: 91%;
+    margin-bottom: 8px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3em;
+  }
+}
+
+/* Missing rule #116 - .prompt-text-class */
+.prompt-text-class {
+  font-size: 16px;
+    line-height: 1.5em;
+}
+
+/* Missing rule #119 - .heading */
+.heading {
+  margin-bottom: 12px;
+}
+
+/* Missing rule #144 - .text-block-7 */
+.text-block-7 {
+  font-size: 16px;
+    line-height: 1em;
+}
+
+/* Missing rule #173 - .heading-2 */
+.heading-2 {
+  margin-bottom: 0;
+}
+
+/* Missing rule #188 - .universal-heading-icon.w--current */
+.universal-heading-icon.w--current {
+  flex: none;
+    align-self: stretch;
+    align-items: center;
+}
+
+/* Missing rule #217 - .heading */
+.heading {
+  margin-bottom: 0;
+    line-height: 1.5em;
+}
+
+/* Missing rule #235 - .text-block-7 */
+.text-block-7 {
+  font-size: 24px;
+}
+
+/* Missing rule #237 - .text-block-8 */
+.text-block-8 {
+  font-size: 32px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+/* Missing rule #268 - .universal-heading-icon */
+.universal-heading-icon {
+  background-color: var(--secondary-highlight);
+    border-style: none;
+}
+
+/* Missing rule #269 - .universal-heading-icon.w--current */
+.universal-heading-icon.w--current {
+  min-height: 48px;
+}
+}
+}
+

@@ -1,0 +1,795 @@
+/* Buttons Component Styles */
+/* Auto-generated - duplicates removed */
+
+.page-controls.edit-prompt-button {
+  border-style: none;
+  
+  
+  border-color: var(--black);
+  
+  
+  background-color: var(--transparent-black);
+  
+  
+  color: var(--black);
+  
+  
+  border-radius: 100px;
+  
+  
+  flex: 1;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  text-decoration: none;
+  
+  
+  display: flex;
+}
+
+.page-controls.edit-prompt-button:hover {
+  background-color: #444abe1a;
+}
+
+.page-controls.copy {
+  background-color: var(--highlight);
+  
+  
+  color: var(--white);
+  
+  
+  border-style: none;
+  
+  
+  flex: none;
+}
+
+.close-example-items {
+  background-color: var(--background);
+  
+  
+  color: var(--main-background);
+  
+  
+  cursor: pointer;
+  
+  
+  border-radius: 100%;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  width: 32px;
+  
+  
+  height: 32px;
+  
+  
+  font-family: Material Icons, sans-serif;
+  
+  
+  font-size: 24px;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+  
+  
+  position: fixed;
+  
+  
+  inset: 24px 32px auto auto;
+}
+
+.close-example-items:hover {
+  color: var(--contrast-low);
+}
+
+.clearstatement {
+  border: 1px solid var(--background);
+  
+  
+  background-color: var(--transparent-black);
+  
+  
+  color: var(--contrast-background);
+  
+  
+  cursor: pointer;
+  
+  
+  border-radius: 100%;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  min-width: 40px;
+  
+  
+  min-height: 40px;
+  
+  
+  font-family: Material Icons, sans-serif;
+  
+  
+  font-size: 24px;
+  
+  
+  line-height: 24px;
+  
+  
+  display: flex;
+}
+
+.clearstatement:hover {
+  color: var(--background);
+}
+
+.close-btn {
+  z-index: 10;
+  
+  
+  cursor: pointer;
+  
+  
+  flex-direction: column;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  width: 32px;
+  
+  
+  height: 32px;
+  
+  
+  margin-top: 8px;
+  
+  
+  margin-left: 16px;
+  
+  
+  transition: all .2s;
+  
+  
+  display: flex;
+}
+
+.copystatement {
+  background-color: var(--background);
+  
+  
+  color: var(--main-background);
+  
+  
+  text-align: center;
+  
+  
+  cursor: pointer;
+  
+  
+  border-radius: 100px;
+  
+  
+  flex: 1;
+  
+  
+  justify-content: center;
+  
+  
+  align-self: stretch;
+  
+  
+  align-items: center;
+  
+  
+  min-height: 40px;
+  
+  
+  padding: 8px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 14px;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+}
+
+.copystatement:hover {
+  border-color: var(--sienna);
+  
+  
+  background-color: var(--faded-dark);
+  
+  
+  color: var(--white);
+}
+
+.midjourney-btn {
+  border: 1px solid var(--background);
+  
+  
+  background-color: var(--transparent-black);
+  
+  
+  cursor: pointer;
+  
+  
+  border-radius: 100px;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  min-width: 40px;
+  
+  
+  height: 40px;
+  
+  
+  padding-left: 10px;
+  
+  
+  padding-right: 10px;
+  
+  
+  font-family: Material Icons, sans-serif;
+  
+  
+  font-size: 16px;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+}
+
+.midjourney-btn:hover {
+  color: var(--background);
+}
+
+.mj-btn-text {
+  padding-left: 8px;
+  
+  
+  padding-right: 8px;
+  
+  
+  font-family: Cousine, sans-serif;
+  
+  
+  font-size: 14px;
+}
+
+.mj-btn-text-wrao {
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+}
+
+.close-element.l {
+  background-color: var(--black);
+  
+  
+  width: 3px;
+  
+  
+  height: 32px;
+  
+  
+  position: absolute;
+}
+
+.close-element.r {
+  background-color: var(--black);
+  
+  
+  width: 3px;
+  
+  
+  height: 32px;
+  
+  
+  transform: rotate(135deg);
+}
+
+.text.copy-statement {
+  text-align: center;
+  
+  
+  min-width: 96px;
+}
+
+.close-popup {
+  background-color: var(--black);
+  
+  
+  color: var(--dark-slate-grey);
+  
+  
+  border-radius: 100%;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  width: 24px;
+  
+  
+  height: 24px;
+  
+  
+  font-size: 24px;
+  
+  
+  line-height: 1em;
+  
+  
+  display: flex;
+  
+  
+  position: absolute;
+  
+  
+  inset: -4px -4px auto auto;
+}
+
+.icon-close-menu {
+  cursor: pointer;
+  
+  
+    flex: auto;
+  
+  
+    justify-content: center;
+  
+  
+    align-items: center;
+  
+  
+    padding: 4px;
+  
+  
+    font-family: Material Icons, sans-serif;
+  
+  
+    font-size: 24px;
+  
+  
+    padding: 8px;
+  
+  
+    font-weight: 400;
+  
+  
+    line-height: 1em;
+  
+  
+    display: flex;
+}
+
+.close-popup-message {
+  color: var(--highlight);
+  
+  
+  cursor: pointer;
+  
+  
+  flex: none;
+  
+  
+  justify-content: center;
+  
+  
+  align-items: center;
+  
+  
+  font-family: Material Icons, sans-serif;
+  
+  
+  font-size: 20px;
+  
+  
+  display: flex;
+  
+  
+  position: absolute;
+  
+  
+  transform: rotate(45deg);
+}
+
+.configuration-text-only-of-lines-one-line-show-close-affordance-false {
+  grid-column-gap: 4px;
+  
+  
+  background-color: #322f35;
+  
+  
+  border-radius: 4px;
+  
+  
+  justify-content: flex-start;
+  
+  
+  align-items: flex-start;
+  
+  
+  width: 100%;
+  
+  
+  max-width: 344px;
+  
+  
+  height: 48px;
+  
+  
+  padding: 14px 16px;
+  
+  
+  text-decoration: none;
+  
+  
+  display: flex;
+  
+  
+  box-shadow: 0 1px 3px #0000004d, 0 4px 8px #00000026;
+}
+
+.close-element {
+  background-color: var(--secondary-highlight);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 1px;
+  height: 32px;
+  display: flex;
+  transform: rotate(45deg);
+}
+
+/* === SYSTEMATIC RESTORATION - 2025-08-28 === */
+/* Added 36 missing rules from restore-buttons.css */
+
+/* Missing rule #4 - .sidebar-link */
+.sidebar-link {
+  background-color: var(--main-background);
+  color: var(--black);
+  border-bottom-style: none;
+  align-self: stretch;
+  padding: 8px 12px;
+  font-family: Cousine, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  text-decoration: none;
+  display: flex;
+}
+
+/* Missing rule #14 - .instructions-links */
+.instructions-links {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  flex-flow: column wrap;
+  flex: 0 auto;
+  align-self: stretch;
+  display: flex;
+}
+
+/* Missing rule #15 - .block-link */
+.block-link {
+  background-color: var(--main-background);
+  color: var(--black);
+  border-bottom-style: none;
+  border-radius: 100px;
+  flex-flow: column;
+  flex: none;
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-start;
+  width: auto;
+  padding: 8px 24px;
+  font-family: Cousine, sans-serif;
+  font-size: 18px;
+  line-height: 1em;
+  display: flex;
+}
+
+/* Missing rule #18 - .block-link-ctnr */
+.block-link-ctnr {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  flex-flow: column wrap;
+  flex: 1;
+  justify-content: center;
+  line-height: 1.4em;
+  display: flex;
+}
+
+/* Missing rule #19 - .block-link-description */
+.block-link-description {
+  color: var(--highlight);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+/* Missing rule #20 - .block-link-title */
+.block-link-title {
+  flex: none;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  display: flex;
+}
+
+/* Missing rule #25 - .inline-link.double-underline.open-prompts */
+.inline-link.double-underline.open-prompts {
+  cursor: pointer;
+}
+
+/* Missing rule #29 - .link-block */
+.link-block {
+  border-bottom-width: 1px;
+  border-bottom-color: #00000026;
+  align-items: center;
+  padding-bottom: 6px;
+  display: flex;
+}
+
+/* Missing rule #30 - .icon-sidebar-link */
+.icon-sidebar-link {
+  border: 1px solid var(--highlight);
+  color: var(--highlight);
+  justify-content: center;
+  align-self: stretch;
+  align-items: stretch;
+  margin-right: 8px;
+  padding: 8px 12px;
+  font-family: Cousine, sans-serif;
+  font-size: 14px;
+  display: flex;
+}
+
+/* Missing rule #31 - .icon-sidebar-link:hover */
+.icon-sidebar-link:hover {
+  background-color: var(--transparent-black);
+  color: var(--highlight);
+}
+
+/* Missing rule #32 - .icon-sidebar-link.w--current */
+.icon-sidebar-link.w--current {
+  background-color: var(--sienna);
+  color: var(--main-background);
+  display: none;
+}
+
+/* Missing rule #33 - .link-list-wrap */
+.link-list-wrap {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border: 1px none var(--main-background);
+  border-radius: 20px;
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+}
+
+/* Missing rule #34 - .link-list */
+.link-list {
+  z-index: 10;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  flex-flow: wrap;
+  flex: none;
+  justify-content: flex-start;
+  align-self: stretch;
+  align-items: flex-start;
+  font-size: 18px;
+  display: flex;
+  position: relative;
+}
+
+/* Missing rule #53 - .page-controls.edit-prompt-button */
+.page-controls.edit-prompt-button {
+  flex-direction: column;
+    align-items: center;
+}
+
+/* Missing rule #54 - .page-controls.edit-prompt-button:hover */
+.page-controls.edit-prompt-button:hover {
+  text-decoration: none;
+}
+
+/* Missing rule #59 - .sidebar-link */
+.sidebar-link {
+  font-size: 16px;
+    line-height: 1.4em;
+}
+
+/* Missing rule #60 - .close-btn */
+.close-btn {
+  width: 20px;
+    height: 20px;
+    margin-top: 8px;
+}
+
+/* Missing rule #94 - .embedded-example, .link-block */
+.embedded-example,
+  .link-block {
+  border-bottom-color: var(--black);
+}
+
+/* Missing rule #95 - .icon-sidebar-link */
+.icon-sidebar-link {
+  justify-content: flex-start;
+    margin-right: 4px;
+}
+
+/* Missing rule #96 - .icon-sidebar-link.w--current */
+.icon-sidebar-link.w--current {
+  justify-content: flex-start;
+    width: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: none;
+}
+
+/* Missing rule #97 - .link-list-wrap */
+.link-list-wrap {
+  flex-direction: column;
+    flex: 1;
+    display: flex;
+}
+
+/* Missing rule #120 - .sidebar-link */
+.sidebar-link {
+  border-bottom-color: var(--transparent-black);
+    background-color: #fff0;
+    flex-direction: column;
+    flex: none;
+    padding: 4px 16px 4px 32px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/* Missing rule #121 - .sidebar-link:hover */
+.sidebar-link:hover {
+  border-bottom-color: var(--white);
+}
+
+/* Missing rule #122 - .sidebar-link.w--current */
+.sidebar-link.w--current {
+  background-color: var(--contrast-background);
+    color: var(--black);
+    border-radius: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Missing rule #123 - .close-btn */
+.close-btn {
+  color: var(--main-background);
+    margin-left: 20px;
+    display: none;
+}
+
+/* Missing rule #146 - .block-link */
+.block-link {
+  background-color: var(--main-background);
+    padding: 8px 24px;
+}
+
+/* Missing rule #147 - .block-link-title */
+.block-link-title {
+  font-size: 20px;
+    line-height: 24px;
+}
+
+/* Missing rule #176 - .icon-sidebar-link */
+.icon-sidebar-link {
+  background-color: var(--main-background);
+    color: var(--highlight);
+    border-style: none;
+    border-radius: 100%;
+    flex: none;
+}
+
+/* Missing rule #177 - .icon-sidebar-link:hover */
+.icon-sidebar-link:hover {
+  background-color: var(--main-background);
+}
+
+/* Missing rule #178 - .icon-sidebar-link.w--current */
+.icon-sidebar-link.w--current {
+  flex: none;
+    align-self: stretch;
+    align-items: center;
+}
+
+/* Missing rule #180 - .link-list-wrap */
+.link-list-wrap {
+  flex-direction: column;
+    display: flex;
+}
+
+/* Missing rule #210 - .page-controls.edit-prompt-button */
+.page-controls.edit-prompt-button {
+  align-self: stretch;
+    align-items: stretch;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Missing rule #218 - .sidebar-link */
+.sidebar-link {
+  flex-wrap: wrap;
+    padding-left: 24px;
+    font-family: Cousine, sans-serif;
+}
+
+/* Missing rule #219 - .sidebar-link.w--current */
+.sidebar-link.w--current {
+  background-color: var(--contrast-background);
+    border-radius: 0;
+}
+
+/* Missing rule #220 - .close-btn */
+.close-btn {
+  margin-left: 24px;
+}
+
+/* Missing rule #238 - .block-link */
+.block-link {
+  min-height: 48px;
+}
+
