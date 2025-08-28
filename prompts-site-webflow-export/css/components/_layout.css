@@ -1071,6 +1071,13 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   flex-flow: wrap;
 }
 
+@media screen and (min-width: 769px) {
+  .page-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 /* Added 68 missing rules from restore-unknown.css */
 
 /* Missing rule #2 - .page-controls */
