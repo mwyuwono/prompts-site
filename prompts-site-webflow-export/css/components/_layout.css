@@ -1293,15 +1293,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   height: 24px;
 }
 
-/* Missing rule #130 - .left-panel */
-.left-panel {
-  z-index: 99;
-    flex-direction: column;
-    flex: none;
-    width: 100%;
-    display: none;
-    position: relative;
-}
+
 
 /* Missing rule #138 - .prompt-header */
 .prompt-header {
@@ -1572,10 +1564,5 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (min-width: 769px) {
-  .left-panel {
-    display: flex;
-    max-width: 32vw;
-  }
-}
+
 
