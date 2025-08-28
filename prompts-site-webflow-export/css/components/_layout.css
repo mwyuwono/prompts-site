@@ -1572,3 +1572,10 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   grid-template-columns: 1fr 1fr;
 }
 
+@media screen and (min-width: 769px) {
+  .left-panel {
+    display: flex;
+    max-width: 32vw;
+  }
+}
+
