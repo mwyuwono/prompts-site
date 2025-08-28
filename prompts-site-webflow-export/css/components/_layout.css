@@ -1219,13 +1219,6 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   height: 24px;
 }
 
-/* Missing rule #66 - .left-panel */
-.left-panel {
-  border-right-color: #00000026;
-    flex: 0 auto;
-    width: 40%;
-    padding-top: 0;
-}
 
 /* Missing rule #71 - .prompt-header */
 .prompt-header {
