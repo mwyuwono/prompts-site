@@ -1571,5 +1571,66 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   grid-template-columns: 1fr 1fr;
 }
 
+/* ==========================================================================
+   RESPONSIVE SIDEBAR BEHAVIOR - RESTORED FROM ORIGINAL
+   ========================================================================== */
+
+/* Medium screens (tablets, smaller desktops) */
+@media screen and (max-width: 991px) {
+  .left-panel {
+    border-right-color: #00000026;
+    flex: 0 auto;
+    width: 40%;
+    padding-top: 0;
+  }
+  
+  .right-panel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .right-panel.start-page {
+    justify-content: flex-start;
+    padding: 16px;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .left-panel {
+    z-index: 99;
+    flex-direction: column;
+    flex: none;
+    width: 100%;
+    display: none;
+    position: relative;
+  }
+  
+  .right-panel {
+    padding-top: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .right-panel.start-page {
+    background-color: var(--contrast-background);
+  }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 479px) {
+  .right-panel {
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .right-panel.start-page {
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 
 

@@ -238,3 +238,41 @@
   
   margin-right: 0;
 }
+
+/* ==========================================================================
+   RESPONSIVE SIDEBAR BEHAVIOR - RESTORED FROM ORIGINAL
+   ========================================================================== */
+
+/* Medium screens (tablets, smaller desktops) */
+@media screen and (max-width: 991px) {
+  .sidebar-section-head {
+    grid-column-gap: 0px;
+    grid-row-gap: 4px;
+    flex-direction: row;
+    width: 40vw;
+    padding-left: 16px;
+    padding-right: 8px;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .sidebar-section {
+    flex-direction: column;
+    margin-top: 0;
+    display: flex;
+  }
+  
+  .sidebar-section-head {
+    grid-row-gap: 8px;
+    align-items: stretch;
+    width: 100%;
+    padding: 16px 96px 16px 80px;
+  }
+  
+  .sidebar-category-head {
+    text-align: left;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
