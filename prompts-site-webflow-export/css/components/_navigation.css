@@ -3,73 +3,83 @@
 
 .block-link:hover {
   border-bottom-color: var(--highlight);
-  
-  
+
+
   background-color: var(--secondary-highlight);
 }
 
 .icon.dropdown-trigger {
   font-size: 24px;
+  flex-shrink: 0;
+  display: flex;
+  color: black;
+  font-family: Material Icons, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon.dropdown-trigger::before {
+  content: "expand_more";
 }
 
 .menu-control {
   z-index: 12;
-  
-  
+
+
   background-color: transparent;
-  
-  
+
+
   color: var(--black);
-  
-  
+
+
   cursor: pointer;
-  
-  
+
+
   border-radius: 100%;
-  
-  
+
+
   flex: 1;
-  
-  
+
+
   justify-content: center;
-  
-  
+
+
   align-items: center;
-  
-  
+
+
   height: 32px;
-  
-  
+
+
   margin-top: 48px;
-  
-  
+
+
   margin-left: 16px;
-  
-  
+
+
   margin-right: 16px;
-  
-  
+
+
   padding-bottom: 4px;
-  
-  
+
+
   padding-left: 16px;
-  
-  
+
+
   padding-right: 16px;
-  
-  
+
+
   font-size: 36px;
-  
-  
+
+
   font-weight: 700;
-  
-  
+
+
   line-height: 1em;
-  
-  
+
+
   display: none;
-  
-  
+
+
   position: fixed;
 }
 
@@ -79,44 +89,44 @@
 
 .services-dropdown {
   border: 1px solid var(--white);
-  
-  
+
+
   background-color: var(--white);
-  
-  
+
+
   cursor: pointer;
-  
-  
+
+
   border-radius: 100%;
-  
-  
+
+
   flex-direction: column;
-  
-  
+
+
   flex: none;
-  
-  
+
+
   justify-content: center;
-  
-  
+
+
   align-items: center;
-  
-  
+
+
   padding: 8px;
-  
-  
+
+
   font-family: Material Icons, sans-serif;
-  
-  
+
+
   font-size: 24px;
-  
-  
+
+
   line-height: 24px;
-  
-  
+
+
   display: flex;
-  
-  
+
+
   position: relative;
 }
 
@@ -128,49 +138,50 @@
 
 .icon-expand-mobile-menu {
   flex: auto;
-  
-  
-    border-radius: 100%;
-  
-  
-    background-color: white;
-  
-  
-    justify-content: center;
-  
-  
-    padding: 8px;
-  
-  
-    font-size: 20px;
-  
-  
+
+
+  border-radius: 100%;
+
+
+  background-color: white;
+
+
+  justify-content: center;
+
+
+  padding: 8px;
+
+
+  font-size: 20px;
 
 
 
-    font-family: Material Icons, sans-serif;
-  
-  
-    font-size: 24px;
-  
-  
-    font-weight: 300;
-  
-  
-    line-height: 1em;
-  
-  
-    display: flex;
-  
-  
-    align-items: center;
+
+
+  font-family: Material Icons, sans-serif;
+
+
+  font-size: 24px;
+
+
+  font-weight: 300;
+
+
+  line-height: 1em;
+
+
+  display: flex;
+
+
+  align-items: center;
 }
 
 .inline-link.double-underline.open-prompts {
   align-self: flex-start;
 }
 
-.mobile-prompt-controls, .icon-expand-mobile-menu {
+.mobile-prompt-controls,
+.icon-expand-mobile-menu {
   display: none;
 }
 
@@ -196,43 +207,43 @@
 
 .block-link-description {
   font-size: 12px;
-  
-  
-    line-height: 1.2em;
+
+
+  line-height: 1.2em;
 }
 
 .inline-link {
   color: var(--black);
-  
-  
+
+
   border-bottom: 1px solid #000;
-  
-  
+
+
   text-decoration: none;
 }
 
 .inline-link.double-underline {
   cursor: ne-resize;
-  
-  
+
+
   border-bottom-width: 2px;
 }
 
 .inline-link.warning {
   border-bottom-color: var(--white);
-  
-  
+
+
   color: var(--white);
 }
 
 .link-block {
   border-bottom-width: 1px;
-  
-  
-    padding-bottom: 4px;
-  
-  
-    font-weight: 700;
+
+
+  padding-bottom: 4px;
+
+
+  font-weight: 700;
 }
 
 .link-block:hover {
@@ -245,32 +256,33 @@
 
 .block-link-stretcher {
   background-color: var(--contrast-background);
-  
-  
+
+
   flex: none;
-  
-  
+
+
   align-self: stretch;
-  
-  
+
+
   width: 100%;
-  
-  
+
+
   height: 5px;
 }
 
 .home-link {
   border-bottom-style: none;
-  
-  
+
+
   text-decoration: none;
 }
 
-.embedded-example, .link-block {
+.embedded-example,
+.link-block {
   padding-bottom: 0;
-  
-  
-    line-height: 1.4em;
+
+
+  line-height: 1.4em;
 }
 
 /* === SYSTEMATIC RESTORATION - 2025-08-28 === */
@@ -366,8 +378,8 @@
 /* Missing rule #63 - .sidebar-content */
 .sidebar-content {
   align-self: stretch;
-    padding-left: 16px;
-    padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Missing rule #64 - .sidebar-content.personal */
@@ -378,36 +390,36 @@
 /* Missing rule #65 - .menu-control */
 .menu-control {
   justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
-    margin-top: 32px;
-    margin-left: 24px;
-    margin-right: 24px;
-    display: none;
-    padding-left: 0;
-    font-size: 32px;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin-top: 32px;
+  margin-left: 24px;
+  margin-right: 24px;
+  display: none;
+  padding-left: 0;
+  font-size: 32px;
 }
 
 /* Missing rule #69 - .tab */
 .tab {
   flex: 0 auto;
-    justify-content: flex-start;
-    min-height: 40px;
-    margin-right: 4px;
-    padding: 4px 12px;
+  justify-content: flex-start;
+  min-height: 40px;
+  margin-right: 4px;
+  padding: 4px 12px;
 }
 
 /* Missing rule #125 - .sidebar - MOBILE ONLY */
 @media screen and (max-width: 991px) {
   .sidebar {
     z-index: 10;
-      flex: none;
-      width: 100%;
-      height: auto;
-      margin-top: 0;
-      position: fixed;
-      inset: 0 0% 0%;
+    flex: none;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    position: fixed;
+    inset: 0 0% 0%;
   }
 }
 
@@ -415,20 +427,20 @@
 @media screen and (max-width: 991px) {
   .sidebar-content {
     grid-column-gap: 24px;
-      grid-row-gap: 24px;
-      padding-top: 116px;
-      padding-left: 0;
-      padding-right: 0;
+    grid-row-gap: 24px;
+    padding-top: 116px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .sidebar-content.work {
     grid-column-gap: 16px;
-      grid-row-gap: 16px;
+    grid-row-gap: 16px;
   }
 
   .sidebar-content.personal {
     color: var(--white);
-      background-color: #0000;
+    background-color: #0000;
   }
 }
 
@@ -436,53 +448,53 @@
 @media screen and (max-width: 991px) {
   .menu-control {
     background-color: var(--white);
-      border-radius: 100%;
-      justify-content: center;
-      align-items: center;
-      width: 42px;
-      height: 42px;
-      font-family: Material Icons, sans-serif;
-      font-size: 24px;
-      line-height: 1em;
-      display: flex;
-      padding: 0px;
-      margin-top: 16px;
-      margin-left: 16px;
-      position: fixed;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    font-family: Material Icons, sans-serif;
+    font-size: 24px;
+    line-height: 1em;
+    display: flex;
+    padding: 0px;
+    margin-top: 16px;
+    margin-left: 16px;
+    position: fixed;
   }
 }
 
 /* Missing rule #133 - .sidebar-category-head */
 .sidebar-category-head {
   text-align: left;
-    flex-direction: column;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-bottom: 4px;
-    padding-left: 32px;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 1.5em;
-    display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-bottom: 4px;
+  padding-left: 32px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5em;
+  display: flex;
 }
 
 /* Missing rule #136 - .tab */
 .tab {
   color: var(--highlight);
-    text-align: center;
-    border-style: none;
-    border-radius: 100px;
-    flex: none;
-    justify-content: center;
-    min-height: 42px;
-    padding-left: 24px;
-    padding-right: 24px;
-    font-family: Playfair Display, sans-serif;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.5em;
+  text-align: center;
+  border-style: none;
+  border-radius: 100px;
+  flex: none;
+  justify-content: center;
+  min-height: 42px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Playfair Display, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5em;
 }
 
 /* Missing rule #200 - .sidebar-toggle */
@@ -493,15 +505,15 @@
 /* Missing rule #201 - .mobile-menu-icon */
 .mobile-menu-icon {
   background-color: var(--white);
-    border-radius: 100%;
-    justify-content: center;
-    align-items: center;
-    width: 42px;
-    height: 42px;
-    font-family: Material Icons, sans-serif;
-    font-size: 24px;
-    line-height: 1em;
-    display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  font-family: Material Icons, sans-serif;
+  font-size: 24px;
+  line-height: 1em;
+  display: flex;
 }
 
 
@@ -518,8 +530,8 @@
 /* Missing rule #223 - .menu-control */
 .menu-control {
   flex: auto;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Missing rule #226 - .sidebar-category-head */
@@ -535,7 +547,7 @@
 /* Missing rule #228 - .tab:hover */
 .tab:hover {
   background-color: var(--lightest-green);
-    color: var(--highlight);
+  color: var(--highlight);
 }
 
 /* Missing rule #229 - .tab.work */
@@ -546,13 +558,12 @@
 /* Missing rule #230 - .tab.work.active */
 .tab.work.active {
   background-color: var(--highlight);
-    color: var(--main-background);
+  color: var(--main-background);
 }
 
 /* Missing rule #257 - .icon-expand-mobile-menu */
 .icon-expand-mobile-menu {
   width: 32px;
-    height: 32px;
-    margin-left: 0;
+  height: 32px;
+  margin-left: 0;
 }
-
