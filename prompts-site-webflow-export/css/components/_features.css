@@ -763,13 +763,11 @@
   grid-area: span 1175 / span 1 / span 1175 / span 1;
 }
 
-@media screen and (max-width: 991px) {
-  
-}
+@media screen and (max-width: 991px) {}
 
 @media screen and (max-width: 768px) {
-  #sidebar-container > div > div > div.sidebar-section-head {
-    background-color: white;
+  #sidebar-container>div>div>div.sidebar-section-head {
+    background-color: transparent;
   }
 }
 
@@ -782,7 +780,8 @@
     grid-row-gap: 16px;
   }
 
-  .start-content.resources, .start-content.services {
+  .start-content.resources,
+  .start-content.services {
     padding-left: 0;
 
     padding-right: 0;
@@ -799,9 +798,9 @@
   }
 }
 
-.
-
-.body-2, .body-3, .body-4 {
+.body-2,
+.body-3,
+.body-4 {
   background-color: var(--main-background);
 }
 
@@ -816,25 +815,25 @@
 .prompt-header {
   flex-direction: column;
 
-    flex: none;
+  flex: none;
 
-    display: flex;
+  display: flex;
 }
 
 .prompt-overview {
   flex-direction: column;
 
-    flex: none;
+  flex: none;
 
-    margin-top: 24px;
+  margin-top: 24px;
 
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .prompt-overview-trigger {
   padding-bottom: 0;
 
-    line-height: 1.4em;
+  line-height: 1.4em;
 }
 
 .universal-prompt-head {
@@ -848,9 +847,9 @@
 .edit-mode-alert {
   justify-content: center;
 
-    align-items: stretch;
+  align-items: stretch;
 
-    width: auto;
+  width: auto;
 }
 
 .additoinal-resources {
@@ -882,13 +881,11 @@
 }
 
 /* Higher specificity override for img.ai-icon to ensure sizing */
-img
-
-#w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
+img #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
   display: grid;
 }
 
-#w-node-bf62ae82-a17c-6cbd-86c2-46815644a31d-422d3430, 
+#w-node-bf62ae82-a17c-6cbd-86c2-46815644a31d-422d3430,
 
 #w-node-bf62ae82-a17c-6cbd-86c2-46815644a31d-422d3430 {
   grid-area: span 1 / span 1 / span 1 / span 1;
@@ -963,6 +960,7 @@ img
   line-height: 1.5em;
   display: flex;
 }
+
 /* Critical restoration - .prompt-text-class */
 
 /* Critical restoration - .page-controls */
@@ -1019,19 +1017,19 @@ img
 /* Critical restoration - .prompt-header */
 .prompt-header {
   flex-direction: column;
-    flex: 1;
-    margin-bottom: 0;
-    padding-top: 0;
-    display: flex;
-    position: relative;
+  flex: 1;
+  margin-bottom: 0;
+  padding-top: 0;
+  display: flex;
+  position: relative;
 }
 
 /* Critical restoration - .prompt-overview */
 .prompt-overview {
   grid-row-gap: 8px;
-    margin-top: 8px;
-    margin-bottom: 33px;
-    display: flex;
+  margin-top: 8px;
+  margin-bottom: 33px;
+  display: flex;
 }
 
 /* Critical restoration - .page-controls */
@@ -1047,20 +1045,20 @@ img
 /* Missing rule #98 - .logo-ctnr */
 .logo-ctnr {
   margin-top: 0;
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 /* Missing rule #99 - .logo-lockup */
 .logo-lockup {
   border-width: 2px;
-    flex: none;
-    justify-content: center;
-    align-items: center;
-    width: 84px;
-    height: 84px;
-    display: flex;
-    top: 8px;
-    right: 8px;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 84px;
+  display: flex;
+  top: 8px;
+  right: 8px;
 }
 
 /* Missing rule #104 - .logo-lockup-ctnr */
@@ -1091,27 +1089,27 @@ img
 /* Missing rule #183 - .logo-lockup */
 .logo-lockup {
   z-index: 50;
-    border-color: var(--highlight);
-    background-color: #0000;
-    width: 96px;
-    margin-left: auto;
-    position: fixed;
-    top: 8px;
-    right: 12px;
+  border-color: var(--highlight);
+  background-color: #0000;
+  width: 96px;
+  margin-left: auto;
+  position: fixed;
+  top: 8px;
+  right: 12px;
 }
 
 /* Missing rule #191 - .logo-lockup-ctnr */
 .logo-lockup-ctnr {
   flex: 1;
-    justify-content: flex-start;
-    display: none;
+  justify-content: flex-start;
+  display: none;
 }
 
 /* Missing rule #192 - .logo-image */
 .logo-image {
   width: auto;
-    height: 32px;
-    display: none;
+  height: 32px;
+  display: none;
 }
 
 /* Missing rule #193 - .uploaded-image-example */
@@ -1120,14 +1118,12 @@ img
 }
 
 /* Missing rule #202 - @media screen and (max-width: 479px) { body */
-@media screen and (max-width: 479px) {
-  
-}
+@media screen and (max-width: 479px) {}
 
 /* Missing rule #261 - .icon.home */
 .icon.home {
   margin-right: 0;
-    font-style: normal;
+  font-style: normal;
 }
 
 /* Missing rule #266 - .logo-ctnr */
@@ -1138,19 +1134,19 @@ img
 /* Missing rule #267 - .logo-lockup */
 .logo-lockup {
   z-index: 50;
-    background-size: contain;
-    border-style: none;
-    border-radius: 0%;
-    width: 96px;
-    height: 40px;
-    margin-left: auto;
-    display: none;
+  background-size: contain;
+  border-style: none;
+  border-radius: 0%;
+  width: 96px;
+  height: 40px;
+  margin-left: auto;
+  display: none;
 }
 
 /* Missing rule #272 - .logo-image */
 .logo-image {
   flex: none;
-    height: 40px;
+  height: 40px;
 }
 
 /* Missing rule #273 - .uploaded-image-example */
@@ -1159,14 +1155,10 @@ img
 }
 
 /* Missing rule #279 - @media screen and (max-width: 991px) { #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 */
-@media screen and (max-width: 991px) {
-  
-}
+@media screen and (max-width: 991px) {}
 
 /* Missing rule #280 - @media screen and (max-width: 767px) { #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 */
-@media screen and (max-width: 767px) {
-  
-}
+@media screen and (max-width: 767px) {}
 }
 }
 }
