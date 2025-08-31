@@ -368,9 +368,9 @@
         const richText = document.querySelector('.prompt-text-class');
         let promptText = richText ? richText.innerText : '';
 
-        // Replace the placeholder with the actual topic
+        // Replace "on the topic above" with the actual topic
         const topic = topicInput.value || '[Topic not specified]';
-        promptText = promptText.replace('(insert topic here)', topic);
+        promptText = promptText.replace('on the topic above', `on "${topic}"`);
 
         return promptText;
       }
