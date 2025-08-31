@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "glob": "^11.0.3",
     "vite": "^7.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && mkdir -p dist && cp -r prompts-site-webflow-export/* dist/",
