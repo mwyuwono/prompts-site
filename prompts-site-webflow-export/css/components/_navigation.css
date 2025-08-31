@@ -398,54 +398,58 @@
     padding: 4px 12px;
 }
 
-/* Missing rule #125 - .sidebar */
-.sidebar {
-  z-index: 10;
-    flex: none;
-    width: 100%;
-    height: auto;
-    margin-top: 0;
-    position: fixed;
-    inset: 0 0% 0%;
+/* Missing rule #125 - .sidebar - MOBILE ONLY */
+@media screen and (max-width: 991px) {
+  .sidebar {
+    z-index: 10;
+      flex: none;
+      width: 100%;
+      height: auto;
+      margin-top: 0;
+      position: fixed;
+      inset: 0 0% 0%;
+  }
 }
 
-/* Missing rule #126 - .sidebar-content */
-.sidebar-content {
-  grid-column-gap: 24px;
-    grid-row-gap: 24px;
-    padding-top: 116px;
-    padding-left: 0;
-    padding-right: 0;
+/* Missing rule #126-128 - .sidebar-content variants - MOBILE ONLY */
+@media screen and (max-width: 991px) {
+  .sidebar-content {
+    grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      padding-top: 116px;
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .sidebar-content.work {
+    grid-column-gap: 16px;
+      grid-row-gap: 16px;
+  }
+
+  .sidebar-content.personal {
+    color: var(--white);
+      background-color: #0000;
+  }
 }
 
-/* Missing rule #127 - .sidebar-content.work */
-.sidebar-content.work {
-  grid-column-gap: 16px;
-    grid-row-gap: 16px;
-}
-
-/* Missing rule #128 - .sidebar-content.personal */
-.sidebar-content.personal {
-  color: var(--white);
-    background-color: #0000;
-}
-
-/* Missing rule #129 - .menu-control */
-.menu-control {
-  background-color: var(--white);
-    border-radius: 100%;
-    justify-content: center;
-    align-items: center;
-    width: 42px;
-    height: 42px;
-    font-family: Material Icons, sans-serif;
-    font-size: 24px;
-    line-height: 1em;
-    display: flex;
-    padding: 0px;
-    margin-top: 16px;
-    margin-left: 16px;
-    position: fixed;
+/* Missing rule #129 - .menu-control - MOBILE ONLY */
+@media screen and (max-width: 991px) {
+  .menu-control {
+    background-color: var(--white);
+      border-radius: 100%;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      font-family: Material Icons, sans-serif;
+      font-size: 24px;
+      line-height: 1em;
+      display: flex;
+      padding: 0px;
+      margin-top: 16px;
+      margin-left: 16px;
+      position: fixed;
+  }
 }
 
 /* Missing rule #133 - .sidebar-category-head */
