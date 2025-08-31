@@ -1,10 +1,8 @@
 /* Navigation Component Styles */
-/* Auto-generated - duplicates removed */
+/* Auto-generated - duplicates removed and consolidated */
 
 .block-link:hover {
   border-bottom-color: var(--highlight);
-
-
   background-color: var(--secondary-highlight);
 }
 
@@ -24,109 +22,55 @@
 
 .menu-control {
   z-index: 12;
-
-
   background-color: transparent;
-
-
   color: var(--black);
-
-
   cursor: pointer;
-
-
   border-radius: 100%;
-
-
-  flex: 1;
-
-
+  flex: auto;
   justify-content: center;
-
-
   align-items: center;
-
-
   height: 32px;
-
-
+  width: auto;
   margin-top: 48px;
-
-
   margin-left: 16px;
-
-
   margin-right: 16px;
-
-
   padding-bottom: 4px;
-
-
   padding-left: 16px;
-
-
   padding-right: 16px;
-
-
   font-size: 36px;
-
-
   font-weight: 700;
-
-
   line-height: 1em;
-
-
   display: none;
-
-
   position: fixed;
 }
 
 .mobile-menu-icon {
+  background-color: var(--white);
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  font-family: Material Icons, sans-serif;
+  font-size: 24px;
+  line-height: 1em;
   display: none;
 }
 
 .services-dropdown {
   border: 1px solid var(--white);
-
-
   background-color: var(--white);
-
-
   cursor: pointer;
-
-
   border-radius: 100%;
-
-
   flex-direction: column;
-
-
   flex: none;
-
-
   justify-content: center;
-
-
   align-items: center;
-
-
   padding: 8px;
-
-
   font-family: Material Icons, sans-serif;
-
-
   font-size: 24px;
-
-
   line-height: 24px;
-
-
   display: flex;
-
-
   position: relative;
 }
 
@@ -138,42 +82,19 @@
 
 .icon-expand-mobile-menu {
   flex: auto;
-
-
   border-radius: 100%;
-
-
   background-color: white;
-
-
   justify-content: center;
-
-
-  padding: 8px;
-
-
-  font-size: 20px;
-
-
-
-
-
-  font-family: Material Icons, sans-serif;
-
-
-  font-size: 24px;
-
-
-  font-weight: 300;
-
-
-  line-height: 1em;
-
-
-  display: flex;
-
-
   align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 0;
+  padding: 8px;
+  font-family: Material Icons, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1em;
+  display: flex;
 }
 
 .inline-link.double-underline.open-prompts {
@@ -185,146 +106,6 @@
   display: none;
 }
 
-.services-popup-menu {
-  padding: 24px;
-}
-
-.block-link-arrow {
-  display: none;
-}
-
-.instructions-links {
-  flex: 0 auto;
-}
-
-.block-link.highlight {
-  background-color: var(--secondary-highlight);
-}
-
-.block-link-ctnr {
-  flex: 1;
-}
-
-.block-link-description {
-  font-size: 12px;
-
-
-  line-height: 1.2em;
-}
-
-.inline-link {
-  color: var(--black);
-
-
-  border-bottom: 1px solid #000;
-
-
-  text-decoration: none;
-}
-
-.inline-link.double-underline {
-  cursor: ne-resize;
-
-
-  border-bottom-width: 2px;
-}
-
-.inline-link.warning {
-  border-bottom-color: var(--white);
-
-
-  color: var(--white);
-}
-
-.link-block {
-  border-bottom-width: 1px;
-
-
-  padding-bottom: 4px;
-
-
-  font-weight: 700;
-}
-
-.link-block:hover {
-  border-bottom-color: var(--highlight);
-}
-
-.link-list {
-  flex-direction: row;
-}
-
-.block-link-stretcher {
-  background-color: var(--contrast-background);
-
-
-  flex: none;
-
-
-  align-self: stretch;
-
-
-  width: 100%;
-
-
-  height: 5px;
-}
-
-.home-link {
-  border-bottom-style: none;
-
-
-  text-decoration: none;
-}
-
-.embedded-example,
-.link-block {
-  padding-bottom: 0;
-
-
-  line-height: 1.4em;
-}
-
-/* === SYSTEMATIC RESTORATION - 2025-08-28 === */
-/* Added 30 missing rules from restore-navigation.css */
-
-/* Missing rule #5 - .sidebar */
-.sidebar {
-  border-right: 1px #000;
-  flex-direction: column;
-  flex: none;
-  height: 100vh;
-  display: flex;
-  position: relative;
-  overflow: auto;
-}
-
-/* Missing rule #7 - .tab */
-.tab {
-  background-color: var(--transparent-black);
-  color: var(--black);
-  cursor: pointer;
-  border-radius: 100px;
-  flex: none;
-  justify-content: center;
-  align-items: center;
-  min-height: 40px;
-  margin-right: 8px;
-  padding: 8px 16px;
-  font-family: Cousine, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  display: flex;
-  position: relative;
-}
-
-/* Missing rule #27 - .icon.sidebar-chevron */
-.icon.sidebar-chevron {
-  font-size: 22px;
-  line-height: 1em;
-}
-
-/* Missing rule #37 - .services-popup-menu */
 .services-popup-menu {
   z-index: 60;
   -webkit-backdrop-filter: blur(16px);
@@ -346,7 +127,131 @@
   box-shadow: 0 2px 30px 4px #07342940;
 }
 
-/* Missing rule #44 - .sidebar-toggle */
+.block-link-arrow {
+  display: none;
+}
+
+.instructions-links {
+  flex: 0 auto;
+}
+
+.block-link.highlight {
+  background-color: var(--secondary-highlight);
+}
+
+.block-link-ctnr {
+  flex: 1;
+}
+
+.block-link-description {
+  font-size: 12px;
+  line-height: 1.2em;
+}
+
+.inline-link {
+  color: var(--black);
+  border-bottom: 1px solid #000;
+  text-decoration: none;
+}
+
+.inline-link.double-underline {
+  cursor: ne-resize;
+  border-bottom-width: 2px;
+}
+
+.inline-link.warning {
+  border-bottom-color: var(--white);
+  color: var(--white);
+}
+
+.link-block {
+  border-bottom-width: 1px;
+  padding-bottom: 0;
+  font-weight: 700;
+  line-height: 1.4em;
+}
+
+.link-block:hover {
+  border-bottom-color: var(--highlight);
+}
+
+.link-list {
+  flex-direction: row;
+}
+
+.block-link-stretcher {
+  background-color: var(--contrast-background);
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  height: 5px;
+}
+
+.home-link {
+  border-bottom-style: none;
+  text-decoration: none;
+}
+
+.embedded-example {
+  padding-bottom: 0;
+  line-height: 1.4em;
+}
+
+/* === SYSTEMATIC RESTORATION - CONSOLIDATED === */
+
+.sidebar {
+  border-right: 1px #000;
+  flex-direction: column;
+  flex: 0 auto;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: auto;
+}
+
+.tab {
+  background-color: var(--transparent-black);
+  color: var(--highlight);
+  text-align: center;
+  border-style: none;
+  border-radius: 100px;
+  cursor: pointer;
+  flex: 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px;
+  margin-right: 4px;
+  padding: 4px 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Playfair Display, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5em;
+  display: flex;
+  position: relative;
+}
+
+.tab:hover {
+  background-color: var(--lightest-green);
+  color: var(--highlight);
+}
+
+.tab.work {
+  border-color: var(--black);
+}
+
+.tab.work.active {
+  background-color: var(--highlight);
+  color: var(--main-background);
+}
+
+.icon.sidebar-chevron {
+  font-size: 22px;
+  line-height: 1em;
+}
+
 .sidebar-toggle {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
@@ -362,55 +267,44 @@
   min-height: 42px;
   padding-left: 16px;
   padding-right: 16px;
-  display: flex;
+  display: none;
 }
 
-/* Missing rule #58 - .sidebar-all-content-wrap */
 .sidebar-all-content-wrap {
   flex: none;
 }
 
-/* Missing rule #62 - .sidebar */
-.sidebar {
-  flex: 0 auto;
-}
-
-/* Missing rule #63 - .sidebar-content */
 .sidebar-content {
   align-self: stretch;
+  width: 100%;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-/* Missing rule #64 - .sidebar-content.personal */
 .sidebar-content.personal {
   align-self: auto;
 }
 
-/* Missing rule #65 - .menu-control */
-.menu-control {
-  justify-content: center;
-  align-items: center;
+.sidebar-content.work {
   width: auto;
-  height: auto;
-  margin-top: 32px;
-  margin-left: 24px;
-  margin-right: 24px;
-  display: none;
-  padding-left: 0;
+}
+
+.sidebar-category-head {
+  text-align: left;
+  flex-direction: column;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-bottom: 4px;
+  padding-left: 24px;
   font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5em;
+  display: flex;
 }
 
-/* Missing rule #69 - .tab */
-.tab {
-  flex: 0 auto;
-  justify-content: flex-start;
-  min-height: 40px;
-  margin-right: 4px;
-  padding: 4px 12px;
-}
+/* === MOBILE RESPONSIVE STYLES === */
 
-/* Missing rule #125 - .sidebar - MOBILE ONLY */
 @media screen and (max-width: 991px) {
   .sidebar {
     z-index: 10;
@@ -421,10 +315,7 @@
     position: fixed;
     inset: 0 0% 0%;
   }
-}
 
-/* Missing rule #126-128 - .sidebar-content variants - MOBILE ONLY */
-@media screen and (max-width: 991px) {
   .sidebar-content {
     grid-column-gap: 24px;
     grid-row-gap: 24px;
@@ -442,10 +333,7 @@
     color: var(--white);
     background-color: #0000;
   }
-}
 
-/* Missing rule #129 - .menu-control - MOBILE ONLY */
-@media screen and (max-width: 991px) {
   .menu-control {
     background-color: var(--white);
     border-radius: 100%;
@@ -462,108 +350,4 @@
     margin-left: 16px;
     position: fixed;
   }
-}
-
-/* Missing rule #133 - .sidebar-category-head */
-.sidebar-category-head {
-  text-align: left;
-  flex-direction: column;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding-bottom: 4px;
-  padding-left: 32px;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1.5em;
-  display: flex;
-}
-
-/* Missing rule #136 - .tab */
-.tab {
-  color: var(--highlight);
-  text-align: center;
-  border-style: none;
-  border-radius: 100px;
-  flex: none;
-  justify-content: center;
-  min-height: 42px;
-  padding-left: 24px;
-  padding-right: 24px;
-  font-family: Playfair Display, sans-serif;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.5em;
-}
-
-/* Missing rule #200 - .sidebar-toggle */
-.sidebar-toggle {
-  display: none;
-}
-
-/* Missing rule #201 - .mobile-menu-icon */
-.mobile-menu-icon {
-  background-color: var(--white);
-  border-radius: 100%;
-  justify-content: center;
-  align-items: center;
-  width: 42px;
-  height: 42px;
-  font-family: Material Icons, sans-serif;
-  font-size: 24px;
-  line-height: 1em;
-  display: flex;
-}
-
-
-/* Missing rule #221 - .sidebar-content */
-.sidebar-content {
-  width: 100%;
-}
-
-/* Missing rule #222 - .sidebar-content.work */
-.sidebar-content.work {
-  width: auto;
-}
-
-/* Missing rule #223 - .menu-control */
-.menu-control {
-  flex: auto;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Missing rule #226 - .sidebar-category-head */
-.sidebar-category-head {
-  padding-left: 24px;
-}
-
-/* Missing rule #227 - .tab */
-.tab {
-  min-height: 40px;
-}
-
-/* Missing rule #228 - .tab:hover */
-.tab:hover {
-  background-color: var(--lightest-green);
-  color: var(--highlight);
-}
-
-/* Missing rule #229 - .tab.work */
-.tab.work {
-  border-color: var(--black);
-}
-
-/* Missing rule #230 - .tab.work.active */
-.tab.work.active {
-  background-color: var(--highlight);
-  color: var(--main-background);
-}
-
-/* Missing rule #257 - .icon-expand-mobile-menu */
-.icon-expand-mobile-menu {
-  width: 32px;
-  height: 32px;
-  margin-left: 0;
 }
