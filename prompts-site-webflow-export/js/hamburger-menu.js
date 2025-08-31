@@ -77,8 +77,8 @@ class HamburgerMenu {
     this.updateIcon();
     
     // Prevent body scroll on mobile when sidebar is open
-    if (window.innerWidth <= 767) {
-      document.body.style.overflow = 'hidden';
+    if (window.innerWidth <= 768) {
+      document.body.classList.add('sidebar-open');
     }
   }
 
@@ -93,7 +93,7 @@ class HamburgerMenu {
     this.updateIcon();
     
     // Restore body scroll
-    document.body.style.overflow = '';
+    document.body.classList.remove('sidebar-open');
   }
 
   /**

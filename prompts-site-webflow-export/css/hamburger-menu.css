@@ -83,12 +83,34 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw; /* Full viewport width */
+    width: 100vw !important; /* Full viewport width */
+    max-width: 100vw !important;
     transform: translateX(-100%);
     z-index: 999;
     background-color: var(--sidebar-bg, #ffffff);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
     display: flex !important; /* Override gptp.css display:none */
+    overflow: hidden; /* Prevent body scroll when menu is open */
+  }
+  
+  /* Ensure sidebar inside takes full width and is scrollable */
+  .left-panel .sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    overflow-y: auto !important; /* Enable vertical scrolling */
+    overflow-x: hidden !important; /* Prevent horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Ensure sidebar content container takes full width */
+  .left-panel .sidebar-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 80px !important; /* Account for hamburger button */
+    box-sizing: border-box;
   }
   
   .left-panel.is-open {
@@ -114,9 +136,25 @@
     pointer-events: none;
   }
   
+  /* Prevent body scrolling when sidebar is open */
+  body.sidebar-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+  }
+  
   /* Ensure hamburger stays above overlay */
   .hamburger-menu {
     z-index: 1001 !important;
+  }
+  
+  /* Additional mobile menu optimizations */
+  .left-panel .sidebar-section {
+    margin-bottom: 16px !important;
+  }
+  
+  .left-panel .sidebar-section:last-child {
+    margin-bottom: 40px !important; /* Extra bottom padding for scrolling */
   }
 }
 
