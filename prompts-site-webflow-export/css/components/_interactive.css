@@ -3,119 +3,119 @@
 
 .fact-check-warning {
   flex: none;
-  
-  
+
+
   justify-content: flex-start;
-  
-  
+
+
   align-items: center;
-  
-  
+
+
   display: flex;
 }
 
 .fact-check-warning-ctnr {
   background-color: var(--highlight);
-  
-  
+
+
   color: var(--white);
-  
-  
+
+
   border-radius: 16px;
-  
-  
+
+
   flex-flow: wrap;
-  
-  
+
+
   flex: 1;
-  
-  
+
+
   margin-bottom: 8px;
-  
-  
+
+
   padding-top: 16px;
-  
-  
+
+
   padding-right: 16px;
-  
-  
+
+
   font-family: Cousine, sans-serif;
-  
-  
+
+
   font-size: 15px;
-  
-  
+
+
   line-height: 1.6em;
-  
-  
+
+
   display: flex;
-  
-  
+
+
   position: relative;
 }
 
 .tooltip-connector {
   background-color: #0734294f;
-  
-  
+
+
   flex: none;
-  
-  
+
+
   width: 16px;
-  
-  
+
+
   height: 1px;
-  
-  
+
+
   position: absolute;
-  
-  
+
+
   inset: auto -16px auto auto;
 }
 
 .tooltip {
   z-index: 99;
-  
-  
+
+
   background-color: var(--highlight);
-  
-  
+
+
   color: var(--main-background);
-  
-  
+
+
   border-radius: 100px;
-  
-  
+
+
   justify-content: center;
-  
-  
+
+
   align-items: center;
-  
-  
+
+
   padding: 6px 12px 4px;
-  
-  
+
+
   font-family: Cousine, sans-serif;
-  
-  
+
+
   font-size: 12px;
-  
-  
+
+
   line-height: 1em;
-  
-  
+
+
   display: flex;
-  
-  
+
+
   position: absolute;
-  
-  
+
+
   bottom: -28px;
-  
-  
+
+
   left: auto;
-  
-  
+
+
   right: auto;
 }
 
@@ -179,14 +179,16 @@
   align-items: center;
   display: flex;
   position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* Missing rule #55 - .popup-notification */
 .popup-notification {
   width: auto;
-    max-width: 50%;
-    bottom: 24px;
-    right: 24px;
+  max-width: 50%;
+  bottom: 24px;
+  right: 24px;
 }
 
 /* Missing rule #105 - .tooltip */
@@ -202,12 +204,14 @@
 /* Missing rule #186 - .services-dropdown */
 .services-dropdown {
   align-self: stretch;
+  width: 42px;
+  height: 42px;
+
 }
 
 /* Missing rule #212 - .popup-notification */
 .popup-notification {
   min-width: 200px;
-    max-width: 80%;
-    inset: auto 16px 16px auto;
+  max-width: 80%;
+  inset: auto 16px 16px auto;
 }
-
