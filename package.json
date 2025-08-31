@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "css": "^3.0.0",
     "glob": "^11.0.3",
     "vite": "^7.0.0"
   },

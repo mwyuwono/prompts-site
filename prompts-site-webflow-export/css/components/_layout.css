@@ -169,7 +169,7 @@
   height: 100vh;
 
   display: flex !important;
-  
+
   /* ENSURE PROPER FLEXBOX LAYOUT */
   align-items: stretch;
 }
@@ -188,12 +188,12 @@
   display: flex !important;
 
   overflow: auto;
-  
+
   /* ENSURE PROPER FLEX SIZING */
   min-width: 0;
   width: auto !important;
   max-width: none !important;
-  
+
   /* FORCE FLEXBOX BEHAVIOR ON ALL SCREEN SIZES */
   box-sizing: border-box;
 }
@@ -234,7 +234,7 @@
   display: flex !important;
 
   position: relative !important;
-  
+
   /* ENSURE SIDEBAR STAYS IN FLOW */
   max-width: 32%;
 }
@@ -610,15 +610,15 @@
 .prompt-overview-section-wrap {
   flex-direction: column;
 
-    padding: 12px 12px 4px;
+  padding: 12px 12px 4px;
 }
 
 .prompt-overview-wrap {
   flex-direction: column;
 
-    flex: none;
+  flex: none;
 
-    display: flex;
+  display: flex;
 }
 
 .example-input-content.results.wrap-anywhere {
@@ -633,7 +633,8 @@
   flex: none;
 }
 
-.image-3, .logo {
+.image-3,
+.logo {
   height: 64px;
 }
 
@@ -678,6 +679,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
   background-color: #0000000d;
   border-radius: 16px;
   flex-direction: row;
+  flex-wrap: wrap;
   flex: 1;
   padding: 12px 8px 0 12px;
   display: flex;
@@ -702,11 +704,11 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #68 - .sidebar-section-head */
 .sidebar-section-head {
   grid-column-gap: 0px;
-    grid-row-gap: 4px;
-    flex-direction: row;
-    width: 40vw;
-    padding-left: 16px;
-    padding-right: 8px;
+  grid-row-gap: 4px;
+  flex-direction: row;
+  width: 40vw;
+  padding-left: 16px;
+  padding-right: 8px;
 }
 
 /* Missing rule #70 - .instructions-section-content */
@@ -717,13 +719,13 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #73 - .section-heading */
 .section-heading {
   flex: 1;
-    margin-right: 0;
+  margin-right: 0;
 }
 
 /* Missing rule #74 - .section-heading.example-heading */
 .section-heading.example-heading {
   flex: none;
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /* Missing rule #75 - .section-heading.example-heading.super */
@@ -739,27 +741,27 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #79 - .example-section-wrap */
 .example-section-wrap {
   border-color: var(--contrast-background);
-    background-color: var(--highlight);
-    padding: 0 0 24px;
+  background-color: var(--highlight);
+  padding: 0 0 24px;
 }
 
 /* Missing rule #80 - .examples-section-ctnr */
 .examples-section-ctnr {
   flex-direction: column;
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 /* Missing rule #81 - .examples-section-ctnr.vertical */
 .examples-section-ctnr.vertical {
   grid-row-gap: 16px;
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Missing rule #82 - .examples-section-ctnr.with-header-image */
 .examples-section-ctnr.with-header-image {
   padding-left: 40px;
-    padding-right: 40px;
+  padding-right: 40px;
 }
 
 /* Missing rule #87 - .div-block-21 */
@@ -770,8 +772,8 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #92 - .div-block-23 */
 .div-block-23 {
   grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    flex-flow: wrap;
+  grid-row-gap: 16px;
+  flex-flow: wrap;
 }
 
 /* Missing rule #93 - .div-block-27 */
@@ -782,15 +784,15 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #100 - .flex-block-2 */
 .flex-block-2 {
   grid-column-gap: 0px;
-    grid-row-gap: 24px;
-    flex-direction: column;
+  grid-row-gap: 24px;
+  flex-direction: column;
 }
 
 /* Missing rule #107 - .flex-block-5 */
 .flex-block-5 {
   grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    flex-flow: wrap;
+  grid-row-gap: 16px;
+  flex-flow: wrap;
 }
 
 /* Missing rule #118 - .div-block-3 */
@@ -801,23 +803,23 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #131 - .sidebar-section */
 .sidebar-section {
   flex-direction: column;
-    margin-top: 0;
-    display: flex;
+  margin-top: 0;
+  display: flex;
 }
 
 /* Missing rule #132 - .sidebar-section-head */
 .sidebar-section-head {
   grid-row-gap: 8px;
-    align-items: stretch;
-    width: 100%;
-    padding: 16px 96px 16px 80px;
+  align-items: stretch;
+  width: 100%;
+  padding: 16px 96px 16px 80px;
 }
 
 /* Missing rule #134 - .sidebar-links-container */
 .sidebar-links-container {
   background-color: #0000;
-    flex: none;
-    justify-content: center;
+  flex: none;
+  justify-content: center;
 }
 
 /* Missing rule #137 - .instructions-section-content */
@@ -833,48 +835,48 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #141 - .section-heading.example-heading */
 .section-heading.example-heading {
   margin-top: 0;
-    font-size: 24px;
-    line-height: 1.5em;
+  font-size: 24px;
+  line-height: 1.5em;
 }
 
 /* Missing rule #142 - .section-heading.example-heading.super */
 .section-heading.example-heading.super {
   margin-bottom: 0;
-    font-size: 32px;
+  font-size: 32px;
 }
 
 /* Missing rule #153 - .prompt-overview-section-wrap */
 .prompt-overview-section-wrap {
   grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    padding-top: 8px;
-    padding-bottom: 4px;
-    padding-left: 8px;
+  grid-row-gap: 16px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
 }
 
 /* Missing rule #154 - .example-section-wrap */
 .example-section-wrap {
   z-index: 999;
-    border-style: none;
-    padding: 24px;
+  border-style: none;
+  padding: 24px;
 }
 
 /* Missing rule #155 - .examples-section-ctnr */
 .examples-section-ctnr {
   grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    flex-direction: column;
-    flex: none;
-    margin-top: 20px;
-    padding: 0;
+  grid-row-gap: 16px;
+  flex-direction: column;
+  flex: none;
+  margin-top: 20px;
+  padding: 0;
 }
 
 /* Missing rule #156 - .examples-section-ctnr.vertical */
 .examples-section-ctnr.vertical {
   grid-row-gap: 16px;
-    border: 1px #000;
-    width: auto;
-    margin-top: 12px;
+  border: 1px #000;
+  width: auto;
+  margin-top: 12px;
 }
 
 /* Missing rule #157 - .examples-section-ctnr.with-header-image */
@@ -895,34 +897,34 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #189 - .logo-image-container */
 .logo-image-container {
   background-color: #0000;
-    border-radius: 0%;
-    flex-direction: column;
-    flex: none;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    margin-right: 8px;
-    padding: 8px;
-    display: flex;
-    position: static;
-    left: auto;
-    right: auto;
+  border-radius: 0%;
+  flex-direction: column;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-right: 8px;
+  padding: 8px;
+  display: flex;
+  position: static;
+  left: auto;
+  right: auto;
 }
 
 /* Missing rule #190 - .flex-block-3 */
 .flex-block-3 {
   flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-    padding-right: 72px;
-    display: flex;
-    position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 72px;
+  display: flex;
+  position: relative;
 }
 
 /* Missing rule #195 - .builder-column */
 .builder-column {
   padding-left: 8px;
-    padding-right: 8px;
+  padding-right: 8px;
 }
 
 /* Missing rule #196 - .builder-column.prompt */
@@ -933,21 +935,21 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #197 - .flex-block-5 */
 .flex-block-5 {
   grid-column-gap: 8px;
-    grid-row-gap: 8px;
-    flex-flow: row;
+  grid-row-gap: 8px;
+  flex-flow: row;
 }
 
 /* Missing rule #213 - .div-block-4 */
 .div-block-4 {
   border-color: var(--highlight);
-    flex: none;
+  flex: none;
 }
 
 /* Missing rule #214 - .div-block-9 */
 .div-block-9 {
   flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: stretch;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 /* Missing rule #224 - .sidebar-section */
@@ -958,25 +960,25 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #225 - .sidebar-section-head */
 .sidebar-section-head {
   padding-left: 64px;
-    padding-right: 16px;
+  padding-right: 16px;
 }
 
 /* Missing rule #231 - .instructions-section-content */
 .instructions-section-content {
   flex-direction: column;
-    flex: none;
-    margin-left: 8px;
-    display: block;
+  flex: none;
+  margin-left: 8px;
+  display: block;
 }
 
 /* Missing rule #232 - .section-heading */
 .section-heading {
   justify-content: flex-start;
-    margin-top: 4px;
-    margin-bottom: 8px;
-    font-family: Cousine, sans-serif;
-    font-style: normal;
-    font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-family: Cousine, sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 /* Missing rule #233 - .section-heading.example-heading */
@@ -987,36 +989,36 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #234 - .section-heading.example-heading.super */
 .section-heading.example-heading.super {
   background-color: #0000;
-    margin-top: 8px;
-    margin-left: 0;
-    padding-left: 0;
+  margin-top: 8px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* Missing rule #239 - .div-block-17 */
 .div-block-17 {
   flex-direction: row;
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 /* Missing rule #245 - .example-section-wrap */
 .example-section-wrap {
   border-style: none;
-    align-self: stretch;
-    width: auto;
-    padding-top: 0;
-    padding-left: 12px;
-    padding-right: 12px;
+  align-self: stretch;
+  width: auto;
+  padding-top: 0;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 /* Missing rule #246 - .examples-section-ctnr */
 .examples-section-ctnr {
   border: 1px #000;
-    flex-direction: column;
-    flex: none;
-    align-self: stretch;
-    width: auto;
-    padding-bottom: 12px;
-    position: static;
+  flex-direction: column;
+  flex: none;
+  align-self: stretch;
+  width: auto;
+  padding-bottom: 12px;
+  position: static;
 }
 
 /* Missing rule #247 - .examples-section-ctnr.vertical */
@@ -1027,16 +1029,16 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #248 - .examples-section-ctnr.with-header-image */
 .examples-section-ctnr.with-header-image {
   margin-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Missing rule #252 - .example-flex-col */
 .example-flex-col {
   flex-direction: column;
-    align-self: stretch;
-    align-items: flex-start;
-    display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  display: flex;
 }
 
 /* Missing rule #259 - .div-block-23 */
@@ -1047,36 +1049,36 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #260 - .div-block-24 */
 .div-block-24 {
   order: -1;
-    align-self: stretch;
-    margin-top: -12px;
-    margin-bottom: 12px;
-    margin-right: 0;
+  align-self: stretch;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  margin-right: 0;
 }
 
 /* Missing rule #263 - .div-block-28 */
 .div-block-28 {
   margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.5em;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 /* Missing rule #270 - .logo-image-container */
 .logo-image-container {
   align-items: flex-start;
-    padding: 0;
-    position: static;
-    bottom: -27px;
+  padding: 0;
+  position: static;
+  bottom: -27px;
 }
 
 /* Missing rule #271 - .flex-block-3, .logo-lockup-ctnr */
 .flex-block-3,
-  .logo-lockup-ctnr {
+.logo-lockup-ctnr {
   justify-content: flex-start;
 }
 
 /* Missing rule #276 - .builder-column.elements, .builder-column.prompt */
 .builder-column.elements,
-  .builder-column.prompt {
+.builder-column.prompt {
   background-color: var(--main-background);
 }
 
@@ -1201,20 +1203,20 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #46 - .right-panel */
 .right-panel {
   padding-left: 16px;
-    padding-right: 16px;
+  padding-right: 16px;
 }
 
 /* Missing rule #47 - .right-panel.start-page */
 .right-panel.start-page {
   justify-content: flex-start;
-    padding: 16px;
+  padding: 16px;
 }
 
 /* Missing rule #48 - .prompt-body */
 .prompt-body {
   box-shadow: none;
-    max-width: none;
-    padding: 24px;
+  max-width: none;
+  padding: 24px;
 }
 
 /* Missing rule #49 - .prompt-body.personal */
@@ -1229,7 +1231,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 
 /* Missing rule #61 - .close-element.l, .close-element.r */
 .close-element.l,
-  .close-element.r {
+.close-element.r {
   height: 24px;
 }
 
@@ -1247,14 +1249,14 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #76 - .start-page-content-wrap */
 .start-page-content-wrap {
   background-color: var(--contrast-background);
-    padding: 32px;
+  padding: 32px;
 }
 
 /* Missing rule #89 - .header-description */
 .header-description {
   font-size: 22px;
-    font-weight: 400;
-    line-height: 1.5em;
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
 /* Missing rule #90 - .fact-check-warning */
@@ -1275,8 +1277,8 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #110 - .right-panel */
 .right-panel {
   padding-top: 0;
-    padding-left: 24px;
-    padding-right: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Missing rule #111 - .right-panel.start-page */
@@ -1287,8 +1289,8 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #112 - .prompt-body */
 .prompt-body {
   box-shadow: none;
-    max-width: none;
-    padding: 16px;
+  max-width: none;
+  padding: 16px;
 }
 
 /* Missing rule #113 - .prompt-body.personal */
@@ -1303,7 +1305,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 
 /* Missing rule #124 - .close-element.l, .close-element.r */
 .close-element.l,
-  .close-element.r {
+.close-element.r {
   height: 24px;
 }
 
@@ -1312,48 +1314,48 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #138 - .prompt-header */
 .prompt-header {
   flex-direction: column;
-    flex: 1;
-    margin-bottom: 0;
-    padding-top: 0;
-    display: flex;
-    position: relative;
+  flex: 1;
+  margin-bottom: 0;
+  padding-top: 0;
+  display: flex;
+  position: relative;
 }
 
 /* Missing rule #139 - .prompt-overview */
 .prompt-overview {
   grid-row-gap: 8px;
-    margin-top: 8px;
-    margin-bottom: 33px;
-    display: flex;
+  margin-top: 8px;
+  margin-bottom: 33px;
+  display: flex;
 }
 
 /* Missing rule #143 - .prompt-overview-trigger */
 .prompt-overview-trigger {
   text-align: center;
-    border-bottom: 1px solid #000;
-    justify-content: center;
-    align-self: flex-start;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 4px;
-    font-family: Cousine, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1em;
-    display: flex;
+  border-bottom: 1px solid #000;
+  justify-content: center;
+  align-self: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  font-family: Cousine, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1em;
+  display: flex;
 }
 
 /* Missing rule #145 - .start-page-content-wrap */
 .start-page-content-wrap {
   background-color: #0000;
-    margin-top: 72px;
-    padding: 16px;
+  margin-top: 72px;
+  padding: 16px;
 }
 
 /* Missing rule #160 - .quickstack.example */
 .quickstack.example {
   grid-column-gap: 8px;
-    grid-row-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 /* Missing rule #164 - .header-description */
@@ -1369,20 +1371,20 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #166 - .mobile-prompt-controls */
 .mobile-prompt-controls {
   z-index: 999;
-    background-color: white;
-    color: var(--black);
-    border-radius: 100%;
-    flex: auto;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
-    padding: 0;
-    font-weight: 700;
-    line-height: 1em;
-    display: flex;
-    position: fixed;
-    inset: 16px auto auto 24px;
+  background-color: white;
+  color: var(--black);
+  border-radius: 100%;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1em;
+  display: flex;
+  position: fixed;
+  inset: 16px auto auto 24px;
 }
 
 /* Missing rule #167 - .manual-legend */
@@ -1403,27 +1405,27 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #171 - .instructions-ctnr */
 .instructions-ctnr {
   padding-left: 0;
-    position: relative;
+  position: relative;
 }
 
 /* Missing rule #174 - .return-to-start-wrap */
 .return-to-start-wrap {
   background-color: #0000;
-    justify-content: center;
-    align-self: stretch;
-    align-items: stretch;
-    display: flex;
+  justify-content: center;
+  align-self: stretch;
+  align-items: stretch;
+  display: flex;
 }
 
 /* Missing rule #175 - .return-to-start-ctnr */
 .return-to-start-ctnr {
   color: var(--white);
-    background-color: #0000;
-    flex: 1;
-    justify-content: center;
-    align-self: stretch;
-    align-items: center;
-    display: flex;
+  background-color: #0000;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  display: flex;
 }
 
 /* Missing rule #184 - .cousine */
@@ -1434,55 +1436,55 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #187 - .universal-prompt-head */
 .universal-prompt-head {
   justify-content: space-between;
-    align-items: center;
-    padding-left: 0;
+  align-items: center;
+  padding-left: 0;
 }
 
 /* Missing rule #194 - .copied */
 .copied {
   margin-bottom: 16px;
-    right: 8px;
+  right: 8px;
 }
 
 /* Missing rule #198 - .egroup-wrap */
 .egroup-wrap {
   grid-column-gap: 8px;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 /* Missing rule #199 - .egroup.collapseable */
 .egroup.collapseable {
   flex-flow: wrap;
-    flex: 1;
+  flex: 1;
 }
 
 /* Missing rule #203 - .right-panel */
 .right-panel {
   max-width: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /* Missing rule #204 - .right-panel.start-page */
 .right-panel.start-page {
   padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Missing rule #205 - .prompt-body */
 .prompt-body {
   outline-color: var(--contrast-background);
-    outline-offset: 0px;
-    outline-width: 8px;
-    outline-style: none;
-    flex: 1;
-    margin-bottom: 0;
-    padding-bottom: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
+  outline-offset: 0px;
+  outline-width: 8px;
+  outline-style: none;
+  flex: 1;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Missing rule #206 - .prompt-body.personal */
@@ -1493,26 +1495,26 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #209 - .page-controls */
 .page-controls {
   text-align: center;
-    order: -1;
-    align-self: stretch;
-    padding-left: 8px;
-    padding-right: 8px;
+  order: -1;
+  align-self: stretch;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /* Missing rule #211 - .page-controls.copy */
 .page-controls.copy {
   align-self: stretch;
-    margin-bottom: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Missing rule #215 - .page-wrap */
 .page-wrap {
   flex-direction: column;
-    flex: none;
-    max-width: 100%;
-    overflow: visible;
+  flex: none;
+  max-width: 100%;
+  overflow: visible;
 }
 
 /* Missing rule #236 - .start-page-content-wrap */
@@ -1523,22 +1525,22 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #253 - .header-description */
 .header-description {
   margin-top: 0;
-    font-size: 22px;
-    line-height: 1.5em;
+  font-size: 22px;
+  line-height: 1.5em;
 }
 
 /* Missing rule #254 - .fact-check-warning-ctnr */
 .fact-check-warning-ctnr {
   margin-bottom: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 12px;
 }
 
 /* Missing rule #255 - .fact-warning-content-ctnr */
 .fact-warning-content-ctnr {
   margin-bottom: 12px;
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 /* Missing rule #256 - .dismiss-warning */
@@ -1564,7 +1566,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
 /* Missing rule #265 - .return-to-start-ctnr */
 .return-to-start-ctnr {
   text-align: center;
-    justify-content: center;
+  justify-content: center;
 }
 
 /* Missing rule #275 - .copied */
@@ -1590,12 +1592,12 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     width: 40%;
     padding-top: 0;
   }
-  
+
   .right-panel {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .right-panel.start-page {
     justify-content: flex-start;
     padding: 16px;
@@ -1612,13 +1614,13 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     display: none;
     position: relative;
   }
-  
+
   .right-panel {
     padding-top: 0;
     padding-left: 24px;
     padding-right: 24px;
   }
-  
+
   .right-panel.start-page {
     background-color: var(--contrast-background);
   }
@@ -1631,7 +1633,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     padding-left: 8px;
     padding-right: 8px;
   }
-  
+
   .right-panel.start-page {
     padding-top: 24px;
     padding-left: 24px;
@@ -1654,7 +1656,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
-  
+
   .left-panel {
     flex: 0 0 32% !important;
     width: 32% !important;
@@ -1663,7 +1665,7 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     position: relative !important;
     box-sizing: border-box !important;
   }
-  
+
   .right-panel {
     flex: 1 1 auto !important;
     width: auto !important;
@@ -1682,21 +1684,20 @@ a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
     transform: none !important;
     inset: auto !important;
   }
-  
+
   /* High-specificity overrides for stubborn rules */
   body .page-wrap .right-panel {
     width: auto !important;
     max-width: calc(100% - 32%) !important;
   }
-  
-  .page-wrap > .right-panel {
+
+  .page-wrap>.right-panel {
     flex: 1 1 auto !important;
     width: auto !important;
   }
-  
+
   /* Override any Webflow-generated viewport width rules */
   * {
     box-sizing: border-box;
   }
 }
-
