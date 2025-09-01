@@ -1074,6 +1074,12 @@ img #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
 /* Missing rule #170 - .icon.home */
 .icon.home {
   font-size: 24px;
+  font-family: Material Icons, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
 }
 
 /* Missing rule #181 - .logo */
@@ -1159,6 +1165,3 @@ img #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
 
 /* Missing rule #280 - @media screen and (max-width: 767px) { #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 */
 @media screen and (max-width: 767px) {}
-}
-}
-}

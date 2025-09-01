@@ -1,0 +1,613 @@
+/* Universal Prompt Head Component - Complete CSS */
+/* Auto-extracted from 8 source files */
+/* Total rules: 62 */
+
+/* ===== REGULAR RULES ===== */
+
+/* From: _layout.css:1 */
+.logo-image-container {
+  z-index: 10;
+  border-radius: 100%;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  right: auto;
+}
+
+/* From: _layout.css:1 */
+.link-list-wrap {
+  align-self: stretch;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #16 - .block-link-arrow */
+.block-link-arrow {
+  flex: 1;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-left: 8px;
+  font-family: Material Icons, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #17 - a[href="https://perchance.org/"] .block-link-arrow:before, a[href="https://chat.qwen.ai/"] .block-link-arrow:before */
+a[href="https://perchance.org/"] .block-link-arrow:before,
+a[href="https://chat.qwen.ai/"] .block-link-arrow:before {
+  content: "arrow_forward";
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #189 - .logo-image-container */
+.logo-image-container {
+  background-color: #0000;
+  border-radius: 0%;
+  flex-direction: column;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-right: 8px;
+  padding: 8px;
+  display: flex;
+  position: static;
+  left: auto;
+  right: auto;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #270 - .logo-image-container */
+.logo-image-container {
+  align-items: flex-start;
+  padding: 0;
+  position: static;
+  bottom: -27px;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #271 - .flex-block-3, .logo-lockup-ctnr */
+.flex-block-3,
+.logo-lockup-ctnr {
+  justify-content: flex-start;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #38 - .universal-prompt-head */
+.universal-prompt-head {
+  z-index: 5;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border-radius: 100px;
+  flex-direction: row;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 8px 8px 16px;
+  display: flex;
+  position: sticky;
+  inset: 8px 40px auto auto;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #40 - .copied */
+.copied {
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 32px;
+  display: none;
+  position: fixed;
+  inset: auto 32px 0% auto;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #187 - .universal-prompt-head */
+.universal-prompt-head {
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #194 - .copied */
+.copied {
+  margin-bottom: 16px;
+  right: 8px;
+}
+
+/* From: _layout.css:1 */
+/* Missing rule #275 - .copied */
+.copied {
+  margin-bottom: 8px;
+}
+
+/* From: _features.css:1 */
+.icon.home {
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  display: flex;
+}
+
+/* From: _features.css:1 */
+.logo-image {
+  height: 28px;
+}
+
+/* From: _features.css:1 */
+.logo-lockup-ctnr {
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 80px;
+  display: flex;
+  position: relative;
+}
+
+/* From: _features.css:1 */
+.universal-prompt-head {
+  padding-left: 8px;
+}
+
+/* From: _features.css:1 */
+.ai-icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* From: _features.css:1 */
+/* Higher specificity override for img.ai-icon to ensure sizing */
+img #w-node-_981a745d-a725-25f6-5a83-2de796986429-422d3430 {
+  display: grid;
+}
+
+/* From: _features.css:1 */
+/* Critical restoration - .ai-icon */
+
+/* Critical restoration - .prompt-text-class */
+
+/* Critical restoration - .popup-notification */
+
+/* Critical restoration - .sidebar-link */
+
+/* Critical restoration - .sidebar */
+
+/* Critical restoration - .prompt-header */
+.prompt-header {
+  margin-bottom: 24px;
+}
+
+/* From: _features.css:1 */
+/* Critical restoration - .page-controls */
+
+/* Critical restoration - .popup-notification */
+
+/* Critical restoration - .sidebar-link */
+
+/* Added 20 missing rules from restore-features.css */
+
+/* Missing rule #35 - .ai-icon */
+
+/* Missing rule #98 - .logo-ctnr */
+.logo-ctnr {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #104 - .logo-lockup-ctnr */
+.logo-lockup-ctnr {
+  align-self: stretch;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #170 - .icon.home */
+.icon.home {
+  font-size: 24px;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #191 - .logo-lockup-ctnr */
+.logo-lockup-ctnr {
+  flex: 1;
+  justify-content: flex-start;
+  display: none;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #192 - .logo-image */
+.logo-image {
+  width: auto;
+  height: 32px;
+  display: none;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #202 - 
+
+/* Missing rule #261 - .icon.home */
+.icon.home {
+  margin-right: 0;
+  font-style: normal;
+}
+
+/* From: _features.css:1 */
+/* Missing rule #272 - .logo-image */
+.logo-image {
+  flex: none;
+  height: 40px;
+}
+
+/* From: _navigation.css:1 */
+/* Navigation Component Styles */
+/* Auto-generated - duplicates removed and consolidated */
+
+.block-link:hover {
+  border-bottom-color: var(--highlight);
+  background-color: var(--secondary-highlight);
+}
+
+/* From: _navigation.css:1 */
+.icon.dropdown-trigger {
+  font-size: 24px;
+  flex-shrink: 0;
+  display: flex;
+  color: black;
+  font-family: Material Icons, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+/* From: _navigation.css:1 */
+.icon.dropdown-trigger::before {
+  content: "expand_more";
+}
+
+/* From: _navigation.css:1 */
+.mobile-menu-icon {
+  background-color: var(--white);
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  font-family: Material Icons, sans-serif;
+  font-size: 24px;
+  line-height: 1em;
+  display: none;
+}
+
+/* From: _navigation.css:1 */
+.services-dropdown {
+  border: 1px solid var(--white);
+  background-color: var(--white);
+  cursor: pointer;
+  border-radius: 100%;
+  flex-direction: column;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  font-family: Material Icons, sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  display: flex;
+  position: relative;
+}
+
+/* From: _navigation.css:1 */
+.services-dropdown-trigger {
+  color: var(--highlight);
+  display: flex;
+  position: relative;
+}
+
+/* From: _navigation.css:1 */
+.services-popup-menu {
+  z-index: 60;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background-color: #073429db;
+  border-radius: 20px;
+  flex-direction: column;
+  flex: none;
+  align-items: flex-start;
+  min-width: 220px;
+  margin-top: 8px;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.3em;
+  display: none;
+  position: absolute;
+  inset: 40px -8px auto auto;
+  overflow: hidden;
+  box-shadow: 0 2px 30px 4px #07342940;
+}
+
+/* From: _navigation.css:1 */
+.block-link-arrow {
+  display: none;
+}
+
+/* From: _navigation.css:1 */
+.block-link.highlight {
+  background-color: var(--secondary-highlight);
+}
+
+/* From: _navigation.css:1 */
+.block-link-ctnr {
+  flex: 1;
+}
+
+/* From: _navigation.css:1 */
+.block-link-description {
+  font-size: 12px;
+  line-height: 1.2em;
+}
+
+/* From: _navigation.css:1 */
+.link-list {
+  flex-direction: row;
+}
+
+/* From: _navigation.css:1 */
+.block-link-stretcher {
+  background-color: var(--contrast-background);
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  height: 5px;
+}
+
+/* From: _navigation.css:1 */
+.home-link {
+  border-bottom-style: none;
+  text-decoration: none;
+}
+
+/* From: _navigation.css:1 */
+.sidebar-toggle {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  background-color: var(--background);
+  color: var(--main-background);
+  border-radius: 100px;
+  flex-flow: row;
+  flex: none;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  min-width: 42px;
+  min-height: 42px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: none;
+}
+
+/* From: hamburger-menu.css:1 */
+/* Right-align services dropdown on mobile */
+  body > div > div.right-panel > div.universal-prompt-head > div.services-dropdown-trigger {
+  margin-left: auto;
+}
+
+/* From: hamburger-menu.css:1 */
+/* Hide ALL old menu controls globally */
+.mobile-prompt-controls,
+.mobile-menu-icon,
+.icon-expand-mobile-menu,
+.icon-close-menu {
+  display: none !important;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #15 - .block-link */
+.block-link {
+  background-color: var(--main-background);
+  color: var(--black);
+  border-bottom-style: none;
+  border-radius: 100px;
+  flex-flow: column;
+  flex: none;
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-start;
+  width: auto;
+  padding: 8px 24px;
+  font-family: Cousine, sans-serif;
+  font-size: 18px;
+  line-height: 1em;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #18 - .block-link-ctnr */
+.block-link-ctnr {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  flex-flow: column wrap;
+  flex: 1;
+  justify-content: center;
+  line-height: 1.4em;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #19 - .block-link-description */
+.block-link-description {
+  color: var(--highlight);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #20 - .block-link-title */
+.block-link-title {
+  flex: none;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #33 - .link-list-wrap */
+.link-list-wrap {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border: 1px none var(--main-background);
+  border-radius: 20px;
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #34 - .link-list */
+.link-list {
+  z-index: 10;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  flex-flow: wrap;
+  flex: none;
+  justify-content: flex-start;
+  align-self: stretch;
+  align-items: flex-start;
+  font-size: 18px;
+  display: flex;
+  position: relative;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #97 - .link-list-wrap */
+.link-list-wrap {
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #146 - .block-link */
+.block-link {
+  background-color: var(--main-background);
+  padding: 8px 24px;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #147 - .block-link-title */
+.block-link-title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #180 - .link-list-wrap */
+.link-list-wrap {
+  flex-direction: column;
+  display: flex;
+}
+
+/* From: _buttons.css:1 */
+/* Missing rule #238 - .block-link */
+.block-link {
+  min-height: 48px;
+}
+
+/* From: _animations.css:1 */
+.confetti-animation {
+  opacity: .43;
+  filter: brightness(200%) blur(3px);
+  flex: none;
+  align-self: center;
+  width: 500px;
+  height: 400px;
+  display: none;
+  position: absolute;
+  inset: 0 auto auto;
+}
+
+/* From: _animations.css:1 */
+.sidebar-toggle:hover {
+  color: var(--white);
+}
+
+/* From: _interactive.css:1 */
+.tooltip-connector {
+  background-color: #0734294f;
+  flex: none;
+  width: 16px;
+  height: 1px;
+  position: absolute;
+  inset: auto -16px auto auto;
+}
+
+/* From: _interactive.css:1 */
+.tooltip {
+  z-index: 99;
+  background-color: var(--highlight);
+  color: var(--main-background);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px 4px;
+  font-family: Cousine, sans-serif;
+  font-size: 12px;
+  line-height: 1em;
+  display: flex;
+  position: absolute;
+  bottom: -28px;
+  left: auto;
+  right: auto;
+}
+
+/* From: _interactive.css:1 */
+/* Missing rule #36 - .services-dropdown-trigger */
+.services-dropdown-trigger {
+  color: var(--highlight);
+  flex: none;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* From: _interactive.css:1 */
+/* Missing rule #105 - .tooltip */
+.tooltip {
+  display: none;
+}
+
+/* From: _interactive.css:1 */
+/* Missing rule #185 - .services-dropdown-trigger */
+.services-dropdown-trigger {
+  color: var(--highlight);
+}
+
+/* From: _interactive.css:1 */
+/* Missing rule #186 - .services-dropdown */
+.services-dropdown {
+  align-self: stretch;
+  width: 42px;
+  height: 42px;
+}
+

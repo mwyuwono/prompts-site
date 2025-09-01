@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Services Dropdown Interaction Test</title>
+  <link href="prompts-site-webflow-export/css/main.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inconsolata:400,700","Nunito Sans:200,300,regular,500,800","Playfair Display:regular,500,600,700,800,italic,500italic,600italic,700italic,800italic","Cousine:regular,700","Playfair Display:regular,500,600,700,800,500italic,600italic,700italic,800italic","Material Icons:regular"]  }});</script>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .test-section {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    
+    .test-header {
+      background: #007bff;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px 8px 0 0;
+      margin: -20px -20px 20px -20px;
+      font-weight: bold;
+    }
+    
+    .dropdown-container {
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      padding: 40px;
+      margin: 20px 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      background: white;
+    }
+    
+    .test-results {
+      background: #f8f9fa;
+      border-radius: 4px;
+      padding: 15px;
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    
+    .instructions {
+      background: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .status-good { color: #28a745; font-weight: bold; }
+    .status-warning { color: #ffc107; font-weight: bold; }
+    .status-error { color: #dc3545; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🔽 Services Dropdown Interaction Test</h1>
+  
+  <div class="instructions">
+    <h3>Test Instructions:</h3>
+    <ol>
+      <li><strong>Static Version:</strong> Click the dropdown arrow (⌄) to test original Webflow animation</li>
+      <li><strong>Component Version:</strong> Click the dropdown arrow to test if component preserves animations</li>
+      <li>Compare the animation behavior between both versions</li>
+      <li>Check that menu appears/disappears with same timing and effects</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <div class="test-header">Static Version (Original Webflow)</div>
+    <div class="dropdown-container">
+      <!-- Original static implementation -->
+      <div class="services-dropdown-trigger">
+        <a href="https://chat.openai.com/?model=gpt-4-code-interpreter" target="_blank" class="universal-heading-icon gpt w-inline-block">
+          <div class="tooltip">
+            <div>ChatGPT</div>
+          </div>
+          <div class="icon home">
+            <img src="prompts-site-webflow-export/images/GPT-Icon.svg" loading="eager" alt="ChatGPT Logo" class="ai-icon">
+          </div>
+        </a>
+        <a href="https://claude.ai/" target="_blank" class="universal-heading-icon gpt w-inline-block">
+          <div class="tooltip">
+            <div>Claude</div>
+          </div>
+          <div class="icon home">
+            <img src="prompts-site-webflow-export/images/claude-logo.svg" loading="eager" alt="Claude Logo" class="ai-icon">
+          </div>
+        </a>
+        <div class="services-dropdown" id="static-dropdown">
+          <div class="icon dropdown-trigger"></div>
+          <div class="services-popup-menu" id="static-menu">
+            <div class="ai-menu-heading">Services</div>
+            <div class="link-list">
+              <a href="https://claude.ai/chats" target="_blank" class="block-link w-inline-block">
+                <div class="div-block-15 block-link-ctnr">
+                  <div class="div-block-17">
+                    <div class="block-link-title">Claude</div>
+                    <div class="block-link-arrow"></div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://chat.openai.com/?model=gpt-4-code-interpreter" target="_blank" class="block-link w-inline-block">
+                <div class="div-block-15 block-link-ctnr">
+                  <div class="div-block-17">
+                    <div class="block-link-title">ChatGPT</div>
+                    <div class="block-link-arrow"></div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.perplexity.ai" target="_blank" class="block-link w-inline-block">
+                <div class="div-block-15 block-link-ctnr">
+                  <div class="div-block-17">
+                    <div class="block-link-title">Perplexity</div>
+                    <div class="block-link-arrow"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div data-is-ix2-target="1" class="confetti-animation" data-w-id="a9d48a9e-e0bf-3c36-12a0-da43dae50371" data-animation-type="lottie" data-src="prompts-site-webflow-export/documents/Animation---1719531472609.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="3" data-duration="0" data-ix2-initial-state="1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-header">Component Version (Generated)</div>
+    <div class="dropdown-container">
+      <!-- Component version will be inserted here -->
+      <div id="component-dropdown-target" class="services-dropdown-trigger">
+        <!-- Component will render here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-header">Test Results</div>
+    <div class="test-results" id="test-results">
+      Initializing dropdown interaction test...
+    </div>
+    
+    <div style="margin-top: 20px;">
+      <button onclick="runDropdownTests()" style="background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+        🔄 Run Automated Tests
+      </button>
+      <button onclick="clearResults()" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+        🗑️ Clear Results
+      </button>
+    </div>
+  </div>
+
+  <!-- Load dependencies in correct order (like actual pages) -->
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6448171057d708e03d845245" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="prompts-site-webflow-export/js/gptp.js" type="text/javascript"></script>
+  <script src="prompts-site-webflow-export/js/refined-prompt-head-component.js"></script>
+
+  <script>
+    let componentInstance = null;
+    
+    // Initialize component
+    function initializeComponent() {
+      const targetElement = document.getElementById('component-dropdown-target');
+      componentInstance = new RefinedPromptHeadComponent({
+        mode: 'test',
+        enableTesting: false
+      });
+      
+      // Debug path prefix
+      log(`Detected pathPrefix: "${componentInstance.pathPrefix}"`);
+      log(`Current pathname: "${window.location.pathname}"`);
+      
+      // Manually create just the services section for testing
+      const servicesHTML = componentInstance.generateServicesSection();
+      log(`Generated services HTML: ${servicesHTML.substring(0, 200)}...`);
+      targetElement.innerHTML = servicesHTML;
+      
+      // Initialize Webflow interactions
+      componentInstance.initializeWebflowInteractions();
+      
+      log('Component initialized with services section');
+    }
+
+    // Test functions
+    function runDropdownTests() {
+      log('🚀 Starting dropdown interaction tests...');
+      
+      testDropdownPresence();
+      testInitialState();
+      testClickEvents();
+      testWebflowIntegration();
+      
+      log('✅ All tests completed');
+    }
+    
+    function testDropdownPresence() {
+      const staticDropdown = document.getElementById('static-dropdown');
+      const componentDropdown = document.querySelector('#component-dropdown-target .services-dropdown');
+      
+      if (staticDropdown && componentDropdown) {
+        log('✅ Both dropdown elements found');
+      } else {
+        log('❌ Missing dropdown elements');
+        if (!staticDropdown) log('   - Static dropdown missing');
+        if (!componentDropdown) log('   - Component dropdown missing');
+      }
+    }
+    
+    function testInitialState() {
+      const staticMenu = document.getElementById('static-menu');
+      const componentMenu = document.querySelector('#component-dropdown-target .services-popup-menu');
+      
+      if (staticMenu && componentMenu) {
+        const staticDisplay = window.getComputedStyle(staticMenu).display;
+        const componentDisplay = window.getComputedStyle(componentMenu).display;
+        
+        log(`📊 Initial state comparison:`);
+        log(`   - Static menu display: ${staticDisplay}`);
+        log(`   - Component menu display: ${componentDisplay}`);
+        
+        if (staticDisplay === componentDisplay) {
+          log('✅ Initial states match');
+        } else {
+          log('⚠️ Initial states differ - may affect animations');
+        }
+      } else {
+        log('❌ Cannot test initial state - menus not found');
+      }
+    }
+    
+    function testClickEvents() {
+      const staticDropdown = document.getElementById('static-dropdown');
+      const componentDropdown = document.querySelector('#component-dropdown-target .services-dropdown');
+      
+      // Test static dropdown click
+      if (staticDropdown) {
+        let staticClicked = false;
+        const staticHandler = () => { staticClicked = true; };
+        staticDropdown.addEventListener('click', staticHandler);
+        staticDropdown.click();
+        staticDropdown.removeEventListener('click', staticHandler);
+        
+        log(`🖱️ Static dropdown click: ${staticClicked ? 'registered' : 'failed'}`);
+      }
+      
+      // Test component dropdown click
+      if (componentDropdown) {
+        let componentClicked = false;
+        const componentHandler = () => { componentClicked = true; };
+        componentDropdown.addEventListener('click', componentHandler);
+        componentDropdown.click();
+        componentDropdown.removeEventListener('click', componentHandler);
+        
+        log(`🖱️ Component dropdown click: ${componentClicked ? 'registered' : 'failed'}`);
+      }
+    }
+    
+    function testWebflowIntegration() {
+      log('🔧 Testing Webflow integration...');
+      
+      if (typeof Webflow !== 'undefined') {
+        log('✅ Webflow found');
+        
+        if (Webflow.require && Webflow.require('ix2')) {
+          log('✅ Webflow IX2 (interactions) available');
+        } else {
+          log('⚠️ Webflow IX2 not available - using fallback animations');
+        }
+      } else {
+        log('⚠️ Webflow not found - using fallback animations');
+      }
+      
+      // Test actual dropdown functionality
+      setTimeout(() => {
+        log('🎯 Testing dropdown functionality...');
+        testDropdownAnimation();
+      }, 500);
+    }
+    
+    function testDropdownAnimation() {
+      const staticMenu = document.getElementById('static-menu');
+      const componentMenu = document.querySelector('#component-dropdown-target .services-popup-menu');
+      const staticDropdown = document.getElementById('static-dropdown');
+      const componentDropdown = document.querySelector('#component-dropdown-target .services-dropdown');
+      
+      if (!staticMenu || !componentMenu || !staticDropdown || !componentDropdown) {
+        log('❌ Could not find dropdown elements for testing');
+        return;
+      }
+      
+      // Test static dropdown
+      log('🖱️ Testing static dropdown...');
+      const staticBefore = window.getComputedStyle(staticMenu).display;
+      
+      staticDropdown.click();
+      setTimeout(() => {
+        const staticAfter = window.getComputedStyle(staticMenu).display;
+        log(`   Static: ${staticBefore} → ${staticAfter}`);
+        
+        // Test component dropdown  
+        log('🖱️ Testing component dropdown...');
+        const componentBefore = window.getComputedStyle(componentMenu).display;
+        
+        componentDropdown.click();
+        setTimeout(() => {
+          const componentAfter = window.getComputedStyle(componentMenu).display;
+          log(`   Component: ${componentBefore} → ${componentAfter}`);
+          
+          // Evaluate results
+          const staticWorked = staticBefore !== staticAfter;
+          const componentWorked = componentBefore !== componentAfter;
+          
+          if (staticWorked && componentWorked) {
+            log('✅ Both dropdowns are animating correctly!');
+          } else if (!staticWorked && !componentWorked) {
+            log('⚠️ Neither dropdown animating - may be CSS-only dropdowns or need hover');
+            testHoverDropdowns();
+          } else if (componentWorked && !staticWorked) {
+            log('✅ Component dropdown working (fallback animations)');
+            log('ℹ️ Static dropdown may use different trigger method');
+          } else {
+            log('❌ Component dropdown not working properly');
+          }
+          
+          // Clean up - hide both dropdowns
+          setTimeout(() => {
+            staticDropdown.click();
+            componentDropdown.click();
+          }, 1000);
+          
+        }, 400);
+      }, 400);
+    }
+    
+    function testHoverDropdowns() {
+      log('🖱️ Testing hover-based dropdown behavior...');
+      const staticDropdown = document.getElementById('static-dropdown');
+      const componentDropdown = document.querySelector('#component-dropdown-target .services-dropdown');
+      
+      // Simulate hover
+      if (staticDropdown) {
+        staticDropdown.dispatchEvent(new MouseEvent('mouseenter'));
+        setTimeout(() => {
+          staticDropdown.dispatchEvent(new MouseEvent('mouseleave'));
+        }, 1000);
+      }
+      
+      if (componentDropdown) {
+        componentDropdown.dispatchEvent(new MouseEvent('mouseenter'));
+        setTimeout(() => {
+          componentDropdown.dispatchEvent(new MouseEvent('mouseleave'));
+        }, 1000);
+      }
+    }
+    
+    function clearResults() {
+      document.getElementById('test-results').textContent = 'Results cleared...';
+    }
+    
+    function log(message) {
+      const results = document.getElementById('test-results');
+      const timestamp = new Date().toLocaleTimeString();
+      results.textContent += `[${timestamp}] ${message}\n`;
+      results.scrollTop = results.scrollHeight;
+    }
+    
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      log('Page loaded - initializing component...');
+      initializeComponent();
+      log('Ready to test dropdown interactions');
+      log('Click dropdowns manually or run automated tests');
+    });
+  </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && mkdir -p dist && cp -r prompts-site-webflow-export/* dist/",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "css-migration:analyze": "node scripts/extract-component.js analyze",
     "css-migration:test-before": "node tests/css-migration-test.js before",
@@ -25,5 +25,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "html-validator-cli": "^7.0.1",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0"
+  }
 }
