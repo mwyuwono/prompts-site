@@ -41,6 +41,13 @@ This is a static website for organizing AI prompts, built as a Webflow export wi
 
 ## Recent Changes & Fixes
 
+**Latest Updates (2025-09-02):**
+- ✅ **Decoupled Header Component from Webflow IX2:** The `RefinedPromptHeadComponent` has been refactored to remove its dependency on Webflow's interaction engine (IX2). This involved:
+    - Removing problematic `Webflow.destroy()`, `Webflow.ready()`, `Webflow.require('ix2').init()`, and `IX2_RAW_DATA_IMPORTED` dispatch calls.
+    - Implementing a custom animated dropdown menu using GSAP, including smooth scaling, chevron rotation, and staggered link animations.
+    - Dynamically loading the GSAP library to ensure its availability.
+    - For a detailed analysis of the Webflow decoupling, refer to `WEBFLOW_DECOUPLING_ANALYSIS.md`.
+
 **Latest Updates (2025-08-26):**
 - ✅ Implemented modular sidebar navigation component system
 - ✅ Created centralized navigation data structure for consistency
