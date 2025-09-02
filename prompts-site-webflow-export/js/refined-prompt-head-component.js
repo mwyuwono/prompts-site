@@ -230,6 +230,9 @@ class RefinedPromptHeadComponent {
       case 'comparison':
         this.initializeComparisonMode();
         break;
+      case 'replace-safe':
+        this.initializeSafeReplaceMode();
+        break;
       default:
         console.error('RefinedPromptHeadComponent: Invalid mode');
         return;
@@ -276,35 +279,270 @@ class RefinedPromptHeadComponent {
   }
 
   /**
+   * Safe replace mode: Replace with backup and rollback capabilities
+   */
+  initializeSafeReplaceMode() {
+    // Wait for layout to stabilize before replacing component
+    const initDelay = this.detectRefreshType();
+    
+    setTimeout(() => {
+      // Load component testing CSS for safety UI
+      this.loadComponentCSS();
+
+      // Backup original content
+      this.originalHTML = this.originalElement.innerHTML;
+      this.originalClasses = this.originalElement.className;
+
+      // Add safety indicator and controls
+      this.addSafetyControls();
+
+      // Replace content with component
+      this.originalElement.innerHTML = this.generateHTML();
+      this.originalElement.classList.add('component-active-safe');
+
+      // Force layout recalculation to prevent sidebar issues
+      this.forceLayoutRecalculation();
+
+      // Monitor for layout issues
+      this.startLayoutMonitoring();
+
+      console.log('RefinedPromptHeadComponent: Initialized in safe replace mode');
+      console.log('🛡️ Backup created - original content preserved');
+    }, initDelay);
+  }
+
+  /**
+   * Detect refresh type and return appropriate delay
+   */
+  detectRefreshType() {
+    // Check navigation timing to detect hard refresh vs regular refresh
+    if (performance.navigation) {
+      const navigationType = performance.navigation.type;
+      if (navigationType === performance.navigation.TYPE_RELOAD) {
+        console.log('🔄 Regular refresh detected - using longer delay');
+        return 200; // Longer delay for regular refresh
+      }
+    }
+    
+    // Check if page was loaded from cache (regular refresh indicator)
+    const entries = performance.getEntriesByType('navigation');
+    if (entries.length > 0) {
+      const entry = entries[0];
+      if (entry.transferSize === 0 || entry.transferSize < entry.encodedBodySize) {
+        console.log('📦 Cached resources detected - using longer delay');
+        return 200;
+      }
+    }
+    
+    console.log('🆕 Fresh load detected - using minimal delay');
+    return 50; // Shorter delay for hard refresh/first load
+  }
+
+  /**
+   * Force layout recalculation to fix sidebar positioning
+   */
+  forceLayoutRecalculation() {
+    // Method 1: Trigger reflow by reading layout properties
+    const body = document.body;
+    const leftPanel = document.querySelector('.left-panel');
+    const rightPanel = document.querySelector('.right-panel');
+    
+    // Force browser to recalculate layout by reading computed styles
+    if (leftPanel) leftPanel.offsetHeight;
+    if (rightPanel) rightPanel.offsetHeight;
+    body.offsetHeight;
+    
+    // Method 2: Temporarily trigger a minimal window resize event
+    setTimeout(() => {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      
+      // Trigger resize event to force layout recalculation
+      window.dispatchEvent(new Event('resize'));
+      
+      // Also trigger on body to ensure all listeners catch it
+      document.body.dispatchEvent(new Event('resize', { bubbles: true }));
+      
+      console.log('🔄 Layout recalculation triggered');
+    }, 50);
+  }
+
+  /**
+   * Add safety controls for easy rollback
+   */
+  addSafetyControls() {
+    // Create safety panel
+    const safetyPanel = document.createElement('div');
+    safetyPanel.id = 'component-safety-panel';
+    safetyPanel.innerHTML = `
+      <div style="position: fixed; top: 10px; right: 10px; background: #17a2b8; color: white; padding: 12px 20px; border-radius: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10001; font-family: monospace; font-size: 14px; display: flex; align-items: center; gap: 12px;">
+        <span>🛡️ COMPONENT ACTIVE</span>
+        <button onclick="window.PromptHeadComponent?.rollback()" style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 15px; cursor: pointer; font-size: 12px;">↩️ ROLLBACK</button>
+        <button onclick="document.getElementById('component-safety-panel')?.remove()" style="background: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 15px; cursor: pointer; font-size: 12px;">✕</button>
+      </div>
+    `;
+    
+    document.body.appendChild(safetyPanel);
+
+    // Make component globally accessible for rollback
+    window.PromptHeadComponent = this;
+  }
+
+  /**
+   * Monitor layout for issues and auto-rollback if detected
+   */
+  startLayoutMonitoring() {
+    // Check layout health after component loads
+    setTimeout(() => {
+      const layoutIssues = this.detectLayoutIssues();
+      if (layoutIssues.length > 0) {
+        console.warn('🚨 Layout issues detected:', layoutIssues);
+        console.log('🔄 Auto-rollback triggered for safety');
+        this.rollback(layoutIssues);
+      }
+    }, 1000);
+  }
+
+  /**
+   * Detect common layout issues
+   */
+  detectLayoutIssues() {
+    const issues = [];
+    
+    // Check if sidebar is covering page (common issue we found)
+    const leftPanel = document.querySelector('.left-panel');
+    const rightPanel = document.querySelector('.right-panel');
+    
+    if (leftPanel && rightPanel) {
+      const leftRect = leftPanel.getBoundingClientRect();
+      const rightRect = rightPanel.getBoundingClientRect();
+      
+      // If left panel is covering right panel
+      if (leftRect.width > window.innerWidth * 0.7) {
+        issues.push('Sidebar covering page content');
+      }
+      
+      // If right panel has no width
+      if (rightRect.width < 100) {
+        issues.push('Main content area collapsed');
+      }
+    }
+    
+    // Check if component has proper dimensions
+    const componentRect = this.originalElement.getBoundingClientRect();
+    if (componentRect.height < 50) {
+      issues.push('Component has insufficient height');
+    }
+    
+    // Check scroll functionality
+    const bodyHeight = document.body.scrollHeight;
+    const windowHeight = window.innerHeight;
+    if (bodyHeight > windowHeight && window.scrollY === 0) {
+      // Try to scroll and see if it works
+      window.scrollTo(0, 10);
+      setTimeout(() => {
+        if (window.scrollY < 5) {
+          issues.push('Scroll functionality may be broken');
+        }
+        window.scrollTo(0, 0); // Reset
+      }, 100);
+    }
+    
+    return issues;
+  }
+
+  /**
+   * Rollback to original implementation
+   */
+  rollback(issues = []) {
+    if (!this.originalHTML) {
+      console.error('No backup available for rollback');
+      return;
+    }
+
+    // Restore original content
+    this.originalElement.innerHTML = this.originalHTML;
+    this.originalElement.className = this.originalClasses;
+
+    // Remove safety panel
+    const safetyPanel = document.getElementById('component-safety-panel');
+    if (safetyPanel) safetyPanel.remove();
+
+    // Clean up global reference
+    if (window.PromptHeadComponent === this) {
+      delete window.PromptHeadComponent;
+    }
+
+    console.log('✅ Rollback completed - original implementation restored');
+    
+    if (issues.length > 0) {
+      console.log('🔍 Issues that triggered rollback:', issues);
+      
+      // Show user-friendly notification
+      const notification = document.createElement('div');
+      notification.innerHTML = `
+        <div style="position: fixed; top: 50px; right: 10px; background: #dc3545; color: white; padding: 16px 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10002; font-family: system-ui; max-width: 300px; font-size: 14px;">
+          <strong>🚨 Auto-Rollback Triggered</strong><br>
+          Layout issues detected:<br>
+          ${issues.map(issue => `• ${issue}`).join('<br>')}
+          <button onclick="this.parentElement.remove()" style="float: right; background: none; border: 1px solid white; color: white; padding: 4px 8px; border-radius: 4px; margin-top: 8px; cursor: pointer;">OK</button>
+        </div>
+      `;
+      document.body.appendChild(notification);
+      
+      // Auto-remove notification after 10 seconds
+      setTimeout(() => notification.remove(), 10000);
+    }
+  }
+
+  /**
+   * Load component testing CSS file
+   */
+  loadComponentCSS() {
+    if (document.getElementById('component-testing-css')) return; // Already loaded
+    
+    const link = document.createElement('link');
+    link.id = 'component-testing-css';
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = this.detectPathPrefix() + 'css/component-testing.css';
+    document.head.appendChild(link);
+  }
+
+  /**
    * Comparison mode: Show both side by side
    */
   initializeComparisonMode() {
+    // Load component testing CSS
+    this.loadComponentCSS();
+
     // Create wrapper for comparison
     const wrapper = document.createElement('div');
     wrapper.className = 'component-comparison-wrapper';
-    wrapper.style.cssText = 'display: flex; gap: 20px; border: 2px solid #007bff; padding: 20px; margin: 20px 0; background: #f8f9fa;';
 
     // Create component element
     this.componentElement = document.createElement('div');
     this.componentElement.className = 'prompt-head-component-comparison';
-    this.componentElement.style.cssText = 'flex: 1; border: 2px solid green;';
     this.componentElement.innerHTML = this.generateHTML();
 
-    // Create labels
+    // Create enhanced labels with CSS classes
     const staticLabel = document.createElement('div');
-    staticLabel.textContent = 'Static Version';
-    staticLabel.style.cssText = 'position: absolute; top: -25px; left: 0; background: orange; color: white; padding: 2px 8px; font-size: 12px;';
+    staticLabel.innerHTML = '📄 STATIC VERSION (Original)';
+    staticLabel.className = 'component-label component-label--static';
     
     const componentLabel = document.createElement('div');
-    componentLabel.textContent = 'Component Version';
-    componentLabel.style.cssText = 'position: absolute; top: -25px; left: 0; background: green; color: white; padding: 2px 8px; font-size: 12px;';
+    componentLabel.innerHTML = '⚡ NEW COMPONENT (Generated)';
+    componentLabel.className = 'component-label component-label--component';
 
-    // Set up comparison
-    this.originalElement.style.cssText = 'flex: 1; border: 2px solid orange; position: relative;';
+    // Add subtle animation to component version
+    const componentIndicator = document.createElement('div');
+    componentIndicator.innerHTML = '✨ COMPONENT ACTIVE';
+    componentIndicator.className = 'component-indicator';
+
+    // Set up comparison - no inline styles needed, CSS handles it
     this.originalElement.appendChild(staticLabel);
-    
-    this.componentElement.style.position = 'relative';
     this.componentElement.appendChild(componentLabel);
+    this.componentElement.appendChild(componentIndicator);
 
     // Add both to wrapper
     wrapper.appendChild(this.originalElement.cloneNode(true));
@@ -314,7 +552,10 @@ class RefinedPromptHeadComponent {
     this.originalElement.parentNode.insertBefore(wrapper, this.originalElement);
     this.originalElement.style.display = 'none';
 
-    console.log('RefinedPromptHeadComponent: Initialized in comparison mode');
+    // Initialize Webflow interactions for component
+    this.initializeWebflowInteractions();
+
+    console.log('🎯 RefinedPromptHeadComponent: Comparison mode active - look for visual indicators!');
   }
 
   /**
