@@ -178,6 +178,9 @@ class RefinedPromptHeadComponent {
         this.originalElement.innerHTML = componentContent;
         this.componentElement = this.originalElement;
         
+        // Force viewport/media query recalculation (mimics inspector mode)
+        this.forceViewportRecalculation();
+        
         // Verify content was set correctly
         if (!this.originalElement.innerHTML.includes('logo-lockup-ctnr')) {
           // Fallback: restore original content if replacement failed
@@ -189,6 +192,42 @@ class RefinedPromptHeadComponent {
         console.error('Component initialization error:', error);
       }
     }, 100);
+  }
+
+  /**
+   * Force viewport recalculation (mimics what inspector mode does)
+   */
+  forceViewportRecalculation() {
+    // Method 1: Force media query re-evaluation
+    const leftPanel = document.querySelector('.left-panel');
+    const rightPanel = document.querySelector('.right-panel');
+    
+    if (leftPanel && rightPanel) {
+      // Temporarily trigger a minimal layout recalculation
+      leftPanel.style.display = 'none';
+      leftPanel.offsetHeight; // Force reflow
+      leftPanel.style.display = '';
+      
+      // Force media queries to re-evaluate
+      const currentWidth = window.innerWidth;
+      const testQuery = window.matchMedia('(min-width: 769px)');
+      
+      // If we're on desktop, ensure desktop styles apply
+      if (currentWidth > 768) {
+        leftPanel.style.width = '32%';
+        leftPanel.style.maxWidth = '32%';
+        leftPanel.style.position = 'relative';
+        leftPanel.style.transform = 'none';
+        
+        // Remove these inline styles after a brief moment to let CSS take over
+        setTimeout(() => {
+          leftPanel.style.width = '';
+          leftPanel.style.maxWidth = '';
+          leftPanel.style.position = '';
+          leftPanel.style.transform = '';
+        }, 50);
+      }
+    }
   }
 
   /**
@@ -234,10 +273,24 @@ class RefinedPromptHeadComponent {
   initializeWebflowInteractions() {
     if (typeof Webflow !== 'undefined') {
       try {
-        // Only refresh interactions, don't destroy/recreate everything
+        // Fully restart Webflow animations and interactions
+        Webflow.destroy();
+        Webflow.ready();
         Webflow.require('ix2').init();
+        
+        // Force animation recalculation after a brief delay
+        setTimeout(() => {
+          if (Webflow.require && Webflow.require('ix2')) {
+            Webflow.require('ix2').store.dispatch({type: 'IX2_RAW_DATA_IMPORTED'});
+          }
+        }, 100);
       } catch (error) {
-        // Webflow re-initialization not needed or failed
+        // If full restart fails, try just IX2 reinit
+        try {
+          Webflow.require('ix2').init();
+        } catch (e) {
+          // Webflow re-initialization not available
+        }
       }
     }
   }

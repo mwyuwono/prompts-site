@@ -36,6 +36,8 @@
   margin-bottom: 0;
 }
 
+/* Component production styling removed - using default styles */
+
 .component-comparison-wrapper > *:first-child {
   flex: 1;
   border: 3px solid #fd7e14;

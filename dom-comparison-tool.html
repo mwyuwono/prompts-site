@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Structure Comparison Tool</title>
+  <style>
+    body { 
+      font-family: 'Courier New', monospace; 
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    
+    .comparison-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .comparison-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .section-header {
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+      margin: -20px -20px 15px -20px;
+      border-radius: 8px 8px 0 0;
+      font-weight: bold;
+    }
+    
+    .static-header { background: #fd7e14; }
+    .component-header { background: #28a745; }
+    
+    .dom-output {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      border: 1px solid #dee2e6;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    
+    .css-output {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 4px;
+      border: 1px solid #ffeaa7;
+      margin-top: 15px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 11px;
+    }
+    
+    .controls {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .controls button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .controls button:hover {
+      background: #0056b3;
+    }
+    
+    .diff-highlight {
+      background: #ffeb3b;
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+    
+    .error { color: #dc3545; font-weight: bold; }
+    .success { color: #28a745; font-weight: bold; }
+    .warning { color: #ffc107; font-weight: bold; }
+    
+    .results {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    
+    .test-result {
+      padding: 8px 12px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border-left: 4px solid #ddd;
+    }
+    
+    .test-pass { border-left-color: #28a745; background: #d4edda; }
+    .test-fail { border-left-color: #dc3545; background: #f8d7da; }
+    .test-warn { border-left-color: #ffc107; background: #fff3cd; }
+  </style>
+</head>
+<body>
+  <h1>🔍 DOM Structure & CSS Comparison Tool</h1>
+  <p>This tool helps identify layout differences between static and component versions.</p>
+  
+  <div class="controls">
+    <button onclick="analyzeCurrentPage()">📊 Analyze Current Page</button>
+    <button onclick="runLayoutTests()">🧪 Run Layout Tests</button>
+    <button onclick="compareCSSProperties()">🎨 Compare CSS Properties</button>
+    <button onclick="clearResults()">🗑️ Clear Results</button>
+  </div>
+
+  <div class="comparison-container">
+    <div class="comparison-section">
+      <div class="section-header static-header">📄 Static Version Structure</div>
+      <div id="static-dom" class="dom-output">Click "Analyze Current Page" to load DOM structure...</div>
+      <div id="static-css" class="css-output" style="display:none;"></div>
+    </div>
+    
+    <div class="comparison-section">
+      <div class="section-header component-header">⚡ Component Version Structure</div>
+      <div id="component-dom" class="dom-output">Click "Analyze Current Page" to load DOM structure...</div>
+      <div id="component-css" class="css-output" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div class="results">
+    <h3>📋 Analysis Results</h3>
+    <div id="test-results">No tests run yet...</div>
+  </div>
+
+  <script>
+    let staticElement = null;
+    let componentElement = null;
+    
+    // Key CSS properties that affect layout
+    const CRITICAL_CSS_PROPERTIES = [
+      'position', 'top', 'right', 'bottom', 'left', 'z-index',
+      'display', 'flex-direction', 'justify-content', 'align-items',
+      'width', 'height', 'min-width', 'min-height', 'max-width', 'max-height',
+      'padding', 'margin', 'border', 'overflow', 'overflow-x', 'overflow-y'
+    ];
+    
+    function analyzeCurrentPage() {
+      log('🔍 Analyzing current page structure...');
+      
+      // Check if we're in comparison mode
+      const urlParams = new URLSearchParams(window.location.search);
+      const isComparison = urlParams.get('test-component') === 'comparison';
+      
+      if (isComparison) {
+        analyzeComparisonMode();
+      } else {
+        analyzeStaticMode();
+      }
+    }
+    
+    function analyzeComparisonMode() {
+      log('📊 Comparison mode detected - analyzing both versions');
+      
+      // Find both versions
+      const wrapper = document.querySelector('.component-comparison-wrapper');
+      if (wrapper) {
+        // Static version (first child)
+        staticElement = wrapper.children[0]?.querySelector('.universal-prompt-head');
+        // Component version (second child) 
+        componentElement = wrapper.children[1]?.querySelector('.universal-prompt-head');
+        
+        if (staticElement && componentElement) {
+          displayDOMStructure(staticElement, 'static-dom');
+          displayDOMStructure(componentElement, 'component-dom');
+          log('✅ Both versions found and analyzed');
+        } else {
+          log('❌ Could not find both versions in comparison mode');
+        }
+      } else {
+        log('❌ Comparison wrapper not found - make sure URL has ?test-component=comparison');
+      }
+    }
+    
+    function analyzeStaticMode() {
+      log('📄 Static mode detected - analyzing static version only');
+      
+      staticElement = document.querySelector('.universal-prompt-head');
+      if (staticElement) {
+        displayDOMStructure(staticElement, 'static-dom');
+        document.getElementById('component-dom').textContent = 'Switch to comparison mode (?test-component=comparison) to see component version';
+        log('✅ Static version analyzed');
+      } else {
+        log('❌ Could not find .universal-prompt-head element');
+      }
+    }
+    
+    function displayDOMStructure(element, targetId) {
+      const output = document.getElementById(targetId);
+      const structure = getDOMStructure(element, 0);
+      output.textContent = structure;
+    }
+    
+    function getDOMStructure(element, indent = 0) {
+      const indentStr = '  '.repeat(indent);
+      let result = `${indentStr}<${element.tagName.toLowerCase()}`;
+      
+      // Add important attributes
+      if (element.className) result += ` class="${element.className}"`;
+      if (element.id) result += ` id="${element.id}"`;
+      
+      // Add data attributes
+      Array.from(element.attributes).forEach(attr => {
+        if (attr.name.startsWith('data-')) {
+          result += ` ${attr.name}="${attr.value}"`;
+        }
+      });
+      
+      result += '>\n';
+      
+      // Process children
+      Array.from(element.children).forEach(child => {
+        result += getDOMStructure(child, indent + 1);
+      });
+      
+      result += `${indentStr}</${element.tagName.toLowerCase()}>\n`;
+      return result;
+    }
+    
+    function runLayoutTests() {
+      log('🧪 Running layout compatibility tests...');
+      clearResults();
+      
+      const results = [];
+      
+      if (!staticElement || !componentElement) {
+        results.push({
+          type: 'fail',
+          test: 'Element Detection',
+          message: 'Both static and component versions must be available. Switch to comparison mode.'
+        });
+        displayResults(results);
+        return;
+      }
+      
+      // Test 1: CSS Class Comparison
+      results.push(testCSSClasses());
+      
+      // Test 2: DOM Structure Comparison  
+      results.push(testDOMStructure());
+      
+      // Test 3: Critical CSS Properties
+      results.push(testCriticalCSS());
+      
+      // Test 4: Parent Context
+      results.push(testParentContext());
+      
+      // Test 5: Layout Position
+      results.push(testLayoutPosition());
+      
+      displayResults(results);
+      log(`✅ Completed ${results.length} layout tests`);
+    }
+    
+    function testCSSClasses() {
+      const staticClasses = staticElement.className.split(' ').sort();
+      const componentClasses = componentElement.className.split(' ').sort();
+      
+      const missing = staticClasses.filter(cls => !componentClasses.includes(cls));
+      const extra = componentClasses.filter(cls => !staticClasses.includes(cls));
+      
+      if (missing.length === 0 && extra.length === 0) {
+        return {
+          type: 'pass',
+          test: 'CSS Classes',
+          message: 'All CSS classes match perfectly'
+        };
+      } else {
+        let message = 'CSS class differences found:';
+        if (missing.length) message += ` Missing: ${missing.join(', ')}`;
+        if (extra.length) message += ` Extra: ${extra.join(', ')}`;
+        
+        return {
+          type: 'fail',
+          test: 'CSS Classes', 
+          message: message
+        };
+      }
+    }
+    
+    function testDOMStructure() {
+      const staticStructure = getDOMStructureSignature(staticElement);
+      const componentStructure = getDOMStructureSignature(componentElement);
+      
+      if (staticStructure === componentStructure) {
+        return {
+          type: 'pass',
+          test: 'DOM Structure',
+          message: 'DOM structure matches exactly'
+        };
+      } else {
+        return {
+          type: 'fail',
+          test: 'DOM Structure',
+          message: 'DOM structures differ - check element hierarchy'
+        };
+      }
+    }
+    
+    function getDOMStructureSignature(element) {
+      let signature = element.tagName + '.' + (element.className || 'no-class');
+      Array.from(element.children).forEach(child => {
+        signature += '>' + getDOMStructureSignature(child);
+      });
+      return signature;
+    }
+    
+    function testCriticalCSS() {
+      const staticStyles = getComputedStyle(staticElement);
+      const componentStyles = getComputedStyle(componentElement);
+      
+      const differences = [];
+      
+      CRITICAL_CSS_PROPERTIES.forEach(prop => {
+        const staticValue = staticStyles.getPropertyValue(prop);
+        const componentValue = componentStyles.getPropertyValue(prop);
+        
+        if (staticValue !== componentValue) {
+          differences.push(`${prop}: "${staticValue}" vs "${componentValue}"`);
+        }
+      });
+      
+      if (differences.length === 0) {
+        return {
+          type: 'pass',
+          test: 'Critical CSS Properties',
+          message: 'All critical CSS properties match'
+        };
+      } else {
+        return {
+          type: 'fail',
+          test: 'Critical CSS Properties',
+          message: `Differences found: ${differences.join(', ')}`
+        };
+      }
+    }
+    
+    function testParentContext() {
+      const staticParent = staticElement.parentElement;
+      const componentParent = componentElement.parentElement;
+      
+      if (!staticParent || !componentParent) {
+        return {
+          type: 'fail',
+          test: 'Parent Context',
+          message: 'Missing parent elements'
+        };
+      }
+      
+      if (staticParent.className === componentParent.className) {
+        return {
+          type: 'pass',
+          test: 'Parent Context',
+          message: 'Parent elements have matching classes'
+        };
+      } else {
+        return {
+          type: 'warn',
+          test: 'Parent Context',
+          message: `Parent classes differ: "${staticParent.className}" vs "${componentParent.className}"`
+        };
+      }
+    }
+    
+    function testLayoutPosition() {
+      const staticRect = staticElement.getBoundingClientRect();
+      const componentRect = componentElement.getBoundingClientRect();
+      
+      const tolerance = 5; // 5px tolerance
+      
+      const xDiff = Math.abs(staticRect.x - componentRect.x);
+      const yDiff = Math.abs(staticRect.y - componentRect.y);
+      const widthDiff = Math.abs(staticRect.width - componentRect.width);
+      const heightDiff = Math.abs(staticRect.height - componentRect.height);
+      
+      if (xDiff <= tolerance && yDiff <= tolerance && widthDiff <= tolerance && heightDiff <= tolerance) {
+        return {
+          type: 'pass',
+          test: 'Layout Position',
+          message: 'Position and dimensions match within tolerance'
+        };
+      } else {
+        return {
+          type: 'fail',
+          test: 'Layout Position',
+          message: `Position/size differences: x:${xDiff}px y:${yDiff}px w:${widthDiff}px h:${heightDiff}px`
+        };
+      }
+    }
+    
+    function compareCSSProperties() {
+      log('🎨 Comparing detailed CSS properties...');
+      
+      if (!staticElement || !componentElement) {
+        log('❌ Need both elements to compare CSS');
+        return;
+      }
+      
+      const staticStyles = getComputedStyle(staticElement);
+      const componentStyles = getComputedStyle(componentElement);
+      
+      document.getElementById('static-css').style.display = 'block';
+      document.getElementById('component-css').style.display = 'block';
+      
+      let staticCSS = 'CRITICAL CSS PROPERTIES:\n\n';
+      let componentCSS = 'CRITICAL CSS PROPERTIES:\n\n';
+      
+      CRITICAL_CSS_PROPERTIES.forEach(prop => {
+        const staticValue = staticStyles.getPropertyValue(prop);
+        const componentValue = componentStyles.getPropertyValue(prop);
+        
+        const differs = staticValue !== componentValue;
+        const prefix = differs ? '❌ ' : '✅ ';
+        
+        staticCSS += `${prefix}${prop}: ${staticValue}\n`;
+        componentCSS += `${prefix}${prop}: ${componentValue}\n`;
+      });
+      
+      document.getElementById('static-css').textContent = staticCSS;
+      document.getElementById('component-css').textContent = componentCSS;
+      
+      log('✅ CSS properties comparison complete');
+    }
+    
+    function displayResults(results) {
+      const container = document.getElementById('test-results');
+      container.innerHTML = '';
+      
+      results.forEach(result => {
+        const div = document.createElement('div');
+        div.className = `test-result test-${result.type}`;
+        div.innerHTML = `
+          <strong>${result.test}:</strong> ${result.message}
+        `;
+        container.appendChild(div);
+      });
+    }
+    
+    function clearResults() {
+      document.getElementById('test-results').textContent = 'Results cleared...';
+      document.getElementById('static-css').style.display = 'none';
+      document.getElementById('component-css').style.display = 'none';
+    }
+    
+    function log(message) {
+      console.log(`[DOM-Tool] ${message}`);
+    }
+    
+    // Auto-analyze if comparison mode detected
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('test-component') === 'comparison') {
+        setTimeout(analyzeCurrentPage, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -76,6 +76,20 @@
   transition: transform 0.3s ease;
 }
 
+/* Desktop: Ensure left panel maintains layout styles */
+@media screen and (min-width: 769px) {
+  .left-panel {
+    position: relative !important;
+    transform: none !important;
+    width: 32% !important;
+    max-width: 32% !important;
+    height: 100vh !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+}
+
 /* Mobile: Hide sidebar by default, show with hamburger */
 @media screen and (max-width: 768px) {
   .left-panel {

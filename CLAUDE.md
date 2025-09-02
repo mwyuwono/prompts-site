@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+you do not need to uphold Webflow compatibility or standards, rather when projects have references to Webflow it means they originated in Webflow but are now no longer maintained in Webflow and do not need to prioritize Webflow compatibility or patterns. 
+
 ## Important: Play a system sound whenever the user needs to take action
 This attracts the users attention when needed. EVERY TIME the user is prompted to take action or confirm something, a system sound MUST be played. 
 
