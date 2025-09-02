@@ -24,68 +24,15 @@
       richTextElement.setAttribute('contenteditable', 'true');
     }
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const popupNotification = document.querySelector(".popup-notification");
-      const closeButton = document.querySelector(".close-popup");
-      const visitCount = parseInt(localStorage.getItem("visitCount"), 10) || 0;
-      if (visitCount % 4 === 3) {
-        fadeInAndScaleUp(popupNotification, 500, function () {
-          popupNotification.style.display = "block";
-        });
-      }
-      localStorage.setItem("visitCount", visitCount + 1);
-      closeButton.addEventListener("click", function () {
-        fadeOutAndMoveDown(popupNotification, 500, 200, "easeOut", function () {
-          popupNotification.style.display = "none";
-        });
-      });
-    });
-    function fadeInAndScaleUp(element, duration, callback) {
-      element.style.display = "block";
-      element.style.opacity = 0;
-      element.style.transform = "scale(0.8)";
-      element.style.transition = `opacity ${duration}ms, transform ${duration}ms`;
-      setTimeout(() => {
-        element.style.opacity = 1;
-        element.style.transform = "scale(1)";
-      }, 50);
-      setTimeout(() => {
-        element.style.transition = "";
-        if (callback) {
-          callback();
-        }
-      }, duration);
-    }
-    function fadeOutAndMoveDown(element, duration, moveDownPx, easing, callback) {
-      const easeOut = (t) => --t * t * t + 1;
-      const startOpacity = 1;
-      const endOpacity = 0;
-      const startTime = Date.now();
-      function animate() {
-        const currentTime = Date.now();
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        const easedProgress = easing === "easeOut" ? easeOut(progress) : progress;
-        element.style.opacity = startOpacity + (endOpacity - startOpacity) * easedProgress;
-        element.style.transform = `translateY(${moveDownPx * easedProgress}px)`;
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          if (callback) {
-            callback();
-          }
-        }
-      }
-      animate();
-    }
-  </script>
+  
   <!-- Sidebar Component Scripts -->
   <script src="../js/navigation-data.js" type="text/javascript"></script>
   <script src="../js/sidebar-component.js" type="text/javascript"></script>
   <script src="../js/sidebar-loader.js" type="text/javascript"></script>
   <script src="../js/hamburger-menu.js" type="text/javascript"></script>
   <script src="../js/refined-prompt-head-component-production.js" type="text/javascript"></script>
-</head>
+  
+  </head>
 
 <body data-current-page="audio-essay.html" data-current-section="personal">
   <div class="page-wrap">
@@ -299,7 +246,7 @@
 
   <script>
     // Initialize refined prompt head component - PRODUCTION
-    document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
       const targetElement = document.querySelector('.universal-prompt-head');
       if (targetElement) {
         const component = new RefinedPromptHeadComponent({ 
@@ -307,6 +254,46 @@
         });
         component.initialize(targetElement);
       }
+    });
+  </script>
+  <script>
+    function logVisibility(eventName) {
+      console.log(`--- Logging visibility state at: ${eventName} ---`);
+      const promptBody = document.querySelector('.prompt-body');
+
+      if (!promptBody) {
+        console.log('.prompt-body element not found.');
+        return;
+      }
+
+      let element = promptBody;
+      let level = 0;
+      while (element && element.tagName !== 'BODY') {
+        const styles = window.getComputedStyle(element);
+        console.log(
+          `[${level}] Element: ${element.tagName.toLowerCase()}.${element.className.replace(/ /g, '.')}`,
+          `| display: ${styles.display}`,
+          `| opacity: ${styles.opacity}`,
+          `| visibility: ${styles.visibility}`
+        );
+        element = element.parentElement;
+        level++;
+      }
+    }
+
+    // Log immediately
+    logVisibility('Initial Script Execution');
+
+    // Log on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => logVisibility('DOMContentLoaded'));
+
+    // Log on window.onload
+    window.addEventListener('load', () => {
+      logVisibility('window.onload');
+
+      // Log after a short delay
+      setTimeout(() => logVisibility('window.onload + 100ms'), 100);
+      setTimeout(() => logVisibility('window.onload + 500ms'), 500);
     });
   </script>
 </body>

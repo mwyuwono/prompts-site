@@ -150,11 +150,16 @@ class RefinedPromptHeadComponent {
       this.initializeReplaceMode();
     }
 
-    // Run these after component replacement is complete
-    setTimeout(() => {
-      this.attachEventListeners();
-      this.initializeWebflowInteractions();
-    }, 200);
+        // Dynamically load GSAP
+    const gsapScript = document.createElement('script');
+    gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+    gsapScript.onload = () => {
+      // GSAP is loaded, now attach event listeners
+      setTimeout(() => {
+        this.attachEventListeners();
+      }, 200);
+    };
+    document.head.appendChild(gsapScript);
     
     this.isInitialized = true;
   }
@@ -234,37 +239,103 @@ class RefinedPromptHeadComponent {
    * Attach event listeners for dropdown interactions
    */
   attachEventListeners() {
-    // Wait for DOM update
-    setTimeout(() => {
-      const dropdownTrigger = document.querySelector('.services-dropdown-trigger');
-      const dropdown = document.querySelector('.services-dropdown');
-      
-      if (dropdownTrigger && dropdown) {
-        // Show dropdown on hover/click
-        dropdownTrigger.addEventListener('mouseenter', () => {
-          dropdown.style.display = 'block';
-          dropdown.style.opacity = '1';
-        });
+    const trigger = document.querySelector('.services-dropdown');
+    const popupMenu = document.querySelector('.services-popup-menu');
+    const chevron = trigger ? trigger.querySelector('.icon.dropdown-trigger') : null;
+    const links = popupMenu ? Array.from(popupMenu.querySelectorAll('.block-link')) : [];
 
-        dropdownTrigger.addEventListener('mouseleave', () => {
-          setTimeout(() => {
-            if (!dropdown.matches(':hover') && !dropdownTrigger.matches(':hover')) {
-              dropdown.style.opacity = '0';
-              setTimeout(() => {
-                dropdown.style.display = 'none';
-              }, 200);
-            }
-          }, 100);
-        });
+    if (!trigger || !popupMenu || !chevron || links.length === 0) return;
 
-        dropdown.addEventListener('mouseleave', () => {
-          dropdown.style.opacity = '0';
-          setTimeout(() => {
-            dropdown.style.display = 'none';
-          }, 200);
-        });
+    // Set initial states for the animation
+    gsap.set(popupMenu, { scale: 0.8, y: -8, opacity: 0, transformOrigin: 'top right' });
+    gsap.set(links, { x: 12, opacity: 0 });
+    gsap.set(chevron, { rotation: 0, transformOrigin: 'center' });
+
+    let isOpen = false;
+    let openTl, closeTl;
+
+    const playOpenAnimation = () => {
+      if (closeTl && closeTl.isActive()) {
+        closeTl.kill();
       }
-    }, 150);
+      openTl = gsap.timeline({
+        onStart: () => {
+          gsap.set(popupMenu, { visibility: 'visible', willChange: 'transform, opacity' });
+          gsap.set(chevron, { willChange: 'transform' });
+        },
+        onComplete: () => {
+          gsap.set(popupMenu, { clearProps: 'willChange' });
+          gsap.set(chevron, { clearProps: 'willChange' });
+        }
+      });
+
+      openTl.to(popupMenu, {
+        duration: 0.2,
+        ease: 'cubic-bezier(0.2, 0, 0, 1)',
+        scale: 1,
+        y: 0,
+        opacity: 1
+      })
+      .to(chevron, {
+        duration: 0.3,
+        ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        rotation: 180
+      }, '<')
+      .to(links, {
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        x: 0,
+        opacity: 1,
+        stagger: 0.04,
+        onStart: function() {
+          gsap.set(this.targets(), { willChange: 'transform, opacity' });
+        },
+        onComplete: function() {
+          gsap.set(this.targets(), { clearProps: 'willChange' });
+        }
+      }, 0.15);
+    };
+
+    const playCloseAnimation = () => {
+      if (openTl && openTl.isActive()) {
+        openTl.kill();
+      }
+      closeTl = gsap.timeline({
+        onComplete: () => {
+          gsap.set(popupMenu, { visibility: 'hidden' });
+        }
+      });
+
+      closeTl.to(popupMenu, {
+        duration: 0.15,
+        ease: 'cubic-bezier(0.4, 0, 1, 1)',
+        scale: 0.8,
+        y: -8,
+        opacity: 0
+      })
+      .to(chevron, {
+        duration: 0.2,
+        ease: 'cubic-bezier(0.4, 0, 1, 1)',
+        rotation: 0
+      }, '<');
+    };
+
+    trigger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      if (isOpen) {
+        playCloseAnimation();
+      } else {
+        playOpenAnimation();
+      }
+      isOpen = !isOpen;
+    });
+
+    document.addEventListener('click', () => {
+      if (isOpen) {
+        playCloseAnimation();
+        isOpen = false;
+      }
+    });
   }
 
   /**
